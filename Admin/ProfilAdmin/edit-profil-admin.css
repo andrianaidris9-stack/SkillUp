@@ -1,0 +1,330 @@
+
+/* =========================================
+   EDIT PROFIL ADMIN SKILLUP
+========================================= */
+
+.edit-profile-panel {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 28px;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border-radius: 14px;
+    box-shadow: 0 3px 15px rgba(24, 57, 105, 0.06);
+}
+
+.edit-profile-heading {
+    margin-bottom: 28px;
+}
+
+.edit-profile-heading h2 {
+    margin: 0 0 7px;
+    color: #183969;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.edit-profile-heading p {
+    margin: 0;
+    color: #718096;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* =========================================
+   FOTO PROFIL
+========================================= */
+
+.admin-photo-section {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 22px;
+    margin-bottom: 28px;
+    background: #F8FAFE;
+    border: 1px solid #E5EAF2;
+    border-radius: 12px;
+}
+
+.admin-photo-preview {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 105px;
+    height: 105px;
+    overflow: visible;
+    background: #E8EFFB;
+    border: 3px solid #FFFFFF;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(24, 57, 105, 0.12);
+    color: #183969;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.admin-photo-preview img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.admin-photo-preview img[hidden] {
+    display: none;
+}
+
+.admin-photo-preview span[hidden] {
+    display: none;
+}
+
+.admin-photo-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.admin-photo-info strong {
+    display: block;
+    margin-bottom: 6px;
+    color: #263B59;
+    font-size: 14px;
+}
+
+.admin-photo-info p {
+    margin: 0 0 12px;
+    color: #718096;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.admin-button-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 9px 15px;
+    color: #2875EE;
+    background: #FFFFFF;
+    border: 1px solid #2875EE;
+    border-radius: 7px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.admin-button-secondary:hover {
+    color: #FFFFFF;
+    background: #2875EE;
+}
+
+/* =========================================
+   PEMBATAS
+========================================= */
+
+.edit-profile-divider {
+    height: 1px;
+    margin: 26px 0;
+    background: #E8EDF5;
+}
+
+/* =========================================
+   FORM
+========================================= */
+
+.edit-admin-form {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+}
+
+.edit-admin-form .admin-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.edit-admin-form label {
+    color: #344563;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.edit-admin-form input {
+    width: 100%;
+    height: 44px;
+    padding: 0 13px;
+    box-sizing: border-box;
+    color: #263B59;
+    background: #FFFFFF;
+    border: 1px solid #D8E0EC;
+    border-radius: 7px;
+    outline: none;
+    font-family: inherit;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+.edit-admin-form input:focus {
+    border-color: #2875EE;
+    box-shadow: 0 0 0 3px rgba(40, 117, 238, 0.10);
+}
+
+.edit-admin-form input.input-invalid {
+    border-color: #DC2626 !important;
+    background: #FEF2F2;
+}
+
+.edit-admin-form input.input-valid {
+    border-color: #16A34A;
+}
+
+/* =========================================
+   PESAN VALIDASI
+========================================= */
+
+.field-error {
+    display: none;
+    margin-top: 1px;
+    color: #DC2626;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.field-error.show {
+    display: block;
+}
+
+.admin-photo-info .field-error {
+    margin-top: 9px;
+}
+
+/* =========================================
+   TOMBOL AKSI
+========================================= */
+
+.edit-profile-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    padding-top: 18px;
+    margin-top: 28px;
+    border-top: 1px solid #E8EDF5;
+}
+
+.cancel-edit-button,
+.save-profile-button {
+    min-width: 145px;
+    min-height: 42px;
+    padding: 0 18px;
+    box-sizing: border-box;
+    border-radius: 7px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.cancel-edit-button {
+    color: #52627A;
+    background: #FFFFFF;
+    border: 1px solid #D8E0EC;
+}
+
+.cancel-edit-button:hover {
+    background: #F3F6FC;
+}
+
+.save-profile-button {
+    color: #FFFFFF;
+    background: #2875EE;
+    border: 1px solid #2875EE;
+}
+
+.save-profile-button:hover {
+    background: #1D60CA;
+}
+
+.save-profile-button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .edit-profile-panel {
+        padding: 19px;
+    }
+
+    .admin-photo-section {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+        padding: 17px;
+    }
+
+    .admin-photo-preview {
+        width: 90px;
+        height: 90px;
+    }
+
+    .edit-profile-actions {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+
+    .cancel-edit-button,
+    .save-profile-button {
+        width: 100%;
+    }
+}
+
+.edit-admin-form input[readonly] {
+    color: #667085;
+    background: #F1F4F8;
+    cursor: not-allowed;
+}
+.edit-admin-form .field-hint {
+    color: #718096;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.admin-photo-preview .photo-camera-trigger {
+    position: absolute;
+    right: -2px;
+    bottom: -2px;
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    padding: 0;
+    border: 2px solid #FFFFFF;
+    border-radius: 50%;
+    color: #FFFFFF;
+    background: #2875EE;
+    box-shadow: 0 3px 10px rgba(24,57,105,.2);
+    font-size: 16px;
+}
+.admin-photo-preview .photo-camera-trigger:hover {
+    color: #FFFFFF;
+    background: #1B5FCB;
+}

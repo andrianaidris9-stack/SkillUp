@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Daftar Akun | SkillUp</title>
+
+    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="../../Shared/CSS/notification.css">
+</head>
+
+<body class="auth-body">
+
+    <main class="auth-page">
+
+        <!-- LOGO SKILLUP -->
+        <a href="../../HalamanUtama/Beranda/index.html" class="auth-logo">
+            <img
+                class="logo-image"
+                src="../../Assets/img/logo-skillup.png"
+                alt="Logo SkillUp"
+            >
+            <span>SkillUp</span>
+        </a>
+
+        <!-- KARTU PENDAFTARAN -->
+        <section class="register-card">
+
+            <div class="auth-heading">
+                <h1>Daftar Akun</h1>
+                <p>
+                    Buat akun peserta untuk memulai proses pemetaan kebutuhan pelatihan.
+                </p>
+            </div>
+
+            <!-- FORM PENDAFTARAN -->
+            <form id="registerForm" novalidate>
+
+                <!-- NAMA LENGKAP -->
+                <div class="auth-input-group">
+                    <label for="registerName">Nama Lengkap</label>
+
+                    <div class="auth-input">
+                        <input
+                            type="text"
+                            id="registerName"
+                            placeholder="Masukkan nama lengkap"
+                            autocomplete="name"
+                            aria-describedby="registerNameError"
+                            required
+                        >
+                    </div>
+
+                    <small
+                        class="field-error"
+                        id="registerNameError"
+                        aria-live="polite"
+                    ></small>
+                </div>
+
+                <!-- EMAIL -->
+                <div class="auth-input-group">
+                    <label for="registerEmail">Email</label>
+
+                    <div class="auth-input">
+                        <input
+                            type="email"
+                            id="registerEmail"
+                            placeholder="nama@gmail.com"
+                            autocomplete="email"
+                            autocapitalize="none"
+                            spellcheck="false"
+                            pattern="[a-z0-9]+(\.[a-z0-9]+)*@gmail\.com"
+                            title="Gunakan format nama@gmail.com dengan huruf kecil."
+                            aria-describedby="registerEmailError"
+                            required
+                        >
+                    </div>
+
+                    <small
+                        class="field-error"
+                        id="registerEmailError"
+                        aria-live="polite"
+                    ></small>
+                </div>
+
+                <!-- NOMOR HP -->
+                <div class="auth-input-group">
+                    <label for="registerPhone">Nomor HP</label>
+
+                    <div class="auth-input">
+                        <input
+                            type="tel"
+                            id="registerPhone"
+                            placeholder="08xxxxxxxxxx"
+                            inputmode="numeric"
+                            autocomplete="tel"
+                            aria-describedby="registerPhoneError"
+                            required
+                        >
+                    </div>
+
+                    <small
+                        class="field-error"
+                        id="registerPhoneError"
+                        aria-live="polite"
+                    ></small>
+                </div>
+
+                <!-- PASSWORD -->
+                <div class="auth-input-group">
+                    <label for="registerPassword">Password</label>
+
+                    <div class="auth-input password-wrapper">
+
+                        <input
+                            type="password"
+                            id="registerPassword"
+                            placeholder="Minimal 8 karakter"
+                            autocomplete="new-password"
+                            aria-describedby="registerPasswordHint registerPasswordError"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="toggle-password password-toggle"
+                            id="togglePassword"
+                            aria-label="Lihat password"
+                            aria-pressed="false"
+                        >
+
+                            <svg
+                                class="eye-open"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+
+                            <svg
+                                class="eye-closed"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path d="M3 3l18 18"/>
+                                <path d="M10.6 10.6a2 2 0 0 0 2.8 2.8"/>
+                                <path d="M9.9 5.2A10.8 10.8 0 0 1 12 5c6.4 0 10 7 10 7a16 16 0 0 1-3.1 3.9"/>
+                                <path d="M6.2 6.2C3.5 8 2 12 2 12s3.6 7 10 7c1.1 0 2.1-.2 3-.5"/>
+                            </svg>
+
+                        </button>
+                    </div>
+
+                    <small class="field-hint" id="registerPasswordHint">
+                        Minimal 8 karakter, terdiri dari huruf besar,
+                        huruf kecil, angka, dan karakter khusus.
+                    </small>
+
+                    <small
+                        class="field-error"
+                        id="registerPasswordError"
+                        aria-live="polite"
+                    ></small>
+                </div>
+
+                <!-- PERSETUJUAN SYARAT -->
+                <div class="terms-container">
+
+                    <label class="terms-option">
+                        <input
+                            type="checkbox"
+                            id="agreeTerms"
+                            aria-describedby="agreeTermsError"
+                            required
+                        >
+
+                        <span>
+                            Saya setuju dengan
+                            <a href="../SyaratKetentuan/syarat-ketentuan.html">
+                                Syarat &amp; Ketentuan
+                            </a>
+                            dan
+                            <a href="../KebijakanPrivasi/kebijakan-privasi.html">
+                                Kebijakan Privasi
+                            </a>.
+                        </span>
+                    </label>
+
+                    <small
+                        class="field-error"
+                        id="agreeTermsError"
+                        aria-live="polite"
+                    ></small>
+
+                </div>
+
+                <!-- TOMBOL DAFTAR -->
+                <button type="submit" class="auth-submit">
+                    Buat Akun Peserta
+                </button>
+
+            </form>
+
+            <!-- LINK LOGIN -->
+            <p class="auth-footer">
+                Sudah punya akun?
+                <a href="../Login/login.html">Login</a>
+            </p>
+
+        </section>
+
+    </main>
+
+    <script src="../../Shared/JS/api-client.js"></script>
+    <script src="../../Shared/JS/notification.js"></script>
+    <script src="register.js"></script>
+
+</body>
+</html>

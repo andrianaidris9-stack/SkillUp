@@ -1,0 +1,548 @@
+
+/* =====================================================
+   LAYOUT BERSAMA HALAMAN PESERTA SKILLUP
+   Versi penyelarasan Admin dan Peserta
+===================================================== */
+
+:root {
+    --user-navy: #183969;
+    --user-blue: #2875EE;
+    --user-bg: #F3F6FC;
+    --user-border: #E2E8F0;
+    --user-text: #202B3C;
+    --user-muted: #66758A;
+
+    --user-sidebar-width: 250px;
+    --user-header-height: 72px;
+    --user-logo-size: 44px;
+}
+
+/* =====================================================
+   PENGATURAN DASAR
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    color: var(--user-text);
+    background: var(--user-bg);
+}
+
+a {
+    text-decoration: none;
+}
+
+/* =====================================================
+   LAYOUT UTAMA
+===================================================== */
+
+.user-layout,
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.user-main,
+.main {
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 100vh;
+}
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.user-sidebar,
+.sidebar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: var(--user-sidebar-width);
+    min-width: var(--user-sidebar-width);
+    height: 100vh;
+    padding: 22px 18px;
+    color: #fff;
+    background: var(--user-navy);
+}
+
+/* =====================================================
+   LOGO SKILLUP
+===================================================== */
+
+.user-brand,
+.sidebar .logo {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    min-height: var(--user-logo-size);
+    margin: 0 0 34px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.user-brand img,
+.sidebar .logo-image {
+    display: block;
+    width: var(--user-logo-size);
+    height: var(--user-logo-size);
+    min-width: var(--user-logo-size);
+    object-fit: contain;
+}
+
+/* =====================================================
+   MENU NAVIGASI
+===================================================== */
+
+.user-menu,
+.sidebar .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.user-menu a,
+.sidebar .menu a {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    border-radius: 9px;
+
+    color: #DCE7F8;
+    background: transparent;
+
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* Menghilangkan garis bawah pada semua tulisan menu */
+
+.user-menu a,
+.user-menu a span,
+.sidebar .menu a,
+.sidebar .menu a span {
+    text-decoration: none !important;
+}
+
+/* Menu aktif dan hover */
+
+.user-menu a:hover,
+.user-menu a.active,
+.sidebar .menu a:hover,
+.sidebar .menu a.active {
+    color: #fff;
+    background: var(--user-blue);
+    text-decoration: none;
+}
+
+/* =====================================================
+   IKON MENU
+===================================================== */
+
+.user-menu-icon,
+.menu-icon {
+    display: inline-flex;
+    flex: 0 0 20px;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    font-size: 18px;
+    line-height: 1;
+}
+
+/* =====================================================
+   TOMBOL KELUAR
+===================================================== */
+
+.user-logout,
+.sidebar .logout {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 11px;
+
+    width: 100%;
+    min-height: 42px;
+    margin-top: auto;
+    padding: 10px 12px;
+
+    border: 0;
+    border-radius: 9px;
+
+    color: #fff;
+    background: #D92D3A;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: left;
+    text-decoration: none;
+
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.user-logout:hover,
+.sidebar .logout:hover {
+    color: #fff;
+    background: #B92330;
+}
+
+/* Ikon panah keluar */
+
+.logout-icon {
+    display: block;
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.user-topbar,
+.topbar {
+    display: flex;
+    flex: 0 0 var(--user-header-height);
+    align-items: center;
+    justify-content: flex-end;
+
+    width: 100%;
+    height: var(--user-header-height);
+    min-height: var(--user-header-height);
+
+    padding: 0 32px;
+
+    border-bottom: 1px solid var(--user-border);
+    background: #fff;
+}
+
+/* =====================================================
+   PROFIL PESERTA
+===================================================== */
+
+.user-avatar,
+.avatar {
+    display: grid;
+    place-items: center;
+
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+
+    overflow: hidden;
+    border-radius: 50%;
+
+    color: var(--user-navy);
+    background: #EAF1FF;
+
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.user-avatar img,
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =====================================================
+   KONTEN HALAMAN
+===================================================== */
+
+.user-content,
+.content {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px 32px 48px;
+}
+
+/* =====================================================
+   JUDUL DAN SAPAAN
+===================================================== */
+
+.user-heading {
+    margin-bottom: 24px;
+}
+
+.user-heading h1 {
+    margin: 0;
+    color: var(--user-navy);
+    font-size: 28px;
+    line-height: 1.2;
+}
+
+.user-heading p {
+    margin: 7px 0 0;
+    color: var(--user-muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.welcome {
+    margin-bottom: 22px;
+}
+
+.welcome h1 {
+    margin: 0 0 6px;
+    color: var(--user-navy);
+    font-size: 28px;
+    line-height: 1.2;
+}
+
+.welcome p {
+    color: var(--user-muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* =====================================================
+   KARTU
+===================================================== */
+
+.user-card {
+    padding: 22px;
+    border: 1px solid var(--user-border);
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 4px 14px rgba(24, 57, 105, 0.04);
+}
+
+.user-card h2 {
+    margin: 0 0 14px;
+    color: var(--user-navy);
+    font-size: 18px;
+}
+
+.user-card > p {
+    color: var(--user-muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.dashboard-panel {
+    margin-top: 20px;
+}
+
+/* =====================================================
+   RINGKASAN PESERTA
+===================================================== */
+
+.user-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.user-stat {
+    padding: 18px;
+    border: 1px solid var(--user-border);
+    border-radius: 12px;
+    background: #fff;
+}
+
+.user-stat span {
+    display: block;
+    color: var(--user-muted);
+    font-size: 12px;
+}
+
+.user-stat strong {
+    display: block;
+    margin-top: 7px;
+    color: var(--user-navy);
+    font-size: 24px;
+}
+
+/* =====================================================
+   TOMBOL DAN AKSI
+===================================================== */
+
+.user-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.user-button,
+.user-button-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 40px;
+    padding: 10px 15px;
+
+    border: 1px solid var(--user-blue);
+    border-radius: 8px;
+
+    color: #fff;
+    background: var(--user-blue);
+
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+}
+
+.user-button:hover {
+    color: #fff;
+    background: #1B5FCB;
+}
+
+.user-button-secondary {
+    color: var(--user-blue);
+    background: #fff;
+}
+
+.user-button-secondary:hover {
+    color: var(--user-blue);
+    background: #F0F5FF;
+}
+
+.user-actions a {
+    text-decoration: none;
+}
+
+/* =====================================================
+   CATATAN
+===================================================== */
+
+.user-note {
+    margin-top: 16px;
+    padding: 14px 16px;
+
+    border-left: 4px solid #F5A623;
+    border-radius: 7px;
+
+    color: #657287;
+    background: #FFF9EF;
+
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 950px) {
+    .user-sidebar,
+    .sidebar {
+        width: 225px;
+        min-width: 225px;
+    }
+
+    .user-content,
+    .content {
+        padding: 24px 20px;
+    }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+    .user-layout,
+    .layout {
+        display: block;
+    }
+
+    .user-sidebar,
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        padding: 16px;
+    }
+
+    .user-brand,
+    .sidebar .logo {
+        margin-bottom: 18px;
+    }
+
+    .user-menu,
+    .sidebar .menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 7px;
+    }
+
+    .user-menu a,
+    .sidebar .menu a {
+        width: auto;
+        min-height: 40px;
+        padding: 9px 11px;
+    }
+
+    .user-logout,
+    .sidebar .logout {
+        width: max-content;
+        margin-top: 16px;
+    }
+
+    .user-topbar,
+    .topbar {
+        flex-basis: 60px;
+        height: 60px;
+        min-height: 60px;
+        padding: 0 18px;
+    }
+
+    .user-content,
+    .content {
+        padding: 22px 15px 36px;
+    }
+
+    .user-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* =====================================================
+   HP KECIL
+===================================================== */
+
+@media (max-width: 420px) {
+    .user-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .user-heading h1,
+    .welcome h1 {
+        font-size: 24px;
+    }
+}

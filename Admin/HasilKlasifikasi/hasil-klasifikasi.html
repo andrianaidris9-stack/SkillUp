@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Klasifikasi | SkillUp Admin</title>
+
+    <link rel="stylesheet" href="../admin-layout.css">
+    <link rel="stylesheet" href="../../Shared/CSS/logout-confirmation.css">
+    <link rel="stylesheet" href="../../Shared/CSS/notification.css">
+</head>
+
+<body>
+<div class="admin-layout">
+
+    <aside class="admin-sidebar">
+
+        <a class="admin-brand" href="../Dashboard/dashboard.html">
+            <img src="../../Assets/img/logo-skillup.png" alt="Logo SkillUp">
+            <span>SkillUp</span>
+        </a>
+
+        <nav class="admin-menu" aria-label="Navigasi Admin">
+
+            <a href="../Dashboard/dashboard.html">
+                <span class="admin-menu-icon">▦</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="../DataPeserta/data-peserta.html">
+                <span class="admin-menu-icon">♟</span>
+                <span>Data Peserta</span>
+            </a>
+
+            <a href="../DataPelatihan/pelatihan.html">
+                <span class="admin-menu-icon">▣</span>
+                <span>Data Pelatihan</span>
+            </a>
+
+            <a href="../DataAsesmen/data-asesmen.html">
+                <span class="admin-menu-icon">▤</span>
+                <span>Data Asesmen</span>
+            </a>
+
+            <a href="hasil-klasifikasi.html" class="active">
+                <span class="admin-menu-icon">✦</span>
+                <span>Hasil Klasifikasi</span>
+            </a>
+
+            <a href="../ProfilAdmin/profil-admin.html">
+                <span class="admin-menu-icon">⚙</span>
+                <span>Profil Admin</span>
+            </a>
+
+        </nav>
+
+        <!-- TOMBOL KELUAR -->
+        <button
+            class="admin-logout"
+            id="logoutButton"
+            type="button"
+            data-logout-url="../../Autentikasi/Login/login.html">
+
+            <span class="logout-icon" aria-hidden="true">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+
+                    <path d="M10 17l5-5-5-5"></path>
+                    <path d="M15 12H3"></path>
+                    <path d="M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6"></path>
+                </svg>
+            </span>
+
+            <span>Keluar</span>
+        </button>
+
+    </aside>
+
+    <main class="admin-main">
+
+        <header class="admin-topbar">
+            <div class="admin-user">
+                <span id="adminName">Admin SkillUp</span>
+                <span class="admin-avatar" id="adminAvatar">A</span>
+            </div>
+        </header>
+
+        <section class="admin-content">
+
+            <div class="admin-page-heading">
+                <h1>Hasil Klasifikasi</h1>
+                <p>
+                    Tinjau rekomendasi kebutuhan pelatihan berdasarkan
+                    algoritma Decision Tree ID3.
+                </p>
+            </div>
+
+            <section class="admin-panel">
+
+                <div class="admin-toolbar">
+                    <h2>Proses dan Hasil Klasifikasi</h2>
+
+                    <button
+                        type="button"
+                        class="admin-button"
+                        id="processClassification">
+                        Proses Klasifikasi
+                    </button>
+                </div>
+
+                <p id="modelStatus" class="admin-note">
+                    Hasil hanya dapat diproses untuk peserta yang sudah
+                    melengkapi profil, asesmen awal, dan penilaian
+                    keterampilan praktik.
+                </p>
+
+                <div class="admin-table-wrap">
+                    <table class="admin-table">
+
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Peserta</th>
+                                <th>Minat</th>
+                                <th>Hasil Decision Tree</th>
+                                <th>Kode</th>
+                                <th>Tanggal Proses</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="classificationTable">
+                            <tr>
+                                <td colspan="7" class="admin-empty">
+                                    Belum ada hasil klasifikasi.
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+
+                <div class="admin-note">
+                    Dataset yang digunakan saat ini merupakan data
+                    contoh/sintetis. Hasil klasifikasi berfungsi sebagai
+                    rekomendasi pendukung keputusan dan belum dapat
+                    dianggap sebagai validasi akurasi pada data lapangan.
+                </div>
+
+            </section>
+
+        </section>
+    </main>
+</div>
+
+<script src="../../Shared/JS/api-client.js"></script>
+    <script src="../../Shared/JS/auth-guard.js?role=admin"></script>
+    <script src="../../Shared/JS/notification.js"></script>
+<script src="../../Shared/JS/logout-confirmation.js"></script>
+<script src="../../Algoritma/decision-tree.js"></script>
+<script src="hasil-klasifikasi.js"></script>
+<script src="../../Shared/JS/admin-header.js"></script>
+
+</body>
+</html>

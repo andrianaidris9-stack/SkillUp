@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" role="img" aria-label="Ilustrasi Kuliner dan Tata Boga">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3F6FC"/><stop offset="1" stop-color="#E4EDFF"/></linearGradient></defs>
+<rect width="600" height="360" rx="28" fill="url(#bg)"/>
+<circle cx="300" cy="180" r="145" fill="#FFFFFF" opacity=".55"/>
+<path d="M185 185h230l-24 100H209z" fill="#FFFFFF" stroke="#2875EE" stroke-width="12" stroke-linejoin="round"/><path d="M215 185c0-45 35-80 85-80s85 35 85 80" fill="#EAF1FF" stroke="#183969" stroke-width="12"/><path d="M270 100V70m40 30V62m40 38V70" stroke="#F5A623" stroke-width="12" stroke-linecap="round"/><path d="M415 205h45" stroke="#183969" stroke-width="14" stroke-linecap="round"/>
+<path d="M48 310h504" stroke="#C9D9F5" stroke-width="3" stroke-linecap="round"/>
+</svg>

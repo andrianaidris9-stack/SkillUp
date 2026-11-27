@@ -1,0 +1,18 @@
+# Rahasia dan dependensi lokal
+Backend/.env
+Backend/vendor/
+Backend/*.log
+Backend/uploads/**/*.tmp
+.DS_Store
+Thumbs.db
+# Foto profil pengguna - tidak dipublikasikan
+Backend/uploads/profile/
+# Foto dokumentasi pribadi - jangan publikasikan
+Backend/uploads/training/
+# File rahasia tambahan
+.env
+.env.*
+!.env.example
+
+# File konfigurasi lokal
+.vscode/

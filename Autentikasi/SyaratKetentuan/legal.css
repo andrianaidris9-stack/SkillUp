@@ -1,0 +1,204 @@
+
+/* =========================================
+   PENGATURAN DASAR
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body.legal-body {
+    min-height: 100vh;
+    background: #F3F6FC;
+    padding: 35px 20px;
+    color: #34445a;
+}
+
+/* =========================================
+   CONTAINER UTAMA
+========================================= */
+.legal-container {
+    max-width: 850px;
+    width: 100%;
+    margin: auto;
+}
+
+/* =========================================
+   LINK KEMBALI
+========================================= */
+.back-link {
+    display: inline-block;
+    color: #2875EE;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    transition: color 0.2s ease;
+}
+
+.back-link:hover {
+    color: #1762df;
+    text-decoration: underline;
+}
+
+/* =========================================
+   KARTU KONTEN
+========================================= */
+.legal-card {
+    background: #ffffff;
+    padding: 40px 45px;
+    border-radius: 16px;
+    box-shadow: 0 8px 35px rgba(28, 57, 95, 0.08);
+}
+
+/* =========================================
+   LOGO DAN IDENTITAS SKILLUP
+========================================= */
+.legal-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 24px;
+    text-decoration: none;
+}
+
+.legal-logo {
+    display: block;
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.legal-brand span {
+    color: #183969;
+    font-size: 23px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+/* =========================================
+   JUDUL HALAMAN
+========================================= */
+.legal-card h1 {
+    color: #183969;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 8px;
+}
+
+.legal-subtitle {
+    text-align: center;
+    color: #8995a5;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+/* =========================================
+   ISI KONTEN
+========================================= */
+.legal-card section {
+    margin-bottom: 24px;
+}
+
+.legal-card section h2 {
+    color: #183969;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 9px;
+}
+
+.legal-card section p {
+    color: #697789;
+    font-size: 14px;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* =========================================
+   TOMBOL KEMBALI KE PENDAFTARAN
+========================================= */
+.legal-button {
+    display: block;
+    width: fit-content;
+    margin: 30px auto 0;
+    padding: 12px 22px;
+    background: #2875EE;
+    color: #ffffff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.legal-button:hover {
+    background: #1762df;
+    transform: translateY(-1px);
+}
+
+/* =========================================
+   TAMPILAN TABLET
+========================================= */
+@media (max-width: 768px) {
+    body.legal-body {
+        padding: 28px 18px;
+    }
+
+    .legal-card {
+        padding: 35px 30px;
+    }
+}
+
+/* =========================================
+   TAMPILAN MOBILE
+========================================= */
+@media (max-width: 600px) {
+    body.legal-body {
+        padding: 20px 14px;
+    }
+
+    .legal-card {
+        padding: 28px 22px;
+        border-radius: 13px;
+    }
+
+    .legal-logo {
+        width: 43px;
+        height: 43px;
+    }
+
+    .legal-brand span {
+        font-size: 21px;
+    }
+
+    .legal-card h1 {
+        font-size: 23px;
+    }
+
+    .legal-subtitle {
+        font-size: 13px;
+        margin-bottom: 28px;
+    }
+
+    .legal-card section h2 {
+        font-size: 15px;
+    }
+
+    .legal-card section p {
+        font-size: 13px;
+        text-align: left;
+    }
+
+    .legal-button {
+        width: 100%;
+    }
+}

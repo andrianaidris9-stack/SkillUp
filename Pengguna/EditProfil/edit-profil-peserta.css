@@ -1,0 +1,405 @@
+
+/* =========================================
+   EDIT PROFIL PESERTA - SKILLUP
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background: #F3F6FC;
+    color: #202B3C;
+}
+
+/* KARTU EDIT PROFIL */
+
+.profile-card {
+    width: 100%;
+    background: #fff;
+    border: 1px solid #CBD9ED;
+    border-radius: 14px;
+    padding: 30px;
+    box-shadow: 0 3px 8px rgba(20, 50, 90, .05);
+}
+
+.profile-card h1 {
+    color: #183969;
+    font-size: 27px;
+    font-weight: 700;
+    margin: 0 0 28px;
+}
+
+/* LAYOUT PROFIL */
+
+.profile-layout {
+    display: grid;
+    grid-template-columns: 175px minmax(0, 1fr);
+    gap: 28px;
+    align-items: start;
+}
+
+/* FOTO PROFIL */
+
+.photo-box {
+    position: relative;
+    width: 175px;
+    min-height: 160px;
+    background: #DCEAFF;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 15px 10px;
+}
+
+.initial {
+    width: 80px;
+    height: 80px;
+    background: #2875EE;
+    color: #fff;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 30px;
+    font-weight: 700;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.initial img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* TOMBOL UBAH FOTO */
+
+.upload-button {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border: 2px solid #FFFFFF;
+    border-radius: 50%;
+    color: #FFFFFF;
+    background: #2875EE;
+    box-shadow: 0 3px 10px rgba(24, 57, 105, .2);
+    cursor: pointer;
+    font-size: 17px;
+    transition: background .2s ease, transform .2s ease;
+}
+
+.upload-button:hover {
+    background: #1B5FCB;
+    transform: scale(1.05);
+}
+
+#photoInput {
+    display: none;
+}
+
+.photo-error {
+    max-width: 150px;
+    text-align: center;
+}
+
+/* FORM */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 14px;
+}
+
+.form-group {
+    min-width: 0;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+/* INPUT DAN DROPDOWN */
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    height: 49px;
+    border: 1px solid #CBD9ED;
+    border-radius: 9px;
+    padding: 0 14px;
+    font-size: 14px;
+    font-weight: 600;
+    outline: none;
+    background: #fff;
+    color: #171717;
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.form-group select {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 40px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23555' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 16px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #2875EE;
+    box-shadow: 0 0 0 3px rgba(40, 117, 245, .10);
+}
+
+.form-group select option {
+    font-size: 14px;
+    padding: 10px;
+    background: #fff;
+    color: #171717;
+}
+
+#email[readonly] {
+    background-color: #F3F6FB;
+    color: #667085;
+    cursor: not-allowed;
+}
+
+/* VALIDASI INLINE */
+
+.field-error {
+    display: block;
+    min-height: 0;
+    margin-top: 6px;
+    color: #DC2626;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.field-error:empty {
+    display: none;
+}
+
+.form-group input.input-error,
+.form-group select.input-error {
+    border-color: #DC2626;
+    box-shadow: 0 0 0 2px rgba(220, 38, 38, .08);
+}
+
+.form-group input.input-error:focus,
+.form-group select.input-error:focus {
+    border-color: #DC2626;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, .10);
+}
+
+/* TOMBOL SIMPAN DAN BATAL */
+
+.button-area {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.save-button,
+.cancel-button {
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.save-button {
+    border: none;
+    background: #2875EE;
+    color: #fff;
+    transition: background .2s ease;
+}
+
+.save-button:hover {
+    background: #155BD0;
+}
+
+.cancel-button {
+    border: 1px solid #CBD9ED;
+    background: #fff;
+    color: #333;
+    transition: background .2s ease;
+}
+
+.cancel-button:hover {
+    background: #F3F6FC;
+}
+
+/* POP-UP BERHASIL */
+
+.success-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.success-modal.show {
+    display: flex;
+}
+
+.success-modal-content {
+    background: #fff;
+    width: 100%;
+    max-width: 400px;
+    padding: 35px 25px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, .15);
+    animation: popupMuncul .3s ease;
+}
+
+.success-check {
+    width: 75px;
+    height: 75px;
+    background: #E5F8EC;
+    border: 3px solid #B8EBC8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 22px;
+}
+
+.success-check span {
+    color: #20A45A;
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.success-modal-content h2 {
+    color: #183969;
+    font-size: 20px;
+    margin: 0 0 12px;
+}
+
+.success-modal-content p {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 0 25px;
+}
+
+.success-modal-content button {
+    background: #2563EB;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 35px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .2s ease;
+}
+
+.success-modal-content button:hover {
+    background: #1D4ED8;
+}
+
+@keyframes popupMuncul {
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* RESPONSIVE TABLET */
+
+@media (max-width: 900px) {
+    .profile-card {
+        padding: 22px 17px;
+    }
+
+    .profile-layout {
+        grid-template-columns: 150px minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .photo-box {
+        width: 150px;
+    }
+}
+
+/* RESPONSIVE MOBILE */
+
+@media (max-width: 500px) {
+    .profile-card {
+        padding: 20px 14px;
+    }
+
+    .profile-card h1 {
+        font-size: 23px;
+        margin-bottom: 22px;
+    }
+
+    .profile-layout {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 25px;
+    }
+
+    .photo-box {
+        width: 175px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .button-area {
+        flex-wrap: wrap;
+    }
+
+    .save-button,
+    .cancel-button {
+        flex: 1;
+        padding: 12px 15px;
+    }
+}
+
+/* RESPONSIVE HP KECIL */
+
+@media (max-width: 380px) {
+    .success-modal-content {
+        padding: 30px 20px;
+    }
+
+    .success-modal-content h2 {
+        font-size: 18px;
+    }
+}

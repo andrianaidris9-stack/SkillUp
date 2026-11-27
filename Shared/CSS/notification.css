@@ -1,0 +1,134 @@
+
+/* =========================================
+   POP-UP NOTIFIKASI BERSAMA SKILLUP
+========================================= */
+
+.skillup-popup-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(15, 23, 42, 0.50);
+}
+
+.skillup-popup-overlay.show {
+    display: flex;
+}
+
+.skillup-popup {
+    width: 100%;
+    max-width: 420px;
+    padding: 32px 28px;
+    background: #ffffff;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.18);
+    animation: popupMasuk 0.2s ease;
+}
+
+.skillup-popup-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.skillup-popup-icon.success {
+    color: #16a34a;
+    background: #dcfce7;
+}
+
+.skillup-popup-icon.error {
+    color: #dc2626;
+    background: #fee2e2;
+}
+
+.skillup-popup-icon.warning {
+    color: #d97706;
+    background: #fef3c7;
+}
+
+.skillup-popup-icon.info {
+    color: #2563eb;
+    background: #dbeafe;
+}
+
+.skillup-popup h3 {
+    margin: 0 0 10px;
+    color: #172554;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.skillup-popup p {
+    margin: 0 0 24px;
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.skillup-popup-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.skillup-popup-button {
+    min-width: 110px;
+    padding: 11px 22px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.skillup-popup-button:hover {
+    background: #1d4ed8;
+}
+
+.skillup-popup-button.secondary {
+    background: #e2e8f0;
+    color: #334155;
+}
+
+.skillup-popup-button.secondary:hover {
+    background: #cbd5e1;
+}
+
+@keyframes popupMasuk {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 480px) {
+    .skillup-popup {
+        padding: 28px 20px;
+    }
+
+    .skillup-popup-actions {
+        flex-direction: column;
+    }
+
+    .skillup-popup-button {
+        width: 100%;
+    }
+}

@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Peserta | SkillUp Admin</title>
+
+    <link rel="stylesheet" href="../admin-layout.css">
+    <link rel="stylesheet" href="../../Shared/CSS/logout-confirmation.css">
+    <link rel="stylesheet" href="../../Shared/CSS/notification.css">
+</head>
+
+<body>
+<div class="admin-layout">
+
+    <aside class="admin-sidebar">
+
+        <a class="admin-brand" href="../Dashboard/dashboard.html">
+            <img src="../../Assets/img/logo-skillup.png" alt="Logo SkillUp">
+            <span>SkillUp</span>
+        </a>
+
+        <nav class="admin-menu" aria-label="Navigasi Admin">
+
+            <a href="../Dashboard/dashboard.html">
+                <span class="admin-menu-icon">▦</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="data-peserta.html" class="active">
+                <span class="admin-menu-icon">♟</span>
+                <span>Data Peserta</span>
+            </a>
+
+            <a href="../DataPelatihan/pelatihan.html">
+                <span class="admin-menu-icon">▣</span>
+                <span>Data Pelatihan</span>
+            </a>
+
+            <a href="../DataAsesmen/data-asesmen.html">
+                <span class="admin-menu-icon">▤</span>
+                <span>Data Asesmen</span>
+            </a>
+
+            <a href="../HasilKlasifikasi/hasil-klasifikasi.html">
+                <span class="admin-menu-icon">✦</span>
+                <span>Hasil Klasifikasi</span>
+            </a>
+
+            <a href="../ProfilAdmin/profil-admin.html">
+                <span class="admin-menu-icon">⚙</span>
+                <span>Profil Admin</span>
+            </a>
+
+        </nav>
+
+        <!-- TOMBOL KELUAR -->
+        <button
+            class="admin-logout"
+            id="logoutButton"
+            type="button"
+            data-logout-url="../../Autentikasi/Login/login.html">
+
+            <span class="logout-icon" aria-hidden="true">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+
+                    <path d="M10 17l5-5-5-5"></path>
+                    <path d="M15 12H3"></path>
+                    <path d="M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6"></path>
+                </svg>
+            </span>
+
+            <span>Keluar</span>
+        </button>
+
+    </aside>
+
+    <main class="admin-main">
+
+        <header class="admin-topbar">
+            <div class="admin-user">
+                <span id="adminName">Admin SkillUp</span>
+                <span class="admin-avatar" id="adminAvatar">A</span>
+            </div>
+        </header>
+
+        <section class="admin-content">
+
+            <div class="admin-page-heading">
+                <h1>Data Peserta</h1>
+                <p>
+                    Lihat data akun dan profil calon peserta
+                    yang telah mendaftar.
+                </p>
+            </div>
+
+            <section class="admin-panel">
+
+                <div class="admin-toolbar">
+                    <h2>Daftar Akun Peserta</h2>
+
+                    <input
+                        class="admin-search"
+                        type="search"
+                        id="searchPeserta"
+                        placeholder="Cari nama atau email peserta"
+                        aria-label="Cari peserta">
+                </div>
+
+                <div class="admin-table-wrap">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Nama</th>
+                                <th>Email</th>
+                                <th>Usia</th>
+                                <th>Pendidikan Terakhir</th>
+                                <th>Pengalaman Kerja</th>
+                                <th>Nomor Telepon</th>
+                                <th>Alamat</th>
+                                <th>Status Profil</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="pesertaTable">
+                            <tr>
+                                <td colspan="10" class="admin-empty">
+                                    Memuat data...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+
+        </section>
+    </main>
+</div>
+
+<script src="../../Shared/JS/api-client.js"></script>
+    <script src="../../Shared/JS/auth-guard.js?role=admin"></script>
+    <script src="../../Shared/JS/notification.js"></script>
+<script src="../../Shared/JS/logout-confirmation.js"></script>
+<script src="data-peserta.js"></script>
+<script src="../../Shared/JS/table-pagination.js"></script>
+<script src="../../Shared/JS/admin-header.js"></script>
+
+</body>
+</html>

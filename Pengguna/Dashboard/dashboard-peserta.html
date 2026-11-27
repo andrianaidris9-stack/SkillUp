@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard Peserta | SkillUp</title>
+
+    <link rel="stylesheet" href="../pengguna-layout.css">
+    <link rel="stylesheet" href="../../Shared/CSS/logout-confirmation.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <!-- LOGO SKILLUP -->
+        <div class="logo">
+            <img
+                class="logo-image"
+                src="../../Assets/img/logo-skillup.png"
+                alt="Logo SkillUp"
+            >
+            <span>SkillUp</span>
+        </div>
+
+        <!-- MENU NAVIGASI -->
+        <nav class="menu" aria-label="Navigasi peserta">
+
+            <a href="dashboard-peserta.html" class="active">
+                <span class="menu-icon" aria-hidden="true">▦</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="../Profil/profil-peserta.html">
+                <span class="menu-icon" aria-hidden="true">♟</span>
+                <span>Profil</span>
+            </a>
+
+            <a href="../AsesmenAwal/asesmen-awal.html">
+                <span class="menu-icon" aria-hidden="true">▤</span>
+                <span>Asesmen Awal</span>
+            </a>
+
+            <a href="../HasilRekomendasi/hasil-rekomendasi.html">
+                <span class="menu-icon" aria-hidden="true">✦</span>
+                <span>Hasil Rekomendasi</span>
+            </a>
+
+        </nav>
+
+        <!-- TOMBOL KELUAR -->
+        <button
+            class="logout"
+            id="logoutButton"
+            type="button"
+            data-logout-url="../../Autentikasi/Login/login.html"
+        >
+            <svg
+                class="logout-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+            >
+                <path d="M10 17l5-5-5-5"></path>
+                <path d="M15 12H3"></path>
+                <path d="M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6"></path>
+            </svg>
+
+            <span>Keluar</span>
+        </button>
+
+    </aside>
+
+    <!-- KONTEN UTAMA -->
+    <main class="main">
+
+        <!-- HEADER -->
+        <header class="topbar">
+            <div class="avatar" id="userAvatar">P</div>
+        </header>
+
+        <!-- ISI DASHBOARD -->
+        <section class="content">
+
+            <div class="welcome">
+                <h1 id="welcomeName">Halo, Peserta!</h1>
+
+                <p>
+                    Kelola profil dan lihat proses pemetaan kebutuhan
+                    pelatihan Anda.
+                </p>
+            </div>
+
+            <!-- RINGKASAN STATUS -->
+            <div class="user-grid">
+
+                <article class="user-stat">
+                    <span>Kelengkapan Profil</span>
+                    <strong id="profileStatus">-</strong>
+                </article>
+
+                <article class="user-stat">
+                    <span>Status Asesmen</span>
+                    <strong id="assessmentStatus">-</strong>
+                </article>
+
+                <article class="user-stat">
+                    <span>Minat Bidang Pelatihan</span>
+                    <strong id="interestStatus">-</strong>
+                </article>
+
+            </div>
+
+            <!-- LANGKAH PESERTA -->
+            <section class="user-card dashboard-panel">
+
+                <h2>Langkah Anda di SkillUp</h2>
+
+                <p id="nextStepText">
+                    Lengkapi profil peserta terlebih dahulu.
+                </p>
+
+                <div class="user-actions">
+
+                    <a
+                        class="user-button"
+                        id="nextStepButton"
+                        href="../Profil/profil-peserta.html"
+                    >
+                        Lengkapi Profil
+                    </a>
+
+
+                </div>
+
+            </section>
+
+            <!-- CATATAN -->
+            <section class="user-card dashboard-panel">
+
+                <h2>Catatan</h2>
+
+                <p class="user-note">
+                    SkillUp membantu memetakan kebutuhan pelatihan.
+                    Rekomendasi yang ditampilkan merupakan bahan
+                    pertimbangan dan bukan keputusan penempatan otomatis.
+                </p>
+
+            </section>
+
+        </section>
+
+    </main>
+
+</div>
+
+<!-- JAVASCRIPT -->
+<script src="../../Shared/JS/api-client.js"></script>
+    <script src="../../Shared/JS/auth-guard.js?role=user"></script>
+    <script src="../../Shared/JS/logout-confirmation.js"></script>
+<script src="dashboard-peserta.js"></script>
+<script src="../Profil/profile-sync.js"></script>
+
+</body>
+</html>

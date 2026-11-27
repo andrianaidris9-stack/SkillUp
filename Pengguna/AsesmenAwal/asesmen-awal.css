@@ -1,0 +1,411 @@
+
+/* =====================================================
+   ASESMEN AWAL - SKILLUP PESERTA
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    color: #202B3C;
+    background: #F3F6FC;
+}
+
+/* =====================================================
+   JUDUL KONTEN
+===================================================== */
+
+.judul {
+    margin-bottom: 25px;
+}
+
+.judul h1 {
+    margin: 0 0 8px;
+    color: #183969;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.judul p {
+    max-width: 780px;
+    margin: 0;
+    color: #66758A;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* =====================================================
+   KARTU FORMULIR
+===================================================== */
+
+.form-card {
+    margin-bottom: 18px;
+    padding: 24px 28px;
+    border: 1px solid #E2E8F0;
+    border-radius: 14px;
+    background: #FFFFFF;
+    box-shadow: 0 4px 14px rgba(24, 57, 105, 0.04);
+}
+
+.form-card h2 {
+    margin: 0 0 15px;
+    color: #183969;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.form-help {
+    margin: 0 0 16px;
+    color: #66758A;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* =====================================================
+   RINGKASAN PROFIL
+===================================================== */
+
+.profile-summary {
+    margin-bottom: 20px;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.summary-grid div {
+    min-width: 0;
+    padding: 15px;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    background: #F8FAFD;
+}
+
+.summary-grid span,
+.summary-grid strong {
+    display: block;
+}
+
+.summary-grid span {
+    margin-bottom: 6px;
+    color: #66758A;
+    font-size: 12px;
+}
+
+.summary-grid strong {
+    color: #183969;
+    font-size: 15px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.catatan {
+    margin: 0;
+    padding: 13px 15px;
+    border-left: 4px solid #2875EE;
+    border-radius: 7px;
+    color: #40536B;
+    background: #EEF5FF;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* =====================================================
+   FORM GROUP
+===================================================== */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+}
+
+.form-group > label,
+.field-label {
+    display: block;
+    margin-bottom: 9px;
+    color: #263445;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.field-label {
+    color: #263445;
+}
+
+/* =====================================================
+   INPUT DAN SELECT
+===================================================== */
+
+.form-group input:not([type="radio"]),
+.form-group select {
+    width: 100%;
+    min-height: 44px;
+    padding: 11px 14px;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    outline: none;
+    color: #263445;
+    background: #FFFFFF;
+    font-family: inherit;
+    font-size: 13px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #2875EE;
+    box-shadow: 0 0 0 3px rgba(40, 117, 238, 0.10);
+}
+
+/* =====================================================
+   RADIO BUTTON
+===================================================== */
+
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.radio-group label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: 9px 14px;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    color: #40536B;
+    background: #FFFFFF;
+    font-size: 13px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.radio-group label:hover {
+    border-color: #2875EE;
+    background: #F5F8FF;
+}
+
+.radio-group input {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    accent-color: #2875EE;
+    cursor: pointer;
+}
+
+/* =====================================================
+   CATATAN KETERAMPILAN PRAKTIK
+===================================================== */
+
+.practical-note {
+    border-left: 4px solid #F5A623;
+}
+
+.practical-note p {
+    margin: 0;
+    color: #66758A;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* =====================================================
+   TOMBOL FORMULIR
+===================================================== */
+
+.tombol {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.tombol button {
+    min-height: 42px;
+    padding: 11px 20px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-simpan {
+    color: #FFFFFF;
+    background: #2875EE;
+}
+
+.btn-simpan:hover {
+    background: #1B5FCB;
+}
+
+.btn-reset {
+    border-color: #2875EE !important;
+    color: #2875EE;
+    background: #FFFFFF;
+}
+
+.btn-reset:hover {
+    background: #F0F5FF;
+}
+
+/* Pastikan elemen yang disembunyikan JS tidak tampil. */
+
+.tombol button[hidden] {
+    display: none !important;
+}
+
+/* =====================================================
+   PEMBERITAHUAN ASESMEN TERKUNCI
+===================================================== */
+
+.assessment-locked-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 22px;
+    padding: 16px 18px;
+    border: 1px solid #BFDBFE;
+    border-left: 4px solid #2875EE;
+    border-radius: 10px;
+    color: #25466F;
+    background: #EEF5FF;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* Form terkunci */
+
+#assessmentForm[data-locked="true"] input:disabled,
+#assessmentForm[data-locked="true"] select:disabled {
+    color: #64748B;
+    background: #F1F5F9;
+    cursor: not-allowed;
+}
+
+#assessmentForm[data-locked="true"] .radio-group label {
+    cursor: not-allowed;
+    opacity: 0.75;
+}
+
+/* =====================================================
+   HASIL ASESMEN
+===================================================== */
+
+.hasil-card {
+    margin: 24px 0;
+    padding: 24px;
+    border: 1px solid #E2E8F0;
+    border-radius: 14px;
+    background: #FFFFFF;
+    box-shadow: 0 4px 14px rgba(24, 57, 105, 0.04);
+}
+
+.hasil-card h2 {
+    margin: 0 0 12px;
+    color: #183969;
+    font-size: 18px;
+}
+
+.hasil-bidang {
+    margin: 12px 0;
+    color: #2875EE;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.status {
+    color: #66758A;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.hasil-card[hidden] {
+    display: none !important;
+}
+
+/* =====================================================
+   RESPONSIVE TABLET
+===================================================== */
+
+@media (max-width: 950px) {
+    .summary-grid {
+        gap: 10px;
+    }
+
+    .form-card {
+        padding: 22px;
+    }
+}
+
+/* =====================================================
+   RESPONSIVE MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+    .judul h1 {
+        font-size: 24px;
+    }
+
+    .judul p {
+        font-size: 13px;
+    }
+
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-card {
+        padding: 19px;
+        border-radius: 12px;
+    }
+
+    .radio-group {
+        gap: 9px;
+    }
+
+    .radio-group label {
+        padding: 9px 11px;
+    }
+
+    .tombol {
+        flex-direction: column-reverse;
+    }
+
+    .tombol button {
+        width: 100%;
+    }
+
+    .assessment-locked-notice {
+        padding: 14px;
+    }
+}
+
+@media (max-width: 420px) {
+    .judul h1 {
+        font-size: 22px;
+    }
+
+    .form-card {
+        padding: 16px;
+    }
+
+    .hasil-card {
+        padding: 18px;
+    }
+}

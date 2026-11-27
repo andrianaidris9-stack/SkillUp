@@ -1,0 +1,227 @@
+
+/* =====================================================
+   DETAIL PELATIHAN SKILLUP
+   KHUSUS HALAMAN PUBLIK
+===================================================== */
+
+.detail-page {
+    min-height: 100vh;
+    background: var(--skillup-bg, #F3F6FC);
+}
+
+.detail-container {
+    width: min(1180px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 38px 0 70px;
+}
+
+/* =====================================================
+   TOMBOL KEMBALI
+===================================================== */
+
+.back-link {
+    display: inline-flex;
+    margin-bottom: 22px;
+    color: var(--skillup-blue, #2875EE);
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    color: var(--skillup-navy, #183969);
+}
+
+/* =====================================================
+   INFORMASI UTAMA PELATIHAN
+===================================================== */
+
+.detail-hero {
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    border: 1px solid var(--skillup-border, #E2E8F0);
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: var(--skillup-shadow, 0 4px 14px rgba(24, 57, 105, .05));
+}
+
+.detail-image {
+    min-height: 360px;
+    background: #EAF1FF;
+}
+
+.detail-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 360px;
+    object-fit: cover;
+}
+
+.detail-information {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 38px;
+}
+
+.detail-category {
+    color: var(--skillup-blue, #2875EE);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.detail-information h1 {
+    margin: 12px 0;
+    color: var(--skillup-navy, #183969);
+    font-size: clamp(28px, 3.5vw, 40px);
+    line-height: 1.2;
+}
+
+.detail-information > p {
+    color: var(--skillup-muted, #66758A);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* =====================================================
+   RINGKASAN PELATIHAN
+===================================================== */
+
+.detail-meta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.detail-meta div,
+.detail-information-grid div {
+    padding: 14px;
+    border: 1px solid var(--skillup-border, #E2E8F0);
+    border-radius: 10px;
+    background: #FAFCFF;
+}
+
+.detail-meta span,
+.detail-information-grid span {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--skillup-muted, #66758A);
+    font-size: 11px;
+}
+
+.detail-meta strong,
+.detail-information-grid strong {
+    display: block;
+    color: var(--skillup-navy, #183969);
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+/* =====================================================
+   INFORMASI PROGRAM
+===================================================== */
+
+.detail-section {
+    margin-top: 24px;
+    padding: 28px;
+    border: 1px solid var(--skillup-border, #E2E8F0);
+    border-radius: 16px;
+    background: #fff;
+}
+
+.detail-section h2 {
+    margin: 0 0 18px;
+    color: var(--skillup-navy, #183969);
+    font-size: 20px;
+}
+
+.detail-information-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+/* =====================================================
+   KETERANGAN TAMBAHAN
+===================================================== */
+
+.detail-disclaimer {
+    margin-top: 18px;
+    padding: 16px 18px;
+    border-left: 4px solid var(--skillup-orange, #F5A623);
+    border-radius: 8px;
+    color: #657287;
+    background: #FFF9EF;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* =====================================================
+   PESAN KESALAHAN
+===================================================== */
+
+.detail-error {
+    margin-top: 20px;
+    padding: 22px;
+    border: 1px dashed #C9D6E8;
+    border-radius: 12px;
+    color: var(--skillup-muted, #66758A);
+    background: #fff;
+    line-height: 1.7;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 850px) {
+    .detail-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-image,
+    .detail-image img {
+        min-height: 260px;
+        max-height: 300px;
+    }
+
+    .detail-information-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    .detail-container {
+        width: calc(100% - 32px);
+        padding: 28px 0 48px;
+    }
+
+    .detail-information {
+        padding: 24px;
+    }
+
+    .detail-meta {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-section {
+        padding: 20px;
+    }
+
+    .detail-information-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 380px) {
+    .detail-information-grid {
+        grid-template-columns: 1fr;
+    }
+}

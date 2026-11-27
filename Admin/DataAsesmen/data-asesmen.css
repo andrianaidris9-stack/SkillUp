@@ -1,0 +1,382 @@
+
+/* =====================================================
+   DATA ASESMEN - MODAL PENILAIAN
+===================================================== */
+
+.admin-button-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 13px;
+    border: 0;
+    border-radius: 7px;
+    background: #2875EE;
+    color: #FFFFFF;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.admin-button-secondary:hover {
+    background: #1D5FCB;
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.modal-penilaian {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    box-sizing: border-box;
+    background: rgba(15, 30, 50, 0.55);
+}
+
+.modal-penilaian.show {
+    display: flex;
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 760px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border-radius: 14px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+    padding: 26px;
+    animation: modalMasuk 0.2s ease;
+}
+
+@keyframes modalMasuk {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body.modal-terbuka {
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   HEADER MODAL
+===================================================== */
+
+.modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 18px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #E2E8F0;
+    margin-bottom: 20px;
+}
+
+.modal-header h2 {
+    margin: 0 0 7px;
+    color: #183969;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.modal-header p {
+    margin: 0;
+    color: #718096;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.close-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 34px;
+    width: 34px;
+    height: 34px;
+    border: 0;
+    border-radius: 8px;
+    background: #F1F5F9;
+    color: #475569;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    background: #E2E8F0;
+}
+
+
+/* =====================================================
+   DETAIL PESERTA
+===================================================== */
+
+.detail-peserta {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 20px;
+    padding: 17px;
+    margin-bottom: 18px;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    background: #F8FAFC;
+}
+
+.detail-peserta p {
+    margin: 0;
+    color: #475569;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.detail-peserta strong {
+    color: #183969;
+}
+
+
+/* =====================================================
+   PANDUAN PRAKTIK
+===================================================== */
+
+.panduan-praktik {
+    padding: 17px;
+    margin-bottom: 22px;
+    border-left: 4px solid #2875EE;
+    border-radius: 8px;
+    background: #EFF6FF;
+}
+
+.panduan-praktik h3 {
+    margin: 0 0 10px;
+    color: #183969;
+    font-size: 14px;
+}
+
+.panduan-praktik p {
+    margin: 0 0 9px;
+    color: #475569;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.panduan-praktik small {
+    color: #64748B;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   INDIKATOR PENGAMATAN
+===================================================== */
+
+.judul-indikator {
+    margin: 0 0 6px;
+    color: #183969;
+    font-size: 16px;
+}
+
+.keterangan-indikator {
+    margin: 0 0 15px;
+    color: #718096;
+    font-size: 12px;
+}
+
+.indikator-list {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    margin-bottom: 20px;
+}
+
+.indikator-item {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 0;
+}
+
+.indikator-item label,
+.form-group label {
+    color: #334155;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.indikator-item select,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    min-height: 42px;
+    padding: 10px 12px;
+    box-sizing: border-box;
+    border: 1px solid #CBD5E1;
+    border-radius: 7px;
+    outline: none;
+    background: #FFFFFF;
+    color: #334155;
+    font-family: inherit;
+    font-size: 13px;
+    transition: border-color 0.2s ease;
+}
+
+.indikator-item select:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #2875EE;
+}
+
+
+/* =====================================================
+   FORM GROUP
+===================================================== */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+    margin-bottom: 18px;
+}
+
+.form-group small {
+    color: #718096;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.form-group textarea {
+    min-height: 105px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   VALIDASI FORM PENILAIAN
+===================================================== */
+
+.field-error {
+    display: none;
+    margin-top: 2px;
+    color: #DC2626 !important;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.field-error.show {
+    display: block;
+}
+
+.input-invalid {
+    border-color: #DC2626 !important;
+    background: #FEF2F2 !important;
+}
+
+.input-invalid:focus {
+    border-color: #DC2626 !important;
+}
+
+.input-valid {
+    border-color: #16A34A !important;
+}
+
+
+/* =====================================================
+   TOMBOL MODAL
+===================================================== */
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-top: 18px;
+    margin-top: 8px;
+    border-top: 1px solid #E2E8F0;
+}
+
+.btn-batal,
+.btn-simpan {
+    min-height: 40px;
+    padding: 10px 18px;
+    border: 0;
+    border-radius: 7px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn-batal {
+    background: #E2E8F0;
+    color: #334155;
+}
+
+.btn-batal:hover {
+    background: #CBD5E1;
+}
+
+.btn-simpan {
+    background: #2875EE;
+    color: #FFFFFF;
+}
+
+.btn-simpan:hover {
+    background: #1D5FCB;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .modal-penilaian {
+        padding: 10px;
+    }
+
+    .modal-content {
+        max-height: 94vh;
+        padding: 18px;
+        border-radius: 11px;
+    }
+
+    .modal-header h2 {
+        font-size: 17px;
+    }
+
+    .detail-peserta {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .modal-actions {
+        flex-direction: column-reverse;
+    }
+
+    .btn-batal,
+    .btn-simpan {
+        width: 100%;
+    }
+}

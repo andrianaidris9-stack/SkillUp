@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | SkillUp Admin</title>
+
+    <link rel="stylesheet" href="../admin-layout.css">
+    <link rel="stylesheet" href="../../Shared/CSS/logout-confirmation.css">
+</head>
+
+<body>
+<div class="admin-layout">
+
+    <!-- SIDEBAR ADMIN -->
+    <aside class="admin-sidebar">
+
+        <a class="admin-brand" href="dashboard.html">
+            <img src="../../Assets/img/logo-skillup.png" alt="Logo SkillUp">
+            <span>SkillUp</span>
+        </a>
+
+        <nav class="admin-menu" aria-label="Navigasi Admin">
+
+            <a href="dashboard.html" class="active">
+                <span class="admin-menu-icon">▦</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="../DataPeserta/data-peserta.html">
+                <span class="admin-menu-icon">♟</span>
+                <span>Data Peserta</span>
+            </a>
+
+            <a href="../DataPelatihan/pelatihan.html">
+                <span class="admin-menu-icon">▣</span>
+                <span>Data Pelatihan</span>
+            </a>
+
+            <a href="../DataAsesmen/data-asesmen.html">
+                <span class="admin-menu-icon">▤</span>
+                <span>Data Asesmen</span>
+            </a>
+
+            <a href="../HasilKlasifikasi/hasil-klasifikasi.html">
+                <span class="admin-menu-icon">✦</span>
+                <span>Hasil Klasifikasi</span>
+            </a>
+
+            <a href="../ProfilAdmin/profil-admin.html">
+                <span class="admin-menu-icon">⚙</span>
+                <span>Profil Admin</span>
+            </a>
+
+        </nav>
+
+        <button
+    class="admin-logout"
+    id="logoutButton"
+    type="button"
+    data-logout-url="../../Autentikasi/Login/login.html">
+
+    <span class="logout-icon" aria-hidden="true">
+        <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+
+            <path d="M10 17l5-5-5-5"></path>
+            <path d="M15 12H3"></path>
+            <path d="M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6"></path>
+        </svg>
+    </span>
+
+    <span>Keluar</span>
+</button>
+    </aside>
+
+
+    <!-- KONTEN UTAMA -->
+    <main class="admin-main">
+
+        <!-- HEADER -->
+        <header class="admin-topbar">
+            <div class="admin-user">
+                <span id="adminName">Admin SkillUp</span>
+                <span class="admin-avatar" id="adminAvatar">A</span>
+            </div>
+        </header>
+
+
+        <!-- ISI DASHBOARD -->
+        <section class="admin-content">
+
+            <div class="admin-page-heading">
+                <h1>Dashboard</h1>
+                <p>
+                    Ringkasan pengelolaan peserta, pelatihan,
+                    dan hasil pemetaan kebutuhan.
+                </p>
+            </div>
+
+
+            <!-- STATISTIK -->
+            <section class="admin-stats">
+
+                <article class="admin-stat">
+                    <span>Total Peserta Terdaftar</span>
+                    <strong id="statPeserta">0</strong>
+                </article>
+
+                <article class="admin-stat">
+                    <span>Program Pelatihan</span>
+                    <strong id="statPelatihan">0</strong>
+                </article>
+
+                <article class="admin-stat">
+                    <span>Asesmen Masuk</span>
+                    <strong id="statAsesmen">0</strong>
+                </article>
+
+                <article class="admin-stat">
+                    <span>Menunggu Penilaian Praktik</span>
+                    <strong id="statMenunggu">0</strong>
+                </article>
+
+            </section>
+
+
+            <!-- ASESMEN TERBARU -->
+            <section class="admin-panel">
+
+                <div class="admin-toolbar">
+                    <h2>Asesmen Terbaru</h2>
+
+                    <a
+                        class="admin-button-secondary"
+                        href="../DataAsesmen/data-asesmen.html">
+                        Lihat Semua Asesmen
+                    </a>
+                </div>
+
+                <div class="admin-table-wrap">
+                    <table class="admin-table">
+
+                        <thead>
+                            <tr>
+                                <th>Nama Peserta</th>
+                                <th>Minat Bidang</th>
+                                <th>Status</th>
+                                <th>Tanggal</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="recentAssessments">
+                            <tr>
+                                <td colspan="4" class="admin-empty">
+                                    Memuat data...
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+
+            </section>
+
+
+            <!-- DISTRIBUSI KLASIFIKASI -->
+            <section class="admin-panel">
+                <h2>Distribusi Hasil Klasifikasi</h2>
+
+                <div
+                    id="classificationSummary"
+                    class="admin-note">
+                    Belum ada hasil klasifikasi yang tersimpan.
+                </div>
+            </section>
+
+        </section>
+    </main>
+</div>
+
+
+<!-- JAVASCRIPT -->
+<script src="../../Shared/JS/api-client.js"></script>
+    <script src="../../Shared/JS/auth-guard.js?role=admin"></script>
+    <script src="../../Shared/JS/logout-confirmation.js"></script>
+<script src="../../Shared/JS/data-pelatihan.js"></script>
+<script src="dashboard.js"></script>
+<script src="../../Shared/JS/admin-header.js"></script>
+
+</body>
+</html>

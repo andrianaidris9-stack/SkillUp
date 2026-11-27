@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jelajahi daftar bidang dan program pelatihan kerja SkillUp Kota Ternate.">
+    <title>Informasi Pelatihan | SkillUp Peserta</title>
+
+    <link rel="stylesheet" href="../../Shared/CSS/style.css">
+    <link rel="stylesheet" href="informasi-pelatihan.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-container">
+
+            <a href="../Dashboard/dashboard-peserta.html" class="logo" aria-label="SkillUp Beranda">
+                <img class="logo-image" src="../../Assets/img/logo-skillup.png" alt="Logo SkillUp">
+                <span>SkillUp</span>
+            </a>
+
+            <nav class="navigation" aria-label="Navigasi utama">
+                <a href="../Dashboard/dashboard-peserta.html">Beranda</a>
+                <a href="informasi-pelatihan.html?sumber=peserta" class="active">Pelatihan</a>
+                <a href="../Dashboard/dashboard-peserta.html">Tentang</a>
+            </nav>
+
+            <div class="header-buttons">
+                <a href="../../Autentikasi/Login/login.html" class="btn-login">Login</a>
+                <a href="../../Autentikasi/Daftar/register.html" class="btn-register">Daftar</a>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- KONTEN UTAMA -->
+    <main class="catalog-page">
+        <section class="catalog-container">
+
+            <!-- JUDUL HALAMAN -->
+            <div class="catalog-heading">
+                <span class="section-eyebrow">Program Pelatihan Kerja</span>
+
+                <h1>Daftar Pelatihan</h1>
+
+                <p>
+                    Jelajahi bidang dan program pelatihan kerja yang dikelola
+                    melalui SkillUp Kota Ternate.
+                </p>
+            </div>
+
+            <!-- PENCARIAN -->
+            <div class="catalog-search">
+                <label class="search-box" for="searchCourse">
+                    <span aria-hidden="true">⌕</span>
+
+                    <input
+                        type="search"
+                        id="searchCourse"
+                        placeholder="Cari nama atau bidang pelatihan"
+                        autocomplete="off"
+                    >
+                </label>
+            </div>
+
+            <!-- DAFTAR DAN FILTER -->
+            <div class="catalog-content" id="daftar-pelatihan">
+
+                <!-- FILTER SIDEBAR -->
+                <aside class="filter-sidebar" aria-label="Filter daftar pelatihan">
+
+                    <div class="filter-group">
+                        <h2>Kategori Pelatihan</h2>
+
+                        <button
+                            type="button"
+                            id="showAllCategories"
+                            class="all-category-button"
+                        >
+                            Semua Kategori
+                        </button>
+
+                        <label>
+                            <input type="checkbox" value="Kecantikan dan Tata Rias" class="category-filter">
+                            Kecantikan dan Tata Rias
+                        </label>
+
+                        <label>
+                            <input type="checkbox" value="Kuliner dan Tata Boga" class="category-filter">
+                            Kuliner dan Tata Boga
+                        </label>
+
+                        <label>
+                            <input type="checkbox" value="Teknik dan Alat Berat" class="category-filter">
+                            Teknik dan Alat Berat
+                        </label>
+
+                        <label>
+                            <input type="checkbox" value="Tata Busana dan Kerajinan" class="category-filter">
+                            Tata Busana dan Kerajinan
+                        </label>
+
+                        <label>
+                            <input type="checkbox" value="Administrasi dan Teknologi" class="category-filter">
+                            Administrasi dan Teknologi
+                        </label>
+
+                        <label>
+                            <input type="checkbox" value="Kelistrikan dan Keterampilan Teknik" class="category-filter">
+                            Kelistrikan dan Keterampilan Teknik
+                        </label>
+
+                        <label>
+                            <input type="checkbox" value="Pariwisata dan Perhotelan" class="category-filter">
+                            Pariwisata dan Perhotelan
+                        </label>
+
+                        <label>
+                            <input type="checkbox" value="Kewirausahaan" class="category-filter">
+                            Kewirausahaan
+                        </label>
+                    </div>
+
+                    <div class="filter-group">
+                        <h2>Tingkat Pelatihan</h2>
+
+                        <label>
+                            <input type="checkbox" value="Pemula" class="level-filter">
+                            Pemula
+                        </label>
+
+                        <label>
+                            <input type="checkbox" value="Menengah" class="level-filter">
+                            Menengah
+                        </label>
+
+                        <label>
+                            <input type="checkbox" value="Mahir" class="level-filter">
+                            Mahir
+                        </label>
+                    </div>
+
+                </aside>
+
+                <!-- HASIL PENCARIAN -->
+                <section class="catalog-results" aria-live="polite">
+
+                    <div class="catalog-results-heading">
+                        <h2>Program Pelatihan</h2>
+                        <span>Daftar program yang tersedia</span>
+                    </div>
+
+                    <div class="catalog-courses" id="catalogCourses">
+                        <p class="no-course" id="noCourse" hidden>
+                            Program pelatihan tidak ditemukan.
+                        </p>
+                    </div>
+
+                </section>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-container">
+
+            <div>
+                <div class="footer-brand">
+                    <img src="../../Assets/img/logo-skillup.png" alt="Logo SkillUp">
+                    <span>SkillUp</span>
+                </div>
+
+                <p class="footer-description">
+                    Sistem pengelolaan dan pemetaan kebutuhan pelatihan kerja
+                    untuk mendukung perencanaan pelatihan yang lebih terarah
+                    di Kota Ternate.
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Navigasi</h3>
+                <a href="../Dashboard/dashboard-peserta.html">Beranda</a>
+                <a href="informasi-pelatihan.html?sumber=peserta">Daftar Pelatihan</a>
+                <a href="../Dashboard/dashboard-peserta.html">Tentang SkillUp</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Informasi</h3>
+                <p>Pelatihan Kerja Kota Ternate</p>
+                <p>Dinas Tenaga Kerja</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 SkillUp — Pelatihan Kerja Kota Ternate.
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="../../Shared/JS/api-client.js"></script>
+    <script src="../../Shared/JS/auth-guard.js?role=user"></script>
+    <script src="../../Shared/JS/data-pelatihan.js"></script>
+    <script src="informasi-pelatihan.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,368 @@
+
+/* =====================================================
+   BERANDA - HERO DAN ALUR SISTEM SKILLUP
+===================================================== */
+
+
+/* =========================================
+   HERO SECTION
+========================================= */
+.home-hero {
+    overflow: hidden;
+    background: linear-gradient(
+        115deg,
+        #F3F6FC 0%,
+        #EAF1FF 100%
+    );
+}
+
+.home-hero-inner {
+    width: min(1180px, calc(100% - 48px));
+    min-height: 520px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 54px;
+    padding: 64px 0;
+}
+
+
+/* =========================================
+   HERO - TEKS
+========================================= */
+.home-copy h1 {
+    max-width: 680px;
+    margin: 20px 0 18px;
+    color: var(--skillup-navy);
+    font-size: clamp(38px, 5vw, 58px);
+    line-height: 1.12;
+    letter-spacing: -1.8px;
+}
+
+.home-copy h1 span {
+    color: var(--skillup-blue);
+}
+
+.home-copy > p {
+    max-width: 610px;
+    color: var(--skillup-muted);
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   HERO - TOMBOL
+========================================= */
+.home-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.primary-action,
+.secondary-action {
+    min-height: 46px;
+    padding: 11px 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.primary-action {
+    color: #ffffff;
+    background: var(--skillup-blue);
+    box-shadow: 0 8px 18px rgba(40, 117, 238, 0.2);
+}
+
+.primary-action:hover {
+    background: #1B5FCB;
+    transform: translateY(-1px);
+}
+
+.secondary-action {
+    color: var(--skillup-navy);
+    background: #ffffff;
+    border: 1px solid #D8E3F4;
+}
+
+.secondary-action:hover {
+    border-color: var(--skillup-blue);
+    color: var(--skillup-blue);
+}
+
+.home-note {
+    margin-top: 18px;
+    color: #7B8798;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   HERO - ILUSTRASI
+========================================= */
+.home-visual {
+    position: relative;
+    min-height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.visual-orbit {
+    position: absolute;
+    border: 1px solid rgba(40, 117, 238, 0.18);
+    border-radius: 50%;
+}
+
+.orbit-one {
+    width: 330px;
+    height: 330px;
+}
+
+.orbit-two {
+    width: 250px;
+    height: 250px;
+}
+
+.visual-card {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: var(--skillup-shadow);
+}
+
+.visual-card-main {
+    width: 260px;
+    min-height: 132px;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.visual-symbol {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    color: #ffffff;
+    background: var(--skillup-blue);
+    font-size: 27px;
+    font-weight: 800;
+}
+
+.visual-card-main strong {
+    color: var(--skillup-navy);
+    font-size: 17px;
+}
+
+.visual-card-main span {
+    color: var(--skillup-muted);
+    font-size: 12px;
+}
+
+.visual-card-small {
+    right: -5px;
+    bottom: 34px;
+}
+
+.visual-dot {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--skillup-orange);
+    box-shadow: 0 0 0 6px #FFF3DB;
+}
+
+.visual-card-small strong,
+.visual-card-small small {
+    display: block;
+}
+
+.visual-card-small strong {
+    color: var(--skillup-navy);
+    font-size: 13px;
+}
+
+.visual-card-small small {
+    color: var(--skillup-muted);
+    font-size: 11px;
+}
+
+.visual-mark {
+    position: absolute;
+    top: 18px;
+    left: 5px;
+    color: rgba(24, 57, 105, 0.16);
+    font-size: 34px;
+    font-weight: 800;
+}
+
+
+/* =========================================
+   BAGIAN ALUR SKILLUP
+========================================= */
+.home-process {
+    width: min(1180px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 76px 0;
+}
+
+.home-section-heading {
+    max-width: 720px;
+    margin: 0 auto 34px;
+    text-align: center;
+}
+
+.home-section-heading h2 {
+    margin: 13px 0 12px;
+}
+
+.home-section-heading p {
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   KARTU TAHAPAN ALUR
+========================================= */
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.process-card {
+    min-height: 210px;
+    padding: 24px;
+    border: 1px solid var(--skillup-border);
+    border-radius: var(--skillup-radius);
+    background: #ffffff;
+    box-shadow: 0 5px 18px rgba(24, 57, 105, 0.04);
+    transition: 0.2s ease;
+}
+
+.process-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--skillup-shadow);
+}
+
+.process-number {
+    display: inline-flex;
+    margin-bottom: 18px;
+    color: var(--skillup-blue);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.process-card h3 {
+    margin-bottom: 9px;
+    color: var(--skillup-navy);
+    font-size: 17px;
+}
+
+.process-card p {
+    color: var(--skillup-muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   RESPONSIVE TABLET
+========================================= */
+@media (max-width: 900px) {
+
+    .home-hero-inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 52px 0 40px;
+    }
+
+    .home-visual {
+        min-height: 300px;
+    }
+
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE MOBILE
+========================================= */
+@media (max-width: 560px) {
+
+    .home-hero-inner,
+    .home-process {
+        width: calc(100% - 32px);
+    }
+
+    .home-copy h1 {
+        font-size: 38px;
+        letter-spacing: -1px;
+    }
+
+    .home-copy > p {
+        font-size: 14px;
+    }
+
+    .home-actions {
+        flex-direction: column;
+    }
+
+    .home-actions a {
+        width: 100%;
+    }
+
+    .home-visual {
+        min-height: 250px;
+    }
+
+    .orbit-one {
+        width: 250px;
+        height: 250px;
+    }
+
+    .orbit-two {
+        width: 190px;
+        height: 190px;
+    }
+
+    .visual-card-main {
+        width: 220px;
+    }
+
+    .visual-card-small {
+        right: 0;
+        bottom: 0;
+        padding: 13px;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-process {
+        padding: 54px 0;
+    }
+
+}

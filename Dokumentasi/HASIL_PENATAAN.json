@@ -1,0 +1,11 @@
+{
+  "root": "/mnt/data/SkillUpProjectKita_Tahap3-4_Revisi_Tersusun",
+  "files": 102,
+  "participant_catalog": [
+    "Pengguna/InformasiPelatihan/informasi-pelatihan.js",
+    "Pengguna/InformasiPelatihan/informasi-pelatihan.html",
+    "Pengguna/InformasiPelatihan/informasi-pelatihan.css"
+  ],
+  "missing_local_refs_count": 0,
+  "missing_local_refs_sample": []
+}

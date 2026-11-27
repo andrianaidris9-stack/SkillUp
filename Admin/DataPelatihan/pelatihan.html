@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Pelatihan | SkillUp Admin</title>
+
+    <link rel="stylesheet" href="../admin-layout.css">
+    <link rel="stylesheet" href="pelatihan.css">
+    <link rel="stylesheet" href="../../Shared/CSS/logout-confirmation.css">
+    <link rel="stylesheet" href="../../Shared/CSS/notification.css">
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <!-- SIDEBAR ADMIN -->
+    <aside class="admin-sidebar">
+
+        <a class="admin-brand" href="../Dashboard/dashboard.html">
+            <img src="../../Assets/img/logo-skillup.png" alt="Logo SkillUp">
+            <span>SkillUp</span>
+        </a>
+
+        <nav class="admin-menu" aria-label="Navigasi Admin">
+
+            <a href="../Dashboard/dashboard.html">
+                <span class="admin-menu-icon">▦</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="../DataPeserta/data-peserta.html">
+                <span class="admin-menu-icon">♟</span>
+                <span>Data Peserta</span>
+            </a>
+
+            <a href="pelatihan.html" class="active">
+                <span class="admin-menu-icon">▣</span>
+                <span>Data Pelatihan</span>
+            </a>
+
+            <a href="../DataAsesmen/data-asesmen.html">
+                <span class="admin-menu-icon">▤</span>
+                <span>Data Asesmen</span>
+            </a>
+
+            <a href="../HasilKlasifikasi/hasil-klasifikasi.html">
+                <span class="admin-menu-icon">✦</span>
+                <span>Hasil Klasifikasi</span>
+            </a>
+
+            <a href="../ProfilAdmin/profil-admin.html">
+                <span class="admin-menu-icon">⚙</span>
+                <span>Profil Admin</span>
+            </a>
+
+        </nav>
+
+        <!-- TOMBOL KELUAR -->
+        <button
+            class="admin-logout"
+            id="logoutButton"
+            type="button"
+            data-logout-url="../../Autentikasi/Login/login.html">
+
+            <span class="logout-icon" aria-hidden="true">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+
+                    <path d="M10 17l5-5-5-5"></path>
+                    <path d="M15 12H3"></path>
+                    <path d="M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6"></path>
+                </svg>
+            </span>
+
+            <span>Keluar</span>
+        </button>
+
+    </aside>
+
+    <!-- KONTEN UTAMA -->
+    <main class="admin-main">
+
+        <!-- HEADER -->
+        <header class="admin-topbar">
+
+            <div class="admin-user">
+                <span id="adminName">Admin SkillUp</span>
+                <span class="admin-avatar" id="adminAvatar">A</span>
+            </div>
+
+        </header>
+
+        <!-- ISI HALAMAN -->
+        <section class="admin-content">
+
+            <!-- JUDUL HALAMAN DAN TOMBOL TAMBAH -->
+            <header class="page-header">
+
+                <div>
+                    <h1>Data Pelatihan</h1>
+                    <p>
+                        Lihat dan kelola daftar program pelatihan yang tersedia di SkillUp.
+                    </p>
+                </div>
+
+                <a
+                    href="../TambahPelatihan/tambah.html"
+                    class="add-training-button">
+
+                    <span class="add-icon" aria-hidden="true">+</span>
+                    <span>Tambah Pelatihan</span>
+
+                </a>
+
+            </header>
+
+            <!-- PENCARIAN -->
+            <section class="search-section">
+
+                <div class="search-box">
+
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7"></circle>
+                        <path d="m16 16 5 5"></path>
+                    </svg>
+
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Cari pelatihan"
+                        aria-label="Cari pelatihan">
+
+                </div>
+
+            </section>
+
+            <!-- TABEL PELATIHAN -->
+            <section class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Gambar Sampul</th>
+                            <th>Judul Pelatihan</th>
+                            <th>Kategori</th>
+                            <th>Tingkat Kesulitan</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="trainingTable">
+                        <!-- Data dimuat melalui JavaScript -->
+                    </tbody>
+
+                </table>
+
+                <p id="emptyMessage" class="empty-message" hidden>
+                    Pelatihan tidak ditemukan.
+                </p>
+
+            </section>
+
+        </section>
+
+    </main>
+
+</div>
+
+<!-- POP-UP KONFIRMASI HAPUS -->
+<div
+    class="delete-modal"
+    id="deleteConfirmModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="deleteModalTitle"
+    aria-describedby="deleteModalDescription"
+    hidden>
+
+    <div class="delete-modal-content">
+
+        <div class="delete-modal-icon" aria-hidden="true">
+            !
+        </div>
+
+        <h3 id="deleteModalTitle">Konfirmasi Hapus</h3>
+
+        <p id="deleteModalDescription">
+            Apakah kamu yakin ingin menghapus data pelatihan ini?
+            Data yang sudah dihapus tidak dapat dikembalikan.
+        </p>
+
+        <div class="delete-modal-actions">
+
+            <button
+                type="button"
+                id="cancelDeleteBtn"
+                class="btn-cancel-delete">
+                Batal
+            </button>
+
+            <button
+                type="button"
+                id="confirmDeleteBtn"
+                class="btn-confirm-delete">
+                Ya, Hapus
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- JAVASCRIPT -->
+<script src="../../Shared/JS/api-client.js"></script>
+<script src="../../Shared/JS/auth-guard.js?role=admin"></script>
+<script src="../../Shared/JS/notification.js"></script>
+<script src="../../Shared/JS/logout-confirmation.js"></script>
+<script src="../../Shared/JS/data-pelatihan.js"></script>
+<script src="pelatihan.js"></script>
+<script src="../../Shared/JS/table-pagination.js"></script>
+<script src="../../Shared/JS/admin-header.js"></script>
+
+</body>
+</html>

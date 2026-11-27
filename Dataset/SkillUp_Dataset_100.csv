@@ -1,0 +1,101 @@
+﻿id_dummy,usia,pendidikan,pengalaman_kerja,minat_bidang,kemampuan_komputer,kemampuan_komunikasi,keterampilan_praktik,kebutuhan_pelatihan
+SKP009,30,SMA/SMK,Belum ada,PAR,1,3,1,PAR
+SKP101,28,Diploma/S1,Informal,WIR,3,2,1,ADM
+SKP035,44,SMA/SMK,Formal 2 tahun atau lebih,TEK,3,1,2,LIS
+SKP016,22,Diploma/S1,Belum ada,WIR,1,2,2,BUS
+SKP080,22,SMA/SMK,Informal,KUL,1,1,2,BUS
+SKP085,23,SMA/SMK,Belum ada,KEC,1,2,2,BUS
+SKP022,32,SMA/SMK,Belum ada,KUL,1,2,3,KUL
+SKP029,36,SMA/SMK,Informal,PAR,2,3,1,PAR
+SKP059,37,SMA/SMK,Belum ada,PAR,2,3,3,KEC
+SKP065,38,SMA/SMK,Informal,KEC,2,3,2,KEC
+SKP057,32,SMA/SMK,Formal 2 tahun atau lebih,KUL,1,2,3,KUL
+SKP070,42,SMA/SMK,Formal kurang dari 2 tahun,BUS,2,1,3,TEK
+SKP041,25,SMA/SMK,Belum ada,WIR,3,1,2,LIS
+SKP030,21,SMA/SMK,Formal kurang dari 2 tahun,TEK,3,1,3,TEK
+SKP002,33,SMA/SMK,Formal 2 tahun atau lebih,WIR,3,3,2,WIR
+SKP038,37,Diploma/S1,Formal 2 tahun atau lebih,KEC,1,3,3,KEC
+SKP050,28,Diploma/S1,Formal kurang dari 2 tahun,PAR,2,3,1,PAR
+SKP092,29,Diploma/S1,Informal,WIR,2,3,1,PAR
+SKP091,26,SMA/SMK,Formal kurang dari 2 tahun,KEC,1,3,2,KEC
+SKP077,48,Diploma/S1,Belum ada,BUS,2,1,3,TEK
+SKP115,18,Diploma/S1,Belum ada,ADM,3,3,1,ADM
+SKP081,31,SMA/SMK,Formal kurang dari 2 tahun,WIR,3,3,2,WIR
+SKP094,47,SMA/SMK,Formal kurang dari 2 tahun,WIR,3,1,3,TEK
+SKP117,30,SMA/SMK,Belum ada,BUS,1,2,1,BUS
+SKP063,26,SMA/SMK,Informal,LIS,3,1,2,LIS
+SKP004,30,Diploma/S1,Formal kurang dari 2 tahun,KUL,1,2,3,KUL
+SKP107,22,Diploma/S1,Formal 2 tahun atau lebih,KEC,1,1,2,BUS
+SKP111,27,Diploma/S1,Belum ada,WIR,3,3,2,WIR
+SKP027,18,SMA/SMK,Belum ada,KEC,2,3,2,KEC
+SKP100,20,Diploma/S1,Belum ada,LIS,3,1,2,LIS
+SKP072,36,Diploma/S1,Belum ada,KEC,1,3,3,KEC
+SKP118,19,Diploma/S1,Formal kurang dari 2 tahun,BUS,1,2,2,BUS
+SKP025,28,SMA/SMK,Formal 2 tahun atau lebih,KUL,2,3,2,PAR
+SKP010,31,SMA/SMK,Formal 2 tahun atau lebih,LIS,2,1,3,TEK
+SKP075,50,SMA/SMK,Formal kurang dari 2 tahun,WIR,3,2,3,WIR
+SKP062,38,SMA/SMK,Belum ada,KEC,2,3,3,KEC
+SKP005,30,SMA/SMK,Formal 2 tahun atau lebih,WIR,3,1,2,LIS
+SKP084,36,SMA/SMK,Formal kurang dari 2 tahun,LIS,2,1,2,LIS
+SKP069,25,SMA/SMK,Belum ada,TEK,3,1,3,TEK
+SKP102,19,Diploma/S1,Formal 2 tahun atau lebih,KEC,1,2,3,KUL
+SKP074,18,SMA/SMK,Formal kurang dari 2 tahun,BUS,1,2,2,BUS
+SKP119,32,Diploma/S1,Informal,TEK,3,1,3,TEK
+SKP017,29,SMA/SMK,Formal 2 tahun atau lebih,KEC,2,3,2,KEC
+SKP007,39,SMA/SMK,Belum ada,WIR,3,3,2,WIR
+SKP105,24,SMA/SMK,Formal kurang dari 2 tahun,TEK,3,1,3,TEK
+SKP018,42,SMA/SMK,Formal kurang dari 2 tahun,KUL,1,2,3,KUL
+SKP048,40,Diploma/S1,Formal kurang dari 2 tahun,PAR,2,3,1,PAR
+SKP095,35,SMA/SMK,Formal kurang dari 2 tahun,KUL,1,2,3,KUL
+SKP049,20,SMA/SMK,Formal kurang dari 2 tahun,TEK,3,2,1,ADM
+SKP068,19,SMA/SMK,Informal,KUL,1,2,3,KUL
+SKP086,31,Diploma/S1,Formal 2 tahun atau lebih,KUL,1,2,3,KUL
+SKP103,26,SMA/SMK,Formal 2 tahun atau lebih,KEC,1,3,2,KEC
+SKP033,27,SMA/SMK,Belum ada,KUL,1,2,3,KUL
+SKP112,48,Diploma/S1,Belum ada,TEK,3,1,3,TEK
+SKP116,21,SMA/SMK,Formal 2 tahun atau lebih,BUS,1,3,3,KEC
+SKP006,28,Diploma/S1,Formal kurang dari 2 tahun,PAR,2,3,2,PAR
+SKP020,29,Diploma/S1,Belum ada,BUS,1,3,3,KEC
+SKP078,46,SMA/SMK,Belum ada,LIS,2,1,1,LIS
+SKP076,31,SMA/SMK,Formal kurang dari 2 tahun,TEK,2,1,3,TEK
+SKP089,42,Diploma/S1,Formal kurang dari 2 tahun,WIR,3,3,3,WIR
+SKP043,34,Diploma/S1,Belum ada,ADM,3,3,1,ADM
+SKP082,25,Diploma/S1,Belum ada,WIR,3,3,2,WIR
+SKP001,36,SMA/SMK,Belum ada,ADM,3,2,1,ADM
+SKP046,29,Diploma/S1,Belum ada,BUS,1,2,2,BUS
+SKP088,23,SMA/SMK,Informal,KUL,1,2,2,BUS
+SKP099,27,Diploma/S1,Formal kurang dari 2 tahun,LIS,3,1,2,LIS
+SKP014,36,SMA/SMK,Belum ada,BUS,1,1,2,BUS
+SKP055,48,SMA/SMK,Informal,LIS,1,1,2,LIS
+SKP042,36,SMA/SMK,Formal 2 tahun atau lebih,PAR,3,2,1,ADM
+SKP034,34,SMA/SMK,Formal kurang dari 2 tahun,KUL,3,2,2,WIR
+SKP106,24,SMA/SMK,Formal 2 tahun atau lebih,KEC,2,3,1,PAR
+SKP008,32,Diploma/S1,Informal,BUS,1,1,2,BUS
+SKP028,26,Diploma/S1,Informal,ADM,3,3,1,ADM
+SKP031,38,SMA/SMK,Informal,BUS,1,2,2,BUS
+SKP067,50,SMA/SMK,Informal,ADM,3,3,2,WIR
+SKP054,28,SMA/SMK,Formal kurang dari 2 tahun,ADM,3,2,1,ADM
+SKP083,34,SMA/SMK,Informal,LIS,3,1,2,LIS
+SKP044,27,SMA/SMK,Formal 2 tahun atau lebih,TEK,2,1,1,TEK
+SKP011,20,Diploma/S1,Informal,ADM,3,3,2,WIR
+SKP003,29,SMA/SMK,Formal 2 tahun atau lebih,ADM,3,3,1,ADM
+SKP079,29,Diploma/S1,Formal kurang dari 2 tahun,ADM,3,2,3,ADM
+SKP108,33,SMA/SMK,Formal 2 tahun atau lebih,PAR,2,3,2,PAR
+SKP097,35,Diploma/S1,Belum ada,TEK,2,1,3,TEK
+SKP114,45,SMA/SMK,Belum ada,TEK,2,1,3,TEK
+SKP087,35,SMA/SMK,Informal,KEC,1,3,3,KEC
+SKP071,29,SMA/SMK,Formal 2 tahun atau lebih,WIR,3,3,1,ADM
+SKP113,32,SMA/SMK,Informal,KEC,1,1,3,KUL
+SKP013,24,SMA/SMK,Formal kurang dari 2 tahun,KEC,2,3,3,KEC
+SKP056,29,SMA/SMK,Informal,KEC,1,2,3,KUL
+SKP051,33,Diploma/S1,Belum ada,KEC,2,3,2,PAR
+SKP104,20,Diploma/S1,Informal,WIR,3,2,3,WIR
+SKP061,41,SMA/SMK,Informal,LIS,3,1,2,LIS
+SKP047,36,SMA/SMK,Formal kurang dari 2 tahun,PAR,2,3,2,PAR
+SKP015,25,Diploma/S1,Formal 2 tahun atau lebih,KUL,2,3,1,PAR
+SKP012,22,SMA/SMK,Formal 2 tahun atau lebih,KEC,1,2,3,KUL
+SKP120,19,SMA/SMK,Belum ada,ADM,3,2,1,ADM
+SKP023,21,SMA/SMK,Formal 2 tahun atau lebih,LIS,2,1,2,LIS
+SKP090,21,Diploma/S1,Formal kurang dari 2 tahun,KUL,1,2,3,KUL
+SKP053,30,Diploma/S1,Informal,WIR,3,3,2,WIR
+SKP110,37,Diploma/S1,Formal kurang dari 2 tahun,BUS,1,2,2,BUS

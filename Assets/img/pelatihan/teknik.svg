@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" role="img" aria-label="Ilustrasi Teknik dan Alat Berat">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3F6FC"/><stop offset="1" stop-color="#E4EDFF"/></linearGradient></defs>
+<rect width="600" height="360" rx="28" fill="url(#bg)"/>
+<circle cx="300" cy="180" r="145" fill="#FFFFFF" opacity=".55"/>
+<path d="M155 235h280l-22 38H180z" fill="#183969"/><circle cx="225" cy="282" r="27" fill="#F5A623"/><circle cx="365" cy="282" r="27" fill="#F5A623"/><path d="M205 230l35-80h105l42 80z" fill="#FFFFFF" stroke="#2875EE" stroke-width="12" stroke-linejoin="round"/><path d="M240 150l30-55h80l-5 55" fill="#EAF1FF" stroke="#183969" stroke-width="12"/><path d="M350 110l85-38 35 28-80 60" fill="none" stroke="#F5A623" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M48 310h504" stroke="#C9D9F5" stroke-width="3" stroke-linecap="round"/>
+</svg>

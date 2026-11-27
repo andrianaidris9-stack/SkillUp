@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profil Admin | SkillUp</title>
+
+    <link rel="stylesheet" href="../admin-layout.css">
+    <link rel="stylesheet" href="edit-profil-admin.css">
+    <link rel="stylesheet" href="../../Shared/CSS/notification.css">
+    <link rel="stylesheet" href="../../Shared/CSS/logout-confirmation.css">
+    <link rel="stylesheet" href="../../Shared/CSS/profile-photo.css">
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar">
+
+        <a class="admin-brand" href="../Dashboard/dashboard.html">
+            <img src="../../Assets/img/logo-skillup.png" alt="Logo SkillUp">
+            <span>SkillUp</span>
+        </a>
+
+        <nav class="admin-menu" aria-label="Navigasi Admin">
+
+            <a href="../Dashboard/dashboard.html">
+                <span class="admin-menu-icon">▦</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="../DataPeserta/data-peserta.html">
+                <span class="admin-menu-icon">♟</span>
+                <span>Data Peserta</span>
+            </a>
+
+            <a href="../DataPelatihan/pelatihan.html">
+                <span class="admin-menu-icon">▣</span>
+                <span>Data Pelatihan</span>
+            </a>
+
+            <a href="../DataAsesmen/data-asesmen.html">
+                <span class="admin-menu-icon">▤</span>
+                <span>Data Asesmen</span>
+            </a>
+
+            <a href="../HasilKlasifikasi/hasil-klasifikasi.html">
+                <span class="admin-menu-icon">✦</span>
+                <span>Hasil Klasifikasi</span>
+            </a>
+
+            <a href="profil-admin.html" class="active">
+                <span class="admin-menu-icon">⚙</span>
+                <span>Profil Admin</span>
+            </a>
+
+        </nav>
+
+        <!-- LOGOUT -->
+        <button
+            class="admin-logout"
+            id="logoutButton"
+            type="button"
+            data-logout-url="../../Autentikasi/Login/login.html">
+
+            <span class="logout-icon" aria-hidden="true">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+
+                    <path d="M10 17l5-5-5-5"></path>
+                    <path d="M15 12H3"></path>
+                    <path d="M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6"></path>
+                </svg>
+            </span>
+
+            <span>Keluar</span>
+        </button>
+
+    </aside>
+
+    <!-- KONTEN UTAMA -->
+    <main class="admin-main">
+
+        <header class="admin-topbar">
+            <div class="admin-user">
+                <span id="adminName">Admin SkillUp</span>
+                <span class="admin-avatar" id="adminAvatar">A</span>
+            </div>
+        </header>
+
+        <section class="admin-content">
+
+            <div class="admin-page-heading">
+                <h1>Edit Profil Admin</h1>
+                <p>
+                    Perbarui informasi identitas akun administrator SkillUp.
+                </p>
+            </div>
+
+            <section class="admin-panel edit-profile-panel">
+
+                <div class="edit-profile-heading">
+                    <h2>Informasi Profil</h2>
+                    <p>
+                        Pastikan informasi akun yang dimasukkan sudah benar.
+                    </p>
+                </div>
+
+                <form id="editAdminProfileForm" novalidate>
+
+                    <!-- FOTO PROFIL -->
+                    <div class="admin-photo-section">
+
+                        <div class="admin-photo-preview" id="photoPreview">
+
+                            <span id="photoInitial">A</span>
+
+                            <img
+                                id="adminPhoto"
+                                src=""
+                                alt="Foto Profil Admin"
+                                hidden>
+
+                            <button
+                                type="button"
+                                class="admin-button-secondary photo-camera-trigger"
+                                id="choosePhotoButton"
+                                data-photo-picker
+                                aria-haspopup="menu"
+                                aria-expanded="false"
+                                aria-label="Ambil foto, pilih dari galeri, atau lihat foto profil"
+                                title="Kelola foto profil">
+                                📷
+                            </button>
+
+                        </div>
+
+                        <div class="admin-photo-info">
+
+                            <strong>Foto Profil</strong>
+
+                            <p>
+                                Gunakan foto JPG atau PNG maksimal 5 MB. Klik ikon kamera untuk mengambil foto atau memilih dari galeri.
+                            </p>
+
+                            <input
+                                type="file"
+                                id="adminPhotoInput"
+                                accept="image/jpeg,image/png"
+                                hidden>
+
+                            <p
+                                class="field-error"
+                                id="photoError"
+                                aria-live="polite">
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="edit-profile-divider"></div>
+
+                    <!-- FORM DATA -->
+                    <div class="admin-form edit-admin-form">
+
+                        <div class="admin-field full">
+                            <label for="adminFullName">Nama Lengkap</label>
+
+                            <input
+                                type="text"
+                                id="adminFullName"
+                                placeholder="Masukkan nama lengkap"
+                                autocomplete="name"
+                                aria-describedby="adminFullNameError">
+
+                            <small
+                                class="field-error"
+                                id="adminFullNameError"
+                                aria-live="polite">
+                            </small>
+                        </div>
+
+                        <div class="admin-field full">
+                            <label for="adminEmail">Email Admin</label>
+
+                            <input
+                                type="email"
+                                id="adminEmail"
+                                placeholder="Email akun Admin"
+                                autocomplete="email"
+                                readonly
+                                aria-readonly="true"
+                                aria-describedby="adminEmailError">
+
+                            <small class="field-hint">Email merupakan identitas login Admin dan tidak dapat diubah dari halaman ini.</small>
+                            <small
+                                class="field-error"
+                                id="adminEmailError"
+                                aria-live="polite">
+                            </small>
+                        </div>
+
+                    </div>
+
+                    <!-- TOMBOL AKSI -->
+                    <div class="edit-profile-actions">
+
+                        <a
+                            href="profil-admin.html"
+                            class="admin-button-secondary cancel-edit-button">
+                            Batal
+                        </a>
+
+                        <button
+                            type="submit"
+                            class="admin-button save-profile-button"
+                            id="saveProfileButton">
+                            Simpan Perubahan
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="../../Shared/JS/api-client.js"></script>
+    <script src="../../Shared/JS/auth-guard.js?role=admin"></script>
+    <script src="../../Shared/JS/notification.js"></script>
+<script src="../../Shared/JS/logout-confirmation.js"></script>
+<script src="edit-profil-admin.js"></script>
+<script src="../../Shared/JS/profile-photo-picker.js"></script>
+<script src="../../Shared/JS/admin-header.js"></script>
+
+</body>
+</html>

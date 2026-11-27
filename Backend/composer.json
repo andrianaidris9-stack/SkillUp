@@ -1,0 +1,13 @@
+{
+  "name": "skillup/kota-ternate",
+  "description": "Backend PHP untuk Sistem Pengelolaan Pelatihan Kerja SkillUp Kota Ternate",
+  "type": "project",
+  "require": {
+    "php": ">=8.1",
+    "ext-pdo": "*",
+    "ext-pdo_mysql": "*",
+    "ext-fileinfo": "*",
+    "phpmailer/phpmailer": "^6.9",
+    "ext-openssl": "*"
+  }
+}

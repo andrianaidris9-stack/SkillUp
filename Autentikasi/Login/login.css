@@ -1,0 +1,463 @@
+
+/* ========================================
+   RESET DAN PENGATURAN DASAR
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body.auth-body {
+    min-height: 100vh;
+    background: #F3F6FC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 35px 20px;
+    color: #243247;
+}
+
+/* ========================================
+   HALAMAN AUTENTIKASI
+======================================== */
+
+.auth-page {
+    width: 100%;
+    max-width: 490px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ========================================
+   LOGO SKILLUP
+======================================== */
+
+.auth-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    margin-bottom: 25px;
+    color: #183969;
+    font-size: 25px;
+    font-weight: 750;
+    text-decoration: none;
+    line-height: 1;
+}
+
+.auth-logo .logo-image {
+    display: block;
+    width: 43px;
+    height: 43px;
+    object-fit: contain;
+    object-position: center;
+    flex-shrink: 0;
+}
+
+.auth-logo span {
+    display: inline-block;
+    color: #183969;
+    font-size: 25px;
+    font-weight: 750;
+    letter-spacing: -0.5px;
+}
+
+/* ========================================
+   KARTU LOGIN
+======================================== */
+
+.login-card {
+    width: 100%;
+    background: #ffffff;
+    padding: 34px 38px;
+    border-radius: 16px;
+    box-shadow: 0 8px 35px rgba(28, 57, 95, 0.08);
+}
+
+/* ========================================
+   TAB LOGIN USER DAN ADMIN
+======================================== */
+
+.login-tabs {
+    display: flex;
+    gap: 8px;
+    padding: 5px;
+    margin-bottom: 30px;
+    border-radius: 9px;
+    background: #f0f4fa;
+}
+
+.login-tab {
+    flex: 1;
+    padding: 12px 10px;
+    border: none;
+    border-radius: 7px;
+    background: transparent;
+    color: #68778d;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.login-tab.active {
+    background: #2875EE;
+    color: #ffffff;
+    box-shadow: 0 3px 8px rgba(40, 117, 245, 0.2);
+}
+
+/* ========================================
+   JUDUL LOGIN
+======================================== */
+
+.auth-heading {
+    text-align: center;
+    margin-bottom: 27px;
+}
+
+.auth-heading h1 {
+    color: #183969;
+    font-size: 27px;
+    margin-bottom: 8px;
+}
+
+.auth-heading p {
+    color: #7b8798;
+    font-size: 14px;
+}
+
+/* ========================================
+   INPUT FORM
+======================================== */
+
+.auth-input-group {
+    margin-bottom: 17px;
+}
+
+.auth-input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #34445a;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.auth-input {
+    width: 100%;
+    min-height: 47px;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 0 13px;
+    border: 1px solid #dce3ed;
+    border-radius: 8px;
+    background: #ffffff;
+    transition: 0.2s;
+}
+
+.auth-input:focus-within {
+    border-color: #2875EE;
+    box-shadow: 0 0 0 3px rgba(40, 117, 245, 0.09);
+}
+
+.input-icon {
+    color: #8290a4;
+    font-size: 16px;
+}
+
+.auth-input input {
+    width: 100%;
+    height: 45px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #34445a;
+    font-size: 14px;
+}
+
+.auth-input input::placeholder {
+    color: #a5afbd;
+}
+
+/* ========================================
+   VALIDASI INPUT
+======================================== */
+
+.field-error {
+    display: none;
+    margin-top: 6px;
+    color: #dc3545;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.field-error.show {
+    display: block;
+}
+
+/* Border input ketika tidak valid */
+.auth-input:has(input.input-invalid) {
+    border-color: #dc3545;
+    background: #fffafa;
+}
+
+.auth-input:has(input.input-invalid:focus) {
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.08);
+}
+
+/* Border input ketika valid */
+.auth-input:has(input.input-valid) {
+    border-color: #28a46b;
+}
+
+.auth-input:has(input.input-valid:focus) {
+    box-shadow: 0 0 0 3px rgba(40, 164, 107, 0.08);
+}
+
+/* ========================================
+   IKON MATA PASSWORD
+======================================== */
+
+.password-wrapper {
+    padding-right: 12px;
+}
+
+.password-wrapper input {
+    flex: 1;
+    min-width: 0;
+}
+
+.password-toggle {
+    width: 30px;
+    height: 35px;
+    flex-shrink: 0;
+    border: none;
+    background: transparent;
+    color: #8996a8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 5px;
+    position: relative;
+    z-index: 2;
+}
+
+.password-toggle:hover {
+    color: #2875EE;
+}
+
+.password-toggle svg {
+    width: 20px;
+    height: 20px;
+}
+
+.password-toggle .eye-open {
+    display: block;
+}
+
+.password-toggle .eye-closed {
+    display: none;
+}
+
+.password-toggle.show-password .eye-open {
+    display: none;
+}
+
+.password-toggle.show-password .eye-closed {
+    display: block;
+}
+
+/* ========================================
+   INGAT SAYA DAN LUPA PASSWORD
+======================================== */
+
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin: 5px 0 22px;
+    font-size: 13px;
+}
+
+.remember-option {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #68778d;
+    cursor: pointer;
+}
+
+.remember-option input {
+    accent-color: #2875EE;
+}
+
+.login-options a,
+.auth-footer a {
+    color: #2875EE;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-options a:hover,
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+/* ========================================
+   TOMBOL LOGIN
+======================================== */
+
+.auth-submit {
+    width: 100%;
+    height: 47px;
+    border: none;
+    border-radius: 8px;
+    background: #2875EE;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.auth-submit:hover {
+    background: #1762df;
+}
+
+/* ========================================
+   PEMBATAS
+======================================== */
+
+.auth-divider {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin: 23px 0;
+    color: #9aa5b3;
+    font-size: 13px;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #e5eaf1;
+}
+
+/* ========================================
+   LOGIN GOOGLE DAN MICROSOFT
+======================================== */
+
+.social-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.social-button {
+    flex: 1;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 8px;
+    border: 1px solid #dce3ed;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #34445a;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.social-button:hover {
+    background: #f7f9fc;
+    border-color: #2875EE;
+}
+
+.google-symbol {
+    color: #4285f4;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.microsoft-symbol {
+    width: 16px;
+    height: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2px;
+}
+
+.microsoft-symbol span {
+    background: #2875EE;
+}
+
+.microsoft-symbol span:nth-child(2) {
+    background: #e94b35;
+}
+
+.microsoft-symbol span:nth-child(3) {
+    background: #27a84a;
+}
+
+.microsoft-symbol span:nth-child(4) {
+    background: #f4b400;
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.auth-footer {
+    margin-top: 24px;
+    text-align: center;
+    color: #7b8798;
+    font-size: 13px;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 480px) {
+
+    body.auth-body {
+        padding: 20px 14px;
+    }
+
+    .auth-logo {
+        gap: 9px;
+        margin-bottom: 21px;
+    }
+
+    .auth-logo .logo-image {
+        width: 39px;
+        height: 39px;
+    }
+
+    .auth-logo span {
+        font-size: 23px;
+    }
+
+    .login-card {
+        padding: 27px 21px;
+    }
+
+    .auth-heading h1 {
+        font-size: 24px;
+    }
+
+    .social-buttons {
+        flex-direction: column;
+    }
+}

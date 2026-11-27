@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" role="img" aria-label="Ilustrasi Tata Busana dan Kerajinan">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3F6FC"/><stop offset="1" stop-color="#E4EDFF"/></linearGradient></defs>
+<rect width="600" height="360" rx="28" fill="url(#bg)"/>
+<circle cx="300" cy="180" r="145" fill="#FFFFFF" opacity=".55"/>
+<path d="M230 105l70 35 70-35 55 60-45 38-24-22v115H244V181l-24 22-45-38z" fill="#FFFFFF" stroke="#2875EE" stroke-width="12" stroke-linejoin="round"/><path d="M300 140v155m-36-125h72" stroke="#F5A623" stroke-width="10" stroke-linecap="round"/><path d="M170 95l45-25m-25 45l45-25" stroke="#183969" stroke-width="10" stroke-linecap="round"/>
+<path d="M48 310h504" stroke="#C9D9F5" stroke-width="3" stroke-linecap="round"/>
+</svg>

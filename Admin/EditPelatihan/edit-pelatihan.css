@@ -1,0 +1,506 @@
+
+/* =====================================================
+   EDIT PELATIHAN - SKILLUP ADMIN
+   Styling khusus formulir edit pelatihan
+===================================================== */
+
+:root {
+    --edit-navy: #183969;
+    --edit-blue: #2875EE;
+    --edit-border: #E2E8F0;
+    --edit-text: #202B3C;
+    --edit-muted: #718096;
+}
+
+/* =====================================================
+   JUDUL HALAMAN
+===================================================== */
+
+.training-page-heading {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 24px;
+}
+
+.training-page-heading h1 {
+    margin: 0;
+    color: var(--edit-navy);
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.training-page-heading p {
+    margin: 6px 0 0;
+    color: var(--edit-muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.back-button {
+    display: inline-flex;
+    flex: 0 0 38px;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border: 1px solid var(--edit-border);
+    border-radius: 9px;
+    background: #FFFFFF;
+    color: var(--edit-navy);
+    font-size: 25px;
+    line-height: 1;
+    transition: background 0.2s ease;
+}
+
+.back-button:hover {
+    background: #EEF4FF;
+}
+
+/* =====================================================
+   FORM CARD
+===================================================== */
+
+.form-card {
+    width: 100%;
+    padding: 28px;
+    border: 1px solid var(--edit-border);
+    border-radius: 13px;
+    background: #FFFFFF;
+    box-shadow: 0 4px 14px rgba(24, 57, 105, 0.05);
+}
+
+/* =====================================================
+   GRID FORM
+===================================================== */
+
+.form-layout {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    align-items: start;
+    gap: 28px;
+}
+
+.thumbnail-column {
+    min-width: 0;
+}
+
+.right-form {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    min-width: 0;
+}
+
+/* =====================================================
+   GAMBAR SAMPUL
+===================================================== */
+
+.field-label {
+    display: block;
+    margin-bottom: 9px;
+    color: var(--edit-navy);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.upload-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 190px;
+    padding: 18px 12px;
+    border: 1px dashed #B8CCE9;
+    border-radius: 10px;
+    background: #F1F6FF;
+    text-align: center;
+    transition: 0.2s ease;
+}
+
+.upload-box.drag-over {
+    border: 2px dashed var(--edit-blue);
+    background: #E5EEFF;
+}
+
+.upload-icon {
+    margin-bottom: 9px;
+    color: var(--edit-blue);
+    font-size: 32px;
+    line-height: 1;
+}
+
+.upload-box strong {
+    color: var(--edit-blue);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.upload-box small {
+    margin-top: 7px;
+    color: var(--edit-muted);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.file-button {
+    min-height: 36px;
+    margin-top: 14px;
+    padding: 8px 20px;
+    border: 1px solid #CBD8E8;
+    border-radius: 8px;
+    background: #FFFFFF;
+    color: var(--edit-text);
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.file-button:hover {
+    border-color: var(--edit-blue);
+    color: var(--edit-blue);
+    background: #F8FAFF;
+}
+
+#thumbnailInput {
+    display: none;
+}
+
+.thumbnail-preview {
+    display: none;
+    width: 100%;
+    max-height: 190px;
+    margin-top: 14px;
+    border: 1px solid var(--edit-border);
+    border-radius: 9px;
+    background: #EEF1F5;
+    object-fit: cover;
+}
+
+.file-name,
+.image-note {
+    margin-top: 9px;
+    color: var(--edit-muted);
+    font-size: 11px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.file-name:empty {
+    display: none;
+}
+
+/* =====================================================
+   FORM INPUT
+===================================================== */
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.form-group {
+    min-width: 0;
+}
+
+.form-group input:not([type="radio"]),
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    padding: 11px 13px;
+    border: 1px solid #CBD8E8;
+    border-radius: 8px;
+    outline: none;
+    background: #FFFFFF;
+    color: var(--edit-text);
+    font-family: inherit;
+    font-size: 13px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--edit-blue);
+    box-shadow: 0 0 0 3px rgba(40, 117, 238, 0.10);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #9AA5B5;
+}
+
+.required {
+    color: #E53935;
+}
+
+.form-group textarea {
+    min-height: 110px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+/* =====================================================
+   STATUS PUBLIKASI
+===================================================== */
+
+.status-options {
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+    min-height: 44px;
+}
+
+.status-option {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 44px;
+    padding: 9px 10px;
+    border: 1px solid #CBD8E8;
+    border-radius: 8px;
+    background: #FFFFFF;
+    color: #64748B;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.status-option input {
+    width: 14px;
+    height: 14px;
+    margin: 0;
+    accent-color: var(--edit-blue);
+}
+
+.status-option:has(input:checked) {
+    border-color: var(--edit-blue);
+    background: #EEF4FF;
+    color: var(--edit-blue);
+}
+
+/* =====================================================
+   TOMBOL FORM
+===================================================== */
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 5px;
+    padding-top: 18px;
+    border-top: 1px solid #EDF0F6;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 135px;
+    min-height: 42px;
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.btn-cancel {
+    border-color: #CBD5E1;
+    background: #FFFFFF;
+    color: var(--edit-text);
+}
+
+.btn-cancel:hover {
+    border-color: #94A3B8;
+    background: #F8FAFC;
+}
+
+.btn-save {
+    border-color: var(--edit-blue);
+    background: var(--edit-blue);
+    color: #FFFFFF;
+}
+
+.btn-save:hover {
+    border-color: #1D5FC5;
+    background: #1D5FC5;
+}
+
+/* =====================================================
+   RESPONSIVE TABLET
+===================================================== */
+
+@media (max-width: 1050px) {
+    .form-card {
+        padding: 22px;
+    }
+
+    .form-layout {
+        grid-template-columns: 220px minmax(0, 1fr);
+        gap: 22px;
+    }
+}
+
+@media (max-width: 850px) {
+    .form-layout {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .thumbnail-column {
+        width: 100%;
+        max-width: 420px;
+    }
+
+    .form-row {
+        gap: 13px;
+    }
+}
+
+/* =====================================================
+   RESPONSIVE MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+    .training-page-heading {
+        gap: 11px;
+        margin-bottom: 19px;
+    }
+
+    .training-page-heading h1 {
+        font-size: 21px;
+    }
+
+    .training-page-heading p {
+        font-size: 12px;
+    }
+
+    .form-card {
+        padding: 17px;
+        border-radius: 10px;
+    }
+
+    .form-layout {
+        gap: 22px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .right-form {
+        gap: 16px;
+    }
+
+    .status-options {
+        flex-direction: column;
+    }
+
+    .status-option {
+        width: 100%;
+        justify-content: flex-start;
+        padding-left: 15px;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+/* =====================================================
+   STATUS ELEMEN JAVASCRIPT
+===================================================== */
+
+.is-visible {
+    display: block !important;
+}
+
+.is-filtered-out {
+    display: none !important;
+}
+
+/* =========================================
+   VALIDASI FORM EDIT PELATIHAN
+========================================= */
+
+.field-error {
+    display: none;
+    margin-top: 5px;
+    color: #DC2626;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.field-error.show {
+    display: block;
+}
+
+.form-group input.input-invalid,
+.form-group select.input-invalid,
+.form-group textarea.input-invalid {
+    border-color: #DC2626 !important;
+    background: #FEF2F2;
+}
+
+.form-group input.input-invalid:focus,
+.form-group select.input-invalid:focus,
+.form-group textarea.input-invalid:focus {
+    border-color: #DC2626 !important;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.08);
+}
+
+.form-group input.input-valid,
+.form-group select.input-valid,
+.form-group textarea.input-valid {
+    border-color: #16A34A;
+}
+
+.upload-box.has-error {
+    border-color: #DC2626;
+    background: #FEF2F2;
+}
+
+.btn-save:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+/* Gambar sampul menyatu dengan area unggah dan dapat dibuka ukuran besar. */
+.training-cover-preview, .thumbnail-preview { display:block; width:100%; max-height:260px; object-fit:cover; border-radius:12px; cursor:zoom-in; margin:12px 0; }
+.training-cover-preview[hidden], .thumbnail-preview[hidden] { display:none; }
+.skillup-image-viewer { position:fixed; inset:0; z-index:10000; display:none; align-items:center; justify-content:center; padding:24px; background:rgba(8,18,35,.82); }
+.skillup-image-viewer.open { display:flex; }
+.skillup-image-viewer-card { position:relative; max-width:94vw; max-height:92vh; padding:16px; border-radius:14px; background:#fff; }
+.skillup-image-viewer-card img { display:block; max-width:90vw; max-height:82vh; object-fit:contain; }
+.skillup-image-viewer-card button { position:absolute; top:5px; right:7px; width:34px; height:34px; border:0; border-radius:50%; cursor:pointer; font-size:24px; }
+
+/* Gambar sampul menyatu dengan area unggah dan dapat dibuka ukuran besar. */
+.training-cover-preview, .thumbnail-preview { display:block; width:100%; max-height:260px; object-fit:cover; border-radius:12px; cursor:zoom-in; margin:12px 0; }
+.training-cover-preview[hidden], .thumbnail-preview[hidden] { display:none; }
+.skillup-image-viewer { position:fixed; inset:0; z-index:10000; display:none; align-items:center; justify-content:center; padding:24px; background:rgba(8,18,35,.82); }
+.skillup-image-viewer.open { display:flex; }
+.skillup-image-viewer-card { position:relative; max-width:94vw; max-height:92vh; padding:16px; border-radius:14px; background:#fff; }
+.skillup-image-viewer-card img { display:block; max-width:90vw; max-height:82vh; object-fit:contain; }
+.skillup-image-viewer-card button { position:absolute; top:5px; right:7px; width:34px; height:34px; border:0; border-radius:50%; cursor:pointer; font-size:24px; }

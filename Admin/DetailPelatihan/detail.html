@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Pelatihan | SkillUp</title>
+
+    <link rel="stylesheet" href="detail-pelatihan.css">
+    <link rel="stylesheet" href="../admin-layout.css">
+</head>
+
+<body>
+
+<div class="detail-container">
+    <div class="detail-card" id="detailCard">
+
+        <header class="detail-header">
+            <div class="detail-brand">
+                <img src="../../Assets/img/logo-skillup.png" alt="Logo SkillUp">
+                <span>SkillUp Admin</span>
+            </div>
+            <h1>Detail Pelatihan</h1>
+        </header>
+
+        <section class="detail-content">
+            <img
+                src=""
+                alt="Sampul Pelatihan"
+                class="training-image"
+                id="trainingImage"
+                hidden
+            >
+
+            <div class="training-info">
+                <h2 id="trainingTitle">Memuat pelatihan...</h2>
+
+                <span class="status" id="trainingStatus"></span>
+
+                <p class="description" id="trainingDescription"></p>
+            </div>
+        </section>
+
+        <h3 class="section-title">Informasi Pelatihan</h3>
+
+        <section class="information-grid">
+
+            <div class="information-item">
+                <p>Kategori</p>
+                <h3 id="category">-</h3>
+            </div>
+
+            <div class="information-item">
+                <p>Tingkat Kesulitan</p>
+                <h3 id="level">-</h3>
+            </div>
+
+            <div class="information-item">
+                <p>Harga Pelatihan</p>
+                <h3 id="hargapelatihan">-</h3>
+            </div>
+
+            <div class="information-item">
+                <p>Durasi Pelatihan</p>
+                <h3 id="duration">-</h3>
+            </div>
+
+            <div class="information-item">
+                <p>Instruktur</p>
+                <h3 id="instructor">-</h3>
+            </div>
+
+            <div class="information-item">
+                <p>Tanggal Mulai</p>
+                <h3 id="startDate">-</h3>
+            </div>
+
+            <div class="information-item">
+                <p>Tanggal Selesai</p>
+                <h3 id="endDate">-</h3>
+            </div>
+
+            <div class="information-item">
+                <p>Status Pelatihan</p>
+                <h3 id="statusInformation">-</h3>
+            </div>
+
+        </section>
+
+        <footer class="detail-footer">
+            <button class="btn-close" id="closeButton" type="button">
+                Tutup
+            </button>
+        </footer>
+
+    </div>
+</div>
+<script src="../../Shared/JS/api-client.js"></script>
+<script src="../../Shared/JS/auth-guard.js?role=admin"></script>
+<script src="../../Shared/JS/data-pelatihan.js"></script>
+<script src="detail-pelatihan.js"></script>
+<script src="../../Shared/JS/logout-confirmation.js"></script>
+<script src="../../Shared/JS/admin-header.js"></script>
+</body>
+</html>

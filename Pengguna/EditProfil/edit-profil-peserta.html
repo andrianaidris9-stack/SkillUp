@@ -1,0 +1,263 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profil | SkillUp</title>
+
+    <link rel="stylesheet" href="../pengguna-layout.css">
+    <link rel="stylesheet" href="edit-profil-peserta.css">
+    <link rel="stylesheet" href="../../Shared/CSS/logout-confirmation.css">
+    <link rel="stylesheet" href="../../Shared/CSS/profile-photo.css">
+
+    <script src="../../Shared/JS/api-client.js"></script>
+    <script src="../../Shared/JS/auth-guard.js?role=user"></script>
+    <script src="edit-profil-peserta.js" defer></script>
+</head>
+
+<body>
+<div class="layout">
+
+    <aside class="sidebar">
+        <div class="logo">
+            <img
+                class="logo-image"
+                src="../../Assets/img/logo-skillup.png"
+                alt="Logo SkillUp"
+            >
+            <span>SkillUp</span>
+        </div>
+
+        <nav class="menu" aria-label="Navigasi peserta">
+            <a href="../Dashboard/dashboard-peserta.html">
+                <span class="menu-icon">▦</span>
+                Dashboard
+            </a>
+
+            <a href="../Profil/profil-peserta.html" class="active">
+                <span class="menu-icon">♟</span>
+                Profil
+            </a>
+
+            <a href="../AsesmenAwal/asesmen-awal.html">
+                <span class="menu-icon">▤</span>
+                Asesmen Awal
+            </a>
+
+            <a href="../HasilRekomendasi/hasil-rekomendasi.html">
+                <span class="menu-icon">✦</span>
+                Hasil Rekomendasi
+            </a>
+        </nav>
+
+        <button
+            class="logout"
+            id="logoutButton"
+            type="button"
+            data-logout-url="../../Autentikasi/Login/login.html"
+        >
+            <span class="logout-icon" aria-hidden="true">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M10 17l5-5-5-5"></path>
+                    <path d="M15 12H3"></path>
+                    <path d="M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6"></path>
+                </svg>
+            </span>
+            <span>Keluar</span>
+        </button>
+    </aside>
+
+    <main class="main">
+        <header class="topbar">
+            <div class="avatar" id="avatarSmall">P</div>
+        </header>
+
+        <section class="content">
+            <div class="profile-card">
+                <h1>Edit Profil</h1>
+
+                <form id="profileForm" novalidate>
+                    <div class="profile-layout">
+
+                        <div class="photo-box">
+                            <div class="initial" id="initial">P</div>
+
+                            <button
+                                type="button"
+                                class="upload-button photo-camera-trigger"
+                                id="uploadButton"
+                                data-photo-picker
+                                aria-haspopup="menu"
+                                aria-expanded="false"
+                                aria-label="Ambil foto, pilih dari galeri, atau lihat foto profil"
+                                title="Kelola foto profil"
+                            >
+                                <span aria-hidden="true">📷</span>
+                            </button>
+
+                            <input
+                                type="file"
+                                id="photoInput"
+                                accept="image/*"
+                            >
+
+                            <span
+                                class="field-error photo-error"
+                                id="photoError"
+                                aria-live="polite"
+                            ></span>
+                        </div>
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+                                <label for="nama">Nama Lengkap</label>
+                                <input
+                                    type="text"
+                                    id="nama"
+                                    autocomplete="name"
+                                    required
+                                    aria-describedby="namaError"
+                                >
+                                <small class="field-error" id="namaError"></small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    readonly
+                                    required
+                                    aria-describedby="emailError"
+                                >
+                                <small class="field-error" id="emailError"></small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="nomor">Nomor Telepon</label>
+                                <input
+                                    type="tel"
+                                    id="nomor"
+                                    inputmode="numeric"
+                                    maxlength="12"
+                                    placeholder="Contoh: 081234567890"
+                                    autocomplete="tel"
+                                    required
+                                    aria-describedby="nomorError"
+                                >
+                                <small class="field-error" id="nomorError"></small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="tanggalLahir">Tanggal Lahir</label>
+                                <input
+                                    type="date"
+                                    id="tanggalLahir"
+                                    required
+                                    aria-describedby="tanggalLahirError"
+                                >
+                                <small class="field-error" id="tanggalLahirError"></small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="pendidikan">Pendidikan Terakhir</label>
+                                <select id="pendidikan" name="pendidikan">
+                                <option value="">Pilih Pendidikan Terakhir</option>
+                                <option value="SMA/SMK/MA">SMA/SMK/MA</option>
+                                <option value="Diploma">Diploma</option>
+                                <option value="S1">Sarjana (S1)</option>
+                                <option value="S2">Magister (S2)</option>
+                                <option value="S3">Doktor (S3)</option>
+                            </select>
+                                <small class="field-error" id="pendidikanError"></small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="pengalamanKerja">Pengalaman Kerja</label>
+                                <select
+                                    id="pengalamanKerja"
+                                    required
+                                    aria-describedby="pengalamanKerjaError"
+                                >
+                                    <option value="">Pilih pengalaman kerja</option>
+                                    <option value="Belum ada">Belum ada</option>
+                                    <option value="Informal">Informal</option>
+                                    <option value="Formal kurang dari 2 tahun">
+                                        Formal kurang dari 2 tahun
+                                    </option>
+                                    <option value="Formal 2 tahun atau lebih">
+                                        Formal 2 tahun atau lebih
+                                    </option>
+                                </select>
+                                <small class="field-error" id="pengalamanKerjaError"></small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="alamat">Alamat</label>
+                                <input
+                                    type="text"
+                                    id="alamat"
+                                    autocomplete="street-address"
+                                    placeholder="Masukkan alamat lengkap"
+                                    required
+                                    aria-describedby="alamatError"
+                                >
+                                <small class="field-error" id="alamatError"></small>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="button-area">
+                        <a
+                            href="../Profil/profil-peserta.html"
+                            class="cancel-button"
+                        >
+                            Batal
+                        </a>
+
+                        <button type="submit" class="save-button">
+                            Simpan Data
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+</div>
+
+<div
+    class="success-modal"
+    id="successModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="successTitle"
+    aria-hidden="true"
+>
+    <div class="success-modal-content">
+        <div class="success-check">
+            <span>✓</span>
+        </div>
+
+        <h2 id="successTitle">Data profil berhasil diubah</h2>
+        <p>Perubahan data profil Anda berhasil disimpan.</p>
+
+        <button type="button" id="closeSuccessModal">
+            Tutup
+        </button>
+    </div>
+</div>
+
+<script src="../../Shared/JS/logout-confirmation.js"></script>
+<script src="../../Shared/JS/profile-photo-picker.js"></script>
+</body>
+</html>

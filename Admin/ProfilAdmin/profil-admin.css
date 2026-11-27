@@ -1,0 +1,240 @@
+
+/* =====================================================
+   PROFIL ADMIN SKILLUP
+===================================================== */
+
+.profile-panel {
+    width: 100%;
+    max-width: 900px;
+    padding: 26px;
+    box-sizing: border-box;
+}
+
+.profile-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.profile-heading h2 {
+    margin: 0;
+    color: var(--admin-navy);
+    font-size: 19px;
+}
+
+.profile-heading p {
+    margin: 7px 0 0;
+    color: var(--admin-muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.profile-role-badge {
+    padding: 7px 12px;
+    border-radius: 20px;
+    color: #1D5FC4;
+    background: #EAF1FF;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* =====================================================
+   IDENTITAS ADMIN
+===================================================== */
+
+.profile-identity {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.profile-photo-wrapper {
+    flex-shrink: 0;
+}
+
+.profile-photo {
+    display: grid;
+    place-items: center;
+    width: 104px;
+    height: 104px;
+    overflow: hidden;
+    border: 4px solid #EAF1FF;
+    border-radius: 50%;
+    color: var(--admin-navy);
+    background: #EAF1FF;
+    font-size: 34px;
+    font-weight: 800;
+}
+
+.profile-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile-photo img[hidden] {
+    display: none;
+}
+
+.profile-identity-info {
+    min-width: 0;
+}
+
+.profile-identity-info h3 {
+    margin: 0;
+    color: var(--admin-navy);
+    font-size: 21px;
+    overflow-wrap: anywhere;
+}
+
+.profile-identity-info p {
+    margin: 7px 0;
+    color: var(--admin-muted);
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+.profile-identity-info span {
+    color: #2875EE;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* =====================================================
+   PEMBATAS DAN INFORMASI PROFIL
+===================================================== */
+
+.profile-divider {
+    height: 1px;
+    margin: 27px 0;
+    background: var(--admin-border);
+}
+
+.profile-information {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.profile-information-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.profile-information-item span {
+    color: var(--admin-muted);
+    font-size: 12px;
+}
+
+.profile-information-item strong {
+    color: var(--admin-text);
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+/* =====================================================
+   TOMBOL AKSI
+===================================================== */
+
+.profile-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 28px;
+}
+
+.profile-edit-button {
+    min-width: 145px;
+    gap: 8px;
+    font-size: 13px;
+}
+
+.profile-edit-button span {
+    font-size: 16px;
+}
+
+.profile-panel .admin-note {
+    margin-top: 22px;
+}
+
+/* =====================================================
+   AVATAR TOPBAR
+   Tampilan foto header dikelola admin-header.js
+===================================================== */
+
+.admin-avatar {
+    display: grid;
+    place-items: center;
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.admin-avatar img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 700px) {
+    .profile-panel {
+        padding: 19px;
+    }
+
+    .profile-identity {
+        gap: 14px;
+    }
+
+    .profile-photo {
+        width: 82px;
+        height: 82px;
+        font-size: 28px;
+    }
+
+    .profile-identity-info h3 {
+        font-size: 17px;
+    }
+
+    .profile-information {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+}
+
+@media (max-width: 420px) {
+    .profile-identity {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .profile-heading {
+        flex-direction: column;
+    }
+
+    .profile-actions {
+        justify-content: stretch;
+    }
+
+    .profile-edit-button {
+        width: 100%;
+    }
+}
+
+.profile-photo[data-photo-viewer] { cursor: zoom-in; transition: transform .18s ease; }
+.profile-photo[data-photo-viewer]:hover { transform: scale(1.04); }
+.profile-photo[data-photo-viewer]:focus-visible { outline: 3px solid #2875EE; outline-offset: 4px; }

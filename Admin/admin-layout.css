@@ -1,0 +1,707 @@
+
+/* =====================================================
+   LAYOUT BERSAMA HALAMAN ADMIN SKILLUP
+===================================================== */
+
+:root {
+    --admin-navy: #183969;
+    --admin-blue: #2875EE;
+    --admin-bg: #F3F6FC;
+    --admin-border: #E2E8F0;
+    --admin-text: #202B3C;
+    --admin-muted: #66758A;
+
+    --admin-sidebar-width: 250px;
+    --admin-header-height: 72px;
+    --admin-logo-size: 44px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    min-width: 320px;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    color: var(--admin-text);
+    background: var(--admin-bg);
+}
+
+a {
+    text-decoration: none;
+}
+
+/* =====================================================
+   LAYOUT UTAMA
+===================================================== */
+
+.admin-layout,
+.dashboard-container,
+.layout {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.admin-main,
+.main,
+.main-content {
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: column;
+    width: auto;
+    min-width: 0;
+    min-height: 100vh;
+}
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.admin-sidebar,
+.sidebar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 var(--admin-sidebar-width);
+    width: var(--admin-sidebar-width);
+    min-width: var(--admin-sidebar-width);
+    height: 100vh;
+    padding: 22px 18px;
+    color: #fff;
+    background: var(--admin-navy);
+}
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.admin-brand,
+.sidebar .logo {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    min-height: var(--admin-logo-size);
+    margin: 0 0 34px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.admin-brand img,
+.sidebar .logo-image {
+    display: block;
+    width: var(--admin-logo-size);
+    height: var(--admin-logo-size);
+    min-width: var(--admin-logo-size);
+    object-fit: contain;
+}
+
+/* =====================================================
+   NAVIGASI
+===================================================== */
+
+.admin-menu,
+.sidebar nav,
+.sidebar .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.admin-menu a,
+.sidebar nav a,
+.sidebar .menu a {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    border-radius: 9px;
+    color: #DCE7F8;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+    white-space: nowrap;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.admin-menu a:hover,
+.admin-menu a.active,
+.sidebar nav a:hover,
+.sidebar nav a.active,
+.sidebar .menu a:hover,
+.sidebar .menu a.active {
+    color: #fff;
+    background: var(--admin-blue);
+}
+
+/* =====================================================
+   IKON MENU
+===================================================== */
+
+.admin-menu-icon {
+    display: inline-flex;
+    flex: 0 0 20px;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    font-size: 18px;
+    line-height: 1;
+}
+
+/* =====================================================
+   TOMBOL KELUAR
+===================================================== */
+
+.admin-logout,
+.sidebar .logout {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 11px;
+    width: 100%;
+    min-height: 42px;
+    margin-top: auto;
+    padding: 10px 12px;
+    border: 0;
+    border-radius: 9px;
+    color: #fff;
+    background: #D92D3A;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.admin-logout:hover,
+.sidebar .logout:hover {
+    color: #fff;
+    background: #B92330;
+}
+
+.logout-icon {
+    display: block;
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+}
+
+.admin-logout .logout-icon {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* =====================================================
+   HEADER / TOPBAR
+===================================================== */
+
+/* =====================================================
+   HEADER / TOPBAR
+===================================================== */
+
+.admin-topbar,
+.topbar {
+    display: flex;
+    flex: 0 0 var(--admin-header-height);
+    align-items: center;
+    justify-content: flex-end;
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    height: var(--admin-header-height);
+    min-height: var(--admin-header-height);
+
+    margin: 0;
+    padding: 0 32px;
+
+    box-sizing: border-box;
+
+    border-bottom: 1px solid var(--admin-border);
+    background: #fff;
+}
+/* =====================================================
+   PROFIL ADMIN DI HEADER
+===================================================== */
+
+.admin-user {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    min-width: 0;
+    color: var(--admin-navy);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.admin-user span,
+.admin-user p {
+    margin: 0;
+}
+
+.admin-avatar {
+    display: grid;
+    flex: 0 0 40px;
+    place-items: center;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border: 1px solid #DCE6F7;
+    border-radius: 50%;
+    color: var(--admin-navy);
+    background: #EAF1FF;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.admin-avatar img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* =====================================================
+   KONTEN
+===================================================== */
+
+.admin-content {
+    width: 100%;
+    max-width: 1400px;
+    min-width: 0;
+    margin: 0 auto;
+    padding: 30px 32px 48px;
+}
+
+.content,
+.page-content {
+    min-width: 0;
+    padding: 30px 32px 48px;
+}
+
+/* =====================================================
+   JUDUL HALAMAN
+===================================================== */
+
+.admin-page-heading {
+    margin-bottom: 24px;
+}
+
+.admin-page-heading h1 {
+    margin: 0;
+    color: var(--admin-navy);
+    font-size: 28px;
+    line-height: 1.2;
+}
+
+.admin-page-heading p {
+    margin: 7px 0 0;
+    color: var(--admin-muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* =====================================================
+   STATISTIK
+===================================================== */
+
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.admin-stat,
+.admin-panel {
+    padding: 21px;
+    border: 1px solid var(--admin-border);
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 4px 14px rgba(24, 57, 105, 0.04);
+}
+
+.admin-stat span {
+    display: block;
+    color: var(--admin-muted);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.admin-stat strong {
+    display: block;
+    margin-top: 8px;
+    color: var(--admin-navy);
+    font-size: 30px;
+}
+
+/* =====================================================
+   PANEL
+===================================================== */
+
+.admin-panel {
+    width: 100%;
+    min-width: 0;
+    margin-top: 20px;
+}
+
+.admin-panel h2 {
+    margin: 0 0 16px;
+    color: var(--admin-navy);
+    font-size: 18px;
+}
+
+.admin-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.admin-toolbar h2 {
+    margin: 0;
+}
+
+/* =====================================================
+   PENCARIAN
+===================================================== */
+
+.admin-search {
+    width: min(420px, 100%);
+    min-height: 42px;
+    padding: 9px 12px;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    outline: none;
+    background: #fff;
+    font-family: inherit;
+}
+
+.admin-search:focus,
+.admin-form input:focus,
+.admin-form select:focus,
+.admin-form textarea:focus {
+    border-color: var(--admin-blue);
+    box-shadow: 0 0 0 3px rgba(40, 117, 238, 0.12);
+}
+
+/* =====================================================
+   FORMULIR
+===================================================== */
+
+.admin-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.admin-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.admin-field label {
+    color: var(--admin-navy);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.admin-field input,
+.admin-field select,
+.admin-field textarea {
+    width: 100%;
+    min-height: 42px;
+    padding: 10px 12px;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    color: var(--admin-text);
+    background: #fff;
+    outline: none;
+    font-family: inherit;
+}
+
+.admin-field textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.admin-field.full {
+    grid-column: 1 / -1;
+}
+
+/* =====================================================
+   TABEL
+===================================================== */
+
+.admin-table-wrap {
+    width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    border: 1px solid var(--admin-border);
+    border-radius: 10px;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    font-size: 13px;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 13px 14px;
+    border-bottom: 1px solid var(--admin-border);
+    text-align: left;
+    vertical-align: middle;
+}
+
+.admin-table th {
+    color: var(--admin-navy);
+    background: #F7F9FD;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.admin-table tr:last-child td {
+    border-bottom: 0;
+}
+
+.admin-empty {
+    padding: 24px;
+    color: var(--admin-muted);
+    text-align: center;
+}
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.admin-status {
+    display: inline-flex;
+    padding: 5px 9px;
+    border-radius: 20px;
+    color: #8A5A00;
+    background: #FFF3D6;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.admin-status.done {
+    color: #167647;
+    background: #E4F7ED;
+}
+
+/* =====================================================
+   TOMBOL
+===================================================== */
+
+.admin-button,
+.admin-button-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 39px;
+    padding: 9px 14px;
+    border: 1px solid var(--admin-blue);
+    border-radius: 8px;
+    color: #fff;
+    background: var(--admin-blue);
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.admin-button:hover {
+    background: #1B5FCB;
+}
+
+.admin-button-secondary {
+    color: var(--admin-blue);
+    background: #fff;
+}
+
+.admin-button-secondary:hover {
+    color: #fff;
+    background: var(--admin-blue);
+}
+
+/* =====================================================
+   CATATAN
+===================================================== */
+
+.admin-note {
+    margin-top: 14px;
+    padding: 13px 15px;
+    border-left: 4px solid #F5A623;
+    border-radius: 7px;
+    color: #657287;
+    background: #FFF9EF;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.admin-action-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 950px) {
+    .admin-sidebar,
+    .sidebar {
+        flex-basis: 225px;
+        width: 225px;
+        min-width: 225px;
+    }
+
+    .admin-content,
+    .content,
+    .page-content {
+        padding: 24px 20px;
+    }
+
+    .admin-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+    .admin-layout,
+    .dashboard-container,
+    .layout {
+        display: block;
+    }
+
+    .admin-sidebar,
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        padding: 16px;
+    }
+
+    .admin-brand,
+    .sidebar .logo {
+        margin-bottom: 18px;
+    }
+
+    .admin-menu,
+    .sidebar nav,
+    .sidebar .menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 7px;
+    }
+
+    .admin-menu a,
+    .sidebar nav a,
+    .sidebar .menu a {
+        width: auto;
+        min-height: 40px;
+        padding: 9px 11px;
+    }
+
+    .admin-logout,
+    .sidebar .logout {
+        width: max-content;
+        margin-top: 16px;
+    }
+
+    .admin-topbar,
+    .topbar {
+        flex-basis: 60px;
+        height: 60px;
+        min-height: 60px;
+        padding: 0 18px;
+    }
+
+    .admin-content,
+    .content,
+    .page-content {
+        padding: 22px 15px 36px;
+    }
+
+    .admin-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .admin-form {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =====================================================
+   HP KECIL
+===================================================== */
+
+@media (max-width: 420px) {
+    .admin-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-page-heading h1 {
+        font-size: 24px;
+    }
+
+    .admin-user {
+        font-size: 12px;
+    }
+}
+
+
+/* Tombol aksi penghapusan data pada tabel Admin. */
+.admin-button-danger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 34px;
+    padding: 7px 12px;
+    border: 1px solid #FECACA;
+    border-radius: 7px;
+    background: #FFF1F2;
+    color: #B91C1C;
+    font: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.admin-button-danger:hover {
+    background: #FEE2E2;
+}

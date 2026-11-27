@@ -1,0 +1,142 @@
+/* Komponen foto profil bersama untuk halaman Edit Profil. */
+.photo-picker-host { position: relative; }
+.photo-picker-menu {
+    position: absolute;
+    z-index: 50;
+    top: calc(100% + 8px);
+    left: 0;
+    display: none;
+    min-width: 190px;
+    padding: 7px;
+    border: 1px solid #DCE5F2;
+    border-radius: 11px;
+    background: #FFFFFF;
+    box-shadow: 0 12px 30px rgba(24, 57, 105, .16);
+}
+.photo-picker-menu.is-open { display: grid; gap: 3px; }
+.photo-picker-menu button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 39px;
+    padding: 9px 11px;
+    border: 0;
+    border-radius: 7px;
+    color: #263B59;
+    background: #FFFFFF;
+    font: inherit;
+    font-size: 13px;
+    text-align: left;
+    cursor: pointer;
+}
+.photo-picker-menu button:hover { color: #1D5FC4; background: #EEF5FF; }
+.photo-camera-trigger { display: inline-flex; align-items: center; gap: 7px; }
+.profile-photo-viewer {
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(9, 22, 42, .78);
+}
+.profile-photo-viewer.is-open { display: flex; }
+.profile-photo-viewer-card {
+    position: relative;
+    display: grid;
+    place-items: center;
+    max-width: min(92vw, 760px);
+    max-height: 90vh;
+    padding: 18px;
+    border-radius: 16px;
+    background: #FFFFFF;
+    box-shadow: 0 20px 60px rgba(0,0,0,.28);
+}
+.profile-photo-viewer-card img {
+    display: block;
+    max-width: min(86vw, 700px);
+    max-height: 78vh;
+    border-radius: 10px;
+    object-fit: contain;
+}
+.profile-photo-viewer-card img[hidden] { display: none; }
+.profile-photo-viewer-close {
+    position: absolute;
+    top: 7px;
+    right: 9px;
+    z-index: 1;
+    width: 34px;
+    height: 34px;
+    border: 0;
+    border-radius: 50%;
+    color: #263B59;
+    background: #EDF2F8;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+}
+.profile-photo-viewer-note { margin: 24px 14px 12px; color: #66758A; font-size: 14px; }
+
+
+/* Jendela kamera untuk mengambil foto profil secara langsung. */
+.profile-camera-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10050;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(15, 23, 42, .72);
+}
+.profile-camera-dialog {
+    width: min(100%, 520px);
+    overflow: hidden;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 24px 70px rgba(0,0,0,.28);
+}
+.profile-camera-dialog header,
+.profile-camera-dialog footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 18px;
+}
+.profile-camera-dialog header button {
+    border: 0;
+    background: transparent;
+    font-size: 28px;
+    cursor: pointer;
+}
+.profile-camera-dialog video {
+    display: block;
+    width: 100%;
+    max-height: 62vh;
+    object-fit: cover;
+    background: #111827;
+}
+.profile-camera-message {
+    margin: 12px 18px;
+    color: #475569;
+    font-size: 14px;
+}
+.profile-camera-dialog footer {
+    justify-content: flex-end;
+    border-top: 1px solid #e2e8f0;
+}
+.profile-camera-dialog footer button {
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+    padding: 9px 16px;
+    background: #fff;
+    cursor: pointer;
+}
+.profile-camera-dialog footer [data-camera-capture] {
+    border-color: #2563eb;
+    color: #fff;
+    background: #2563eb;
+}

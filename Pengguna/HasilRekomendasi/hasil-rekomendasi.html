@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hasil Rekomendasi | SkillUp</title>
+
+    <link rel="stylesheet" href="../pengguna-layout.css">
+    <link rel="stylesheet" href="hasil-rekomendasi.css">
+    <link rel="stylesheet" href="../../Shared/CSS/logout-confirmation.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <img
+                class="logo-image"
+                src="../../Assets/img/logo-skillup.png"
+                alt="Logo SkillUp"
+            >
+            <span>SkillUp</span>
+        </div>
+
+        <nav class="menu" aria-label="Navigasi peserta">
+
+            <a href="../Dashboard/dashboard-peserta.html">
+                <span class="menu-icon" aria-hidden="true">▦</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="../Profil/profil-peserta.html">
+                <span class="menu-icon" aria-hidden="true">♟</span>
+                <span>Profil</span>
+            </a>
+
+            <a href="../AsesmenAwal/asesmen-awal.html">
+                <span class="menu-icon" aria-hidden="true">▤</span>
+                <span>Asesmen Awal</span>
+            </a>
+
+            <a href="hasil-rekomendasi.html" class="active">
+                <span class="menu-icon" aria-hidden="true">✦</span>
+                <span>Hasil Rekomendasi</span>
+            </a>
+
+        </nav>
+
+        <button
+            class="logout"
+            id="logoutButton"
+            type="button"
+            data-logout-url="../../Autentikasi/Login/login.html"
+        >
+            <svg
+                class="logout-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+            >
+                <path d="M10 17l5-5-5-5"></path>
+                <path d="M15 12H3"></path>
+                <path d="M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6"></path>
+            </svg>
+
+            <span>Keluar</span>
+        </button>
+
+    </aside>
+
+    <!-- KONTEN UTAMA -->
+    <main class="main">
+
+        <!-- HEADER PESERTA -->
+        <header class="topbar">
+            <div class="avatar" id="userAvatar">P</div>
+        </header>
+
+        <!-- HALAMAN HASIL REKOMENDASI -->
+        <section class="user-card" id="recommendationCard">
+
+            <p id="recommendationMessage">
+                Memuat hasil rekomendasi...
+            </p>
+
+            <div id="recommendationDetails" hidden>
+
+                <span class="result-label">
+                    Bidang yang Direkomendasikan
+                </span>
+
+                <h2 id="recommendedField"></h2>
+
+                <p id="recommendationExplanation"></p>
+
+                <p id="recommendationDate"></p>
+
+                <div class="recommended-programs">
+
+                    <div class="program-heading">
+                        <div>
+                            <span class="result-label">
+                                PROGRAM PELATIHAN
+                            </span>
+
+                            <h3>Program yang Sesuai untuk Anda</h3>
+
+                            <p>
+                                Berikut program pelatihan yang tersedia
+                                berdasarkan bidang rekomendasi Anda.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div
+                        id="recommendedPrograms"
+                        class="recommended-program-grid"
+                    >
+                        <p>Memuat program pelatihan...</p>
+                    </div>
+
+                    <p
+                        id="recommendedProgramsEmpty"
+                        class="recommended-empty"
+                        hidden
+                    >
+                        Belum ada program pelatihan yang dipublikasikan
+                        untuk bidang rekomendasi ini.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CATATAN HASIL REKOMENDASI -->
+        <p class="user-note" id="recommendationNote">
+            Hasil Decision Tree merupakan rekomendasi pendukung
+            keputusan berdasarkan data profil, asesmen awal,
+            dan penilaian praktik peserta.
+        </p>
+
+        <!-- DETAIL PELATIHAN PESERTA -->
+        <section
+            class="participant-detail-view"
+            id="trainingDetailView"
+            hidden
+        >
+
+            <div class="participant-detail-card">
+
+                <header class="participant-detail-header">
+
+                    <div class="participant-detail-brand">
+                        <img
+                            src="../../Assets/img/logo-skillup.png"
+                            alt="Logo SkillUp"
+                        >
+                        <span>SkillUp</span>
+                    </div>
+
+                    <h1>Detail Pelatihan</h1>
+
+                </header>
+
+                <section class="participant-detail-content">
+
+                    <img
+                        src=""
+                        alt="Sampul Pelatihan"
+                        class="participant-training-image"
+                        id="detailTrainingImage"
+                        hidden
+                    >
+
+                    <div class="participant-training-info">
+
+                        <h2 id="detailTrainingTitle">
+                            Memuat pelatihan...
+                        </h2>
+
+                        <span
+                            class="participant-training-status"
+                            id="detailTrainingStatus"
+                        ></span>
+
+                        <p
+                            class="participant-training-description"
+                            id="detailTrainingDescription"
+                        ></p>
+
+                    </div>
+
+                </section>
+
+                <h3 class="participant-detail-section-title">
+                    Informasi Pelatihan
+                </h3>
+
+                <section class="participant-information-grid">
+
+                    <div class="participant-information-item">
+                        <p>Kategori</p>
+                        <h3 id="detailCategory">-</h3>
+                    </div>
+
+                    <div class="participant-information-item">
+                        <p>Tingkat Kesulitan</p>
+                        <h3 id="detailLevel">-</h3>
+                    </div>
+
+                    <div class="participant-information-item">
+                        <p>Harga Pelatihan</p>
+                        <h3 id="detailPrice">-</h3>
+                    </div>
+
+                    <div class="participant-information-item">
+                        <p>Durasi Pelatihan</p>
+                        <h3 id="detailDuration">-</h3>
+                    </div>
+
+                    <div class="participant-information-item">
+                        <p>Instruktur</p>
+                        <h3 id="detailInstructor">-</h3>
+                    </div>
+
+                    <div class="participant-information-item">
+                        <p>Tanggal Mulai</p>
+                        <h3 id="detailStartDate">-</h3>
+                    </div>
+
+                    <div class="participant-information-item">
+                        <p>Tanggal Selesai</p>
+                        <h3 id="detailEndDate">-</h3>
+                    </div>
+
+                    <div class="participant-information-item">
+                        <p>Status Pelatihan</p>
+                        <h3 id="detailStatusInformation">-</h3>
+                    </div>
+
+                </section>
+
+                <footer class="participant-detail-footer">
+
+                    <button
+                        class="participant-detail-close"
+                        id="closeTrainingDetail"
+                        type="button"
+                    >
+                        Tutup
+                    </button>
+
+                </footer>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<!-- JAVASCRIPT UTAMA -->
+<script src="../../Shared/JS/api-client.js"></script>
+<script src="../../Shared/JS/auth-guard.js?role=user"></script>
+<script src="../../Shared/JS/logout-confirmation.js"></script>
+
+<!-- SUMBER DATA PELATIHAN BERSAMA -->
+<script src="../../Shared/JS/data-pelatihan.js"></script>
+
+<!-- LOGIKA HASIL REKOMENDASI DAN DETAIL -->
+<script src="hasil-rekomendasi.js"></script>
+
+<!-- SINKRONISASI PROFIL -->
+<script src="../Profil/profile-sync.js"></script>
+
+</body>
+</html>

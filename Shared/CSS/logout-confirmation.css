@@ -1,0 +1,140 @@
+
+/* POPUP KONFIRMASI KELUAR - SKILLUP ADMIN */
+
+.logout-confirm-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(15, 30, 55, 0.48);
+    backdrop-filter: blur(3px);
+}
+
+.logout-confirm-overlay[hidden] {
+    display: none !important;
+}
+
+.logout-confirm-dialog {
+    width: min(100%, 420px);
+    padding: 30px 28px 26px;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 18px 55px rgba(15, 35, 70, 0.22);
+    text-align: center;
+    outline: none;
+    animation: logoutPopupMasuk 0.18s ease-out;
+}
+
+.logout-confirm-icon {
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #dc2626;
+    background: #fff0f0;
+}
+
+.logout-confirm-icon svg {
+    width: 27px;
+    height: 27px;
+}
+
+.logout-confirm-dialog h2 {
+    margin: 0 0 9px;
+    color: #183969;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.logout-confirm-dialog p {
+    max-width: 320px;
+    margin: 0 auto 25px;
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.logout-confirm-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.logout-confirm-actions button {
+    min-width: 120px;
+    min-height: 43px;
+    padding: 10px 18px;
+    border: 0;
+    border-radius: 9px;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.logout-cancel-button {
+    color: #334155;
+    background: #eef2f7;
+}
+
+.logout-cancel-button:hover {
+    background: #e2e8f0;
+}
+
+.logout-yes-button {
+    color: #ffffff;
+    background: #dc2626;
+}
+
+.logout-yes-button:hover {
+    background: #b91c1c;
+}
+
+.logout-confirm-actions button:focus-visible {
+    outline: 3px solid rgba(40, 117, 237, 0.35);
+    outline-offset: 2px;
+}
+
+@keyframes logoutPopupMasuk {
+    from {
+        opacity: 0;
+        transform: translateY(8px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 480px) {
+    .logout-confirm-dialog {
+        padding: 26px 20px 22px;
+    }
+
+    .logout-confirm-actions {
+        gap: 9px;
+    }
+
+    .logout-confirm-actions button {
+        flex: 1;
+        min-width: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .logout-confirm-dialog {
+        animation: none;
+    }
+
+    .logout-confirm-actions button {
+        transition: none;
+    }
+}

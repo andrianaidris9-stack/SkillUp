@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profil Peserta | SkillUp</title>
+
+    <link rel="stylesheet" href="../pengguna-layout.css">
+    <link rel="stylesheet" href="profil-peserta.css">
+    <link rel="stylesheet" href="../../Shared/CSS/logout-confirmation.css">
+    <link rel="stylesheet" href="../../Shared/CSS/profile-photo.css">
+
+    <script src="../../Shared/JS/api-client.js"></script>
+    <script src="../../Shared/JS/auth-guard.js?role=user"></script>
+    <script src="profil-peserta.js" defer></script>
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <img
+                class="logo-image"
+                src="../../Assets/img/logo-skillup.png"
+                alt="Logo SkillUp"
+            >
+            <span>SkillUp</span>
+        </div>
+
+        <!-- MENU NAVIGASI -->
+        <nav class="menu" aria-label="Navigasi peserta">
+
+            <a href="../Dashboard/dashboard-peserta.html">
+                <span class="menu-icon" aria-hidden="true">▦</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="profil-peserta.html" class="active">
+                <span class="menu-icon" aria-hidden="true">♟</span>
+                <span>Profil</span>
+            </a>
+
+            <a href="../AsesmenAwal/asesmen-awal.html">
+                <span class="menu-icon" aria-hidden="true">▤</span>
+                <span>Asesmen Awal</span>
+            </a>
+
+            <a href="../HasilRekomendasi/hasil-rekomendasi.html">
+                <span class="menu-icon" aria-hidden="true">✦</span>
+                <span>Hasil Rekomendasi</span>
+            </a>
+
+        </nav>
+
+        <!-- TOMBOL KELUAR -->
+        <button
+            class="logout"
+            id="logoutButton"
+            type="button"
+            data-logout-url="../../Autentikasi/Login/login.html"
+        >
+            <svg
+                class="logout-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+            >
+                <path d="M10 17l5-5-5-5"></path>
+                <path d="M15 12H3"></path>
+                <path d="M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6"></path>
+            </svg>
+
+            <span>Keluar</span>
+        </button>
+
+    </aside>
+
+    <!-- KONTEN UTAMA -->
+    <main class="main">
+
+        <!-- HEADER -->
+        <header class="topbar">
+            <div class="avatar" id="avatarSmall">P</div>
+        </header>
+
+        <!-- ISI PROFIL -->
+        <section class="content">
+
+            <div class="profile-card">
+
+                <h1>Profil Peserta</h1>
+
+                <div class="profile-layout">
+
+                    <!-- FOTO / INISIAL PESERTA -->
+                    <div class="photo-box" data-photo-viewer tabindex="0" role="button" aria-label="Lihat foto profil ukuran besar">
+                        <div class="initial" id="initial">P</div>
+                    </div>
+
+                    <!-- INFORMASI PROFIL -->
+                    <div class="profile-info">
+
+                        <div class="info-item">
+                            <label>Nama Lengkap</label>
+                            <p id="nama">Nama Peserta</p>
+                        </div>
+
+                        <div class="info-item">
+                            <label>Email</label>
+                            <p id="email">Email Peserta</p>
+                        </div>
+
+                        <div class="info-item">
+                            <label>Pendidikan Terakhir</label>
+                            <p id="pendidikan">Pendidikan Peserta</p>
+                        </div>
+
+                        <div class="info-item">
+                            <label>Tanggal Lahir</label>
+                            <p id="tanggalLahir">Belum diisi</p>
+                        </div>
+
+                        <div class="info-item">
+                            <label>Usia</label>
+                            <p id="usia">Belum diisi</p>
+                        </div>
+
+                        <div class="info-item">
+                            <label>Pengalaman Kerja</label>
+                            <p id="pengalamanKerja">Belum diisi</p>
+                        </div>
+
+                        <div class="info-item">
+                            <label>Nomor Telepon</label>
+                            <p id="nomor">Belum diisi</p>
+                        </div>
+
+                        <div class="info-item">
+                            <label>Alamat</label>
+                            <p id="alamat">Alamat Peserta</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- AKSI PROFIL -->
+                <div class="button-area">
+                    <a
+                        href="../EditProfil/edit-profil-peserta.html"
+                        class="edit-button"
+                    >
+                        Edit Profil
+                    </a>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<!-- JAVASCRIPT -->
+<script src="../../Shared/JS/logout-confirmation.js"></script>
+<script src="../../Shared/JS/profile-photo-viewer.js"></script>
+
+</body>
+</html>

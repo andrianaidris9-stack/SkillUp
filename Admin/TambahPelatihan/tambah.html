@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Pelatihan | SkillUp</title>
+
+    <link rel="stylesheet" href="../admin-layout.css">
+    <link rel="stylesheet" href="tambah-pelatihan.css">
+    <link rel="stylesheet" href="../../Shared/CSS/notification.css">
+    <link rel="stylesheet" href="../../Shared/CSS/logout-confirmation.css">
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <aside class="admin-sidebar">
+
+        <div class="admin-brand">
+            <img src="../../Assets/img/logo-skillup.png" alt="Logo SkillUp">
+            <span>SkillUp</span>
+        </div>
+
+        <nav class="admin-menu" aria-label="Navigasi Admin">
+            <a href="../Dashboard/dashboard.html">
+                <span class="admin-menu-icon">▦</span>
+                Dashboard
+            </a>
+
+            <a href="../DataPeserta/data-peserta.html">
+                <span class="admin-menu-icon">♟</span>
+                Data Peserta
+            </a>
+
+            <a href="../DataPelatihan/pelatihan.html" class="active">
+                <span class="admin-menu-icon">▣</span>
+                Data Pelatihan
+            </a>
+
+            <a href="../DataAsesmen/data-asesmen.html">
+                <span class="admin-menu-icon">▤</span>
+                Data Asesmen
+            </a>
+
+            <a href="../HasilKlasifikasi/hasil-klasifikasi.html">
+                <span class="admin-menu-icon">✦</span>
+                Hasil Klasifikasi
+            </a>
+
+            <a href="../ProfilAdmin/profil-admin.html">
+                <span class="admin-menu-icon">⚙</span>
+                Profil Admin
+            </a>
+        </nav>
+
+        <button
+            class="admin-logout"
+            id="logoutButton"
+            type="button"
+            data-logout-url="../../Autentikasi/Login/login.html">
+
+            <span class="logout-icon" aria-hidden="true">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+
+                    <path d="M10 17l5-5-5-5"></path>
+                    <path d="M15 12H3"></path>
+                    <path d="M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6"></path>
+                </svg>
+            </span>
+
+            <span>Keluar</span>
+        </button>
+
+    </aside>
+
+    <main class="admin-main">
+
+        <header class="admin-topbar">
+            <div class="admin-user">
+                <span id="adminName">Admin SkillUp</span>
+                <span class="admin-avatar" id="adminAvatar">A</span>
+            </div>
+        </header>
+
+        <section class="admin-content">
+
+            <div class="training-page-heading">
+
+                <a
+                    href="../DataPelatihan/pelatihan.html"
+                    class="back-button"
+                    aria-label="Kembali ke Data Pelatihan">
+                    ←
+                </a>
+
+                <div>
+                    <h1>Tambah Pelatihan</h1>
+                    <p>Lengkapi informasi pelatihan yang akan ditambahkan.</p>
+                </div>
+
+            </div>
+
+            <form class="form-card" id="trainingForm" data-draft-key="skillup-draft-training-create" novalidate>
+
+                <!-- GAMBAR SAMPUL -->
+                <div class="thumbnail">
+
+                    <h3 class="thumbnail-title">Gambar Sampul</h3>
+
+                    <div class="upload-area" id="uploadArea">
+
+                        <div class="upload-icon">⇧</div>
+
+                        <strong>Seret dan lepaskan gambar di sini</strong>
+
+                        <small>Format JPG atau PNG, maksimal 5 MB</small>
+                        <img id="imagePreview" class="training-cover-preview" alt="Gambar sampul pelatihan" hidden data-image-viewer>
+
+                        <button type="button" id="chooseFileButton">
+                            Pilih Gambar
+                        </button>
+
+                        <input
+                            type="file"
+                            id="thumbnailInput"
+                            accept="image/png,image/jpeg"
+                            aria-describedby="thumbnailError"
+                        >
+
+                    </div>
+
+                    <small
+                        class="field-error"
+                        id="thumbnailError"
+                        role="alert">
+                    </small>
+
+                    <small class="image-note">
+                        Gambar sampul bersifat opsional.
+                    </small>
+
+                </div>
+
+                <!-- INFORMASI PELATIHAN -->
+                <div class="form-fields">
+
+                    <!-- JUDUL -->
+                    <div class="field">
+
+                        <label for="judul">
+                            Judul Pelatihan <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="judul"
+                            placeholder="Masukkan judul pelatihan"
+                            required
+                            aria-describedby="judulError"
+                            aria-invalid="false"
+                        >
+
+                        <small class="field-error" id="judulError" role="alert"></small>
+
+                    </div>
+
+                    <!-- DURASI -->
+                    <div class="field">
+
+                        <label for="durasi">
+                            Durasi Pelatihan (jam) <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="number"
+                            id="durasi"
+                            min="1"
+                            max="9999"
+                            step="1"
+                            inputmode="numeric"
+                            placeholder="20"
+                            required
+                            aria-describedby="durasiError"
+                            aria-invalid="false"
+                        >
+
+                        <small class="field-error" id="durasiError" role="alert"></small>
+
+                    </div>
+
+                    <!-- KATEGORI -->
+                    <div class="field">
+
+                        <label for="kategori">
+                            Kategori Pelatihan <span class="required">*</span>
+                        </label>
+
+                        <select
+                            id="kategori"
+                            required
+                            aria-describedby="kategoriError"
+                            aria-invalid="false">
+
+                            <option value="">Pilih kategori</option>
+                            <option value="Kecantikan dan Tata Rias">Kecantikan dan Tata Rias</option>
+                            <option value="Kuliner dan Tata Boga">Kuliner dan Tata Boga</option>
+                            <option value="Teknik dan Alat Berat">Teknik dan Alat Berat</option>
+                            <option value="Tata Busana dan Kerajinan">Tata Busana dan Kerajinan</option>
+                            <option value="Administrasi dan Teknologi">Administrasi dan Teknologi</option>
+                            <option value="Kelistrikan dan Keterampilan Teknik">Kelistrikan dan Keterampilan Teknik</option>
+                            <option value="Pariwisata dan Perhotelan">Pariwisata dan Perhotelan</option>
+                            <option value="Kewirausahaan">Kewirausahaan</option>
+
+                        </select>
+
+                        <small class="field-error" id="kategoriError" role="alert"></small>
+
+                    </div>
+
+                    <!-- HARGA -->
+                    <div class="field">
+
+                        <label for="harga">Harga Pelatihan (Opsional)</label>
+
+                        <input
+                            type="text"
+                            id="harga"
+                            placeholder="Contoh: Rp0"
+                        >
+
+                    </div>
+
+                    <!-- TINGKAT -->
+                    <div class="field">
+
+                        <label for="tingkat">
+                            Tingkat Kesulitan <span class="required">*</span>
+                        </label>
+
+                        <select
+                            id="tingkat"
+                            required
+                            aria-describedby="tingkatError"
+                            aria-invalid="false">
+
+                            <option value="">Pilih Tingkat</option>
+                            <option value="Pemula">Pemula</option>
+                            <option value="Menengah">Menengah</option>
+                            <option value="Mahir">Mahir</option>
+
+                        </select>
+
+                        <small class="field-error" id="tingkatError" role="alert"></small>
+
+                    </div>
+
+                    <!-- INSTRUKTUR -->
+                    <div class="field">
+
+                        <label for="instruktur">
+                            Nama Instruktur <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="instruktur"
+                            placeholder="Masukkan nama instruktur"
+                            required
+                            aria-describedby="instrukturError"
+                            aria-invalid="false"
+                        >
+
+                        <small class="field-error" id="instrukturError" role="alert"></small>
+
+                    </div>
+
+                    <!-- TANGGAL MULAI -->
+                    <div class="field">
+
+                        <label for="tanggalMulai">
+                            Tanggal Mulai <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="date"
+                            id="tanggalMulai"
+                            required
+                            aria-describedby="tanggalMulaiError"
+                            aria-invalid="false"
+                        >
+
+                        <small class="field-error" id="tanggalMulaiError" role="alert"></small>
+
+                    </div>
+
+                    <!-- TANGGAL SELESAI -->
+                    <div class="field">
+
+                        <label for="tanggalSelesai">
+                            Tanggal Selesai <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="date"
+                            id="tanggalSelesai"
+                            required
+                            aria-describedby="tanggalSelesaiError"
+                            aria-invalid="false"
+                        >
+
+                        <small class="field-error" id="tanggalSelesaiError" role="alert"></small>
+
+                    </div>
+
+                    <!-- STATUS -->
+                    <div class="field status-field">
+
+                        <label>
+                            Status Publikasi <span class="required">*</span>
+                        </label>
+
+                        <div class="status-options">
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="status"
+                                    value="Draft"
+                                    checked
+                                >
+                                Draf
+                            </label>
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="status"
+                                    value="Published"
+                                >
+                                Dipublikasikan
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                    <!-- DESKRIPSI -->
+                    <div class="field description">
+
+                        <label for="deskripsi">
+                            Deskripsi Pelatihan <span class="required">*</span>
+                        </label>
+
+                        <textarea
+                            id="deskripsi"
+                            placeholder="Jelaskan tujuan, cakupan, dan keterampilan yang akan dilatih"
+                            required
+                            aria-describedby="deskripsiError"
+                            aria-invalid="false"
+                        ></textarea>
+
+                        <small class="field-error" id="deskripsiError" role="alert"></small>
+
+                    </div>
+
+                    <!-- TOMBOL -->
+                    <div class="form-actions">
+
+                        <a
+                            href="../DataPelatihan/pelatihan.html"
+                            class="btn btn-cancel">
+                            Batal
+                        </a>
+
+                        <button
+                            type="submit"
+                            class="btn btn-save"
+                            id="saveTrainingButton">
+                            Simpan Pelatihan
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</div>
+
+<!-- SCRIPT -->
+<script src="../../Shared/JS/api-client.js"></script>
+    <script src="../../Shared/JS/auth-guard.js?role=admin"></script>
+    <script src="../../Shared/JS/data-pelatihan.js"></script>
+<script src="../../Shared/JS/notification.js"></script>
+<script src="../../Shared/JS/logout-confirmation.js"></script>
+<script src="../../Shared/JS/image-viewer.js"></script>
+<script src="tambah-pelatihan.js"></script>
+<script src="../../Shared/JS/form-draft.js"></script>
+<script src="../../Shared/JS/admin-header.js"></script>
+
+</body>
+</html>

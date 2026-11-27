@@ -1,0 +1,38 @@
+/* =====================================================
+   KATALOG PELATIHAN - FILTER DAN KARTU PROGRAM
+===================================================== */
+.catalog-page { background: var(--skillup-bg); }
+.catalog-container { width: min(1180px, calc(100% - 48px)); margin: 0 auto; padding: 54px 0 76px; }
+.catalog-heading { margin-bottom: 25px; }
+.catalog-heading h1 { margin: 13px 0 7px; color: var(--skillup-navy); font-size: clamp(30px, 3.5vw, 40px); line-height: 1.2; }
+.catalog-heading p { color: var(--skillup-muted); font-size: 15px; }
+.catalog-search { margin-bottom: 24px; }
+.search-box { width: min(620px, 100%); min-height: 50px; padding: 0 16px; display: flex; align-items: center; gap: 12px; border: 1px solid var(--skillup-border); border-radius: 11px; background: #fff; }
+.search-box span { color: var(--skillup-blue); font-size: 24px; }
+.search-box input { width: 100%; border: 0; outline: 0; color: var(--skillup-text); background: transparent; font-size: 14px; }
+.catalog-content { display: grid; grid-template-columns: 270px minmax(0, 1fr); align-items: start; gap: 24px; }
+.filter-sidebar { padding: 22px; border: 1px solid var(--skillup-border); border-radius: 14px; background: #fff; }
+.filter-group + .filter-group { margin-top: 25px; padding-top: 22px; border-top: 1px solid var(--skillup-border); }
+.filter-group h2 { margin-bottom: 13px; color: var(--skillup-navy); font-size: 16px; }
+.filter-group label { margin: 11px 0; display: flex; align-items: flex-start; gap: 9px; color: #526176; font-size: 13px; line-height: 1.45; cursor: pointer; }
+.filter-group input { margin-top: 2px; accent-color: var(--skillup-blue); }
+.all-category-button { width: 100%; min-height: 38px; margin-bottom: 8px; border: 1px solid #C9D9F5; border-radius: 8px; color: var(--skillup-blue); background: #F5F8FF; font-size: 13px; font-weight: 700; cursor: pointer; }
+.catalog-results { min-width: 0; }
+.catalog-results-heading { margin: 0 0 14px; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.catalog-results-heading h2 { color: var(--skillup-navy); font-size: 19px; }
+.catalog-results-heading span { color: var(--skillup-muted); font-size: 12px; }
+.catalog-courses { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.catalog-card { overflow: hidden; display: flex; flex-direction: column; border: 1px solid var(--skillup-border); border-radius: 14px; background: #fff; box-shadow: 0 5px 18px rgba(24,57,105,.04); transition: .2s ease; }
+.catalog-card:hover { transform: translateY(-2px); box-shadow: var(--skillup-shadow); }
+.catalog-card-image { width: 100%; height: 178px; object-fit: cover; background: #EAF1FF; }
+.catalog-card-info { padding: 18px; display: flex; flex: 1; flex-direction: column; align-items: flex-start; }
+.course-category { margin-bottom: 8px; color: var(--skillup-blue); font-size: 11px; font-weight: 800; }
+.catalog-card-info h2 { margin-bottom: 8px; color: var(--skillup-navy); font-size: 17px; line-height: 1.35; }
+.course-description { margin-bottom: 12px; color: var(--skillup-muted); font-size: 13px; line-height: 1.6; }
+.course-duration, .course-level { margin: 2px 0; color: #536174; font-size: 12px; }
+.detail-button { margin-top: auto; padding-top: 16px; color: var(--skillup-blue); font-size: 13px; font-weight: 800; }
+.detail-button:hover { color: var(--skillup-navy); }
+.no-course { grid-column: 1 / -1; padding: 34px 20px; border: 1px dashed #C9D6E8; border-radius: 12px; color: var(--skillup-muted); background: #fff; text-align: center; }
+@media (max-width: 900px) { .catalog-content { grid-template-columns: 230px minmax(0,1fr); gap: 16px; } .catalog-courses { grid-template-columns: 1fr; } }
+@media (max-width: 650px) { .catalog-container { width: calc(100% - 32px); padding: 38px 0 54px; } .catalog-content { grid-template-columns: 1fr; } .filter-sidebar { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; } .filter-group + .filter-group { margin-top: 0; padding-top: 0; border-top: 0; } .catalog-card-image { height: 190px; } }
+@media (max-width: 430px) { .filter-sidebar { grid-template-columns: 1fr; } .filter-group + .filter-group { margin-top: 12px; padding-top: 18px; border-top: 1px solid var(--skillup-border); } }

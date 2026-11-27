@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" role="img" aria-label="Ilustrasi Administrasi dan Teknologi">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3F6FC"/><stop offset="1" stop-color="#E4EDFF"/></linearGradient></defs>
+<rect width="600" height="360" rx="28" fill="url(#bg)"/>
+<circle cx="300" cy="180" r="145" fill="#FFFFFF" opacity=".55"/>
+<rect x="165" y="85" width="270" height="175" rx="18" fill="#FFFFFF" stroke="#2875EE" stroke-width="12"/><rect x="190" y="110" width="220" height="125" rx="8" fill="#EAF1FF"/><path d="M135 285h330l-35-28H170z" fill="#183969"/><path d="M235 150h115m-115 32h80" stroke="#F5A623" stroke-width="12" stroke-linecap="round"/>
+<path d="M48 310h504" stroke="#C9D9F5" stroke-width="3" stroke-linecap="round"/>
+</svg>

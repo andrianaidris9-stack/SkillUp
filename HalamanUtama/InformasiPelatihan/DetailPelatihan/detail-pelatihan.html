@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Informasi detail program pelatihan kerja SkillUp Kota Ternate.">
+
+    <title>Detail Pelatihan | SkillUp</title>
+
+    <!-- CSS halaman publik -->
+    <link rel="stylesheet" href="../../../Shared/CSS/style.css">
+
+    <!-- CSS detail pelatihan -->
+    <link rel="stylesheet" href="detail-pelatihan.css">
+</head>
+
+<body>
+
+    <!-- HEADER PUBLIK -->
+    <header class="header">
+        <div class="header-container">
+
+            <a
+                href="../../Beranda/index.html"
+                class="logo"
+                aria-label="SkillUp Beranda"
+            >
+                <img
+                    class="logo-image"
+                    src="../../../Assets/img/logo-skillup.png"
+                    alt="Logo SkillUp"
+                >
+                <span>SkillUp</span>
+            </a>
+
+            <nav class="navigation" aria-label="Navigasi utama">
+                <a href="../../Beranda/index.html">Beranda</a>
+                <a href="../pelatihan.html" class="active">
+                    Informasi Pelatihan
+                </a>
+                <a href="../../Tentang/tentang.html">Tentang</a>
+            </nav>
+
+            <div class="header-buttons">
+                <a
+                    href="../../../Autentikasi/Login/login.html"
+                    class="btn-login"
+                >
+                    Login
+                </a>
+
+                <a
+                    href="../../../Autentikasi/Daftar/register.html"
+                    class="btn-register"
+                >
+                    Daftar
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- KONTEN DETAIL PELATIHAN PUBLIK -->
+    <main class="detail-page public-detail-page">
+
+        <div class="detail-container">
+
+            <a
+                href="../pelatihan.html"
+                class="back-link"
+            >
+                ← Kembali ke Katalog Pelatihan
+            </a>
+
+            <div id="detailContent">
+
+                <!-- INFORMASI UTAMA PELATIHAN -->
+                <section class="detail-hero">
+
+                    <div class="detail-image">
+                        <img
+                            id="courseImage"
+                            src=""
+                            alt="Gambar pelatihan"
+                        >
+                    </div>
+
+                    <div class="detail-information">
+
+                        <span
+                            class="detail-category"
+                            id="courseCategory"
+                        ></span>
+
+                        <h1 id="courseTitle">
+                            Memuat informasi pelatihan...
+                        </h1>
+
+                        <p id="courseDescription"></p>
+
+                        <div class="detail-meta">
+
+                            <div>
+                                <span>Tingkat</span>
+                                <strong id="courseLevel">-</strong>
+                            </div>
+
+                            <div>
+                                <span>Durasi</span>
+                                <strong id="courseDuration">-</strong>
+                            </div>
+
+                            <div>
+                                <span>Biaya</span>
+                                <strong id="coursePrice">-</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- INFORMASI PROGRAM -->
+                <section class="detail-section">
+
+                    <h2>Informasi Program</h2>
+
+                    <div class="detail-information-grid">
+
+                        <div>
+                            <span>Instruktur</span>
+                            <strong id="courseInstructor">-</strong>
+                        </div>
+
+                        <div>
+                            <span>Tanggal Mulai</span>
+                            <strong id="courseStart">-</strong>
+                        </div>
+
+                        <div>
+                            <span>Tanggal Selesai</span>
+                            <strong id="courseEnd">-</strong>
+                        </div>
+
+                        <div>
+                            <span>Status Publikasi</span>
+                            <strong id="courseStatus">-</strong>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- KETERANGAN -->
+                <p class="detail-disclaimer">
+                    Informasi ini merupakan gambaran program pelatihan.
+                    Penempatan peserta dan keputusan akhir tetap ditentukan
+                    oleh pengelola atau penyelenggara pelatihan.
+                </p>
+
+            </div>
+
+            <!-- PESAN JIKA DETAIL GAGAL DIMUAT -->
+            <div
+                class="detail-error"
+                id="detailError"
+                hidden
+            ></div>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER PUBLIK -->
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div>
+
+                <div class="footer-brand">
+                    <img
+                        src="../../../Assets/img/logo-skillup.png"
+                        alt="Logo SkillUp"
+                    >
+                    <span>SkillUp</span>
+                </div>
+
+                <p class="footer-description">
+                    Sistem pengelolaan dan pemetaan kebutuhan pelatihan kerja
+                    untuk mendukung perencanaan pelatihan yang lebih terarah
+                    di Kota Ternate.
+                </p>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>Navigasi</h3>
+
+                <a href="../../Beranda/index.html">Beranda</a>
+                <a href="../pelatihan.html">Informasi Pelatihan</a>
+                <a href="../../Tentang/tentang.html">Tentang SkillUp</a>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>Informasi</h3>
+
+                <p>Pelatihan Kerja Kota Ternate</p>
+                <p>Dinas Tenaga Kerja</p>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 SkillUp — Pelatihan Kerja Kota Ternate.
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="../../../Shared/JS/api-client.js"></script>
+    <script src="../../../Shared/JS/data-pelatihan.js"></script>
+    <script src="detail-pelatihan.js"></script>
+
+</body>
+</html>

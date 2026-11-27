@@ -1,0 +1,166 @@
+/* =====================================================
+   SKILLUP DESIGN SYSTEM - HALAMAN PUBLIK
+   Warna, tipografi, navigasi, tombol, dan footer bersama
+===================================================== */
+
+:root {
+    --skillup-navy: #183969;
+    --skillup-blue: #2875EE;
+    --skillup-orange: #F5A623;
+    --skillup-bg: #F3F6FC;
+    --skillup-surface: #FFFFFF;
+    --skillup-text: #202B3C;
+    --skillup-muted: #66758A;
+    --skillup-border: #E2E8F0;
+    --skillup-shadow: 0 12px 32px rgba(24, 57, 105, 0.08);
+    --skillup-radius: 16px;
+    --skillup-container: 1180px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--skillup-text);
+    background: var(--skillup-surface);
+    line-height: 1.6;
+}
+main { flex: 1; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+button, input, select, textarea { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+
+/* Header publik bersama */
+.header {
+    position: relative;
+    z-index: 20;
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid var(--skillup-border);
+}
+.header-container {
+    width: min(var(--skillup-container), calc(100% - 48px));
+    min-height: 76px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+}
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    flex: 0 0 auto;
+    color: var(--skillup-navy);
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+.logo-image { width: 44px; height: 44px; object-fit: contain; }
+.navigation { display: flex; align-items: center; gap: 30px; }
+.navigation a {
+    position: relative;
+    padding: 27px 0 25px;
+    color: #536174;
+    font-size: 14px;
+    font-weight: 600;
+    transition: color .2s ease;
+}
+.navigation a:hover, .navigation a.active { color: var(--skillup-blue); }
+.navigation a.active::after {
+    position: absolute;
+    right: 0;
+    bottom: 17px;
+    left: 0;
+    height: 3px;
+    border-radius: 3px;
+    background: var(--skillup-blue);
+    content: "";
+}
+.header-buttons { display: flex; align-items: center; gap: 10px; }
+.btn-login, .btn-register {
+    min-width: 104px;
+    min-height: 42px;
+    padding: 9px 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--skillup-blue);
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: .2s ease;
+}
+.btn-login { color: var(--skillup-blue); background: #fff; }
+.btn-login:hover { background: #F0F5FF; }
+.btn-register { color: #fff; background: var(--skillup-blue); }
+.btn-register:hover { background: #1B5FCB; }
+
+/* Footer publik bersama */
+.site-footer {
+    margin-top: auto;
+    padding: 34px 24px 22px;
+    color: #DCE7F8;
+    background: var(--skillup-navy);
+}
+.footer-container {
+    width: min(var(--skillup-container), 100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    gap: 44px;
+}
+.footer-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; color: #fff; font-size: 21px; font-weight: 800; }
+.footer-brand img { width: 42px; height: 42px; object-fit: contain; border-radius: 50%; background: #fff; }
+.footer-description { max-width: 390px; color: #C4D2E7; font-size: 13px; }
+.footer-column h3 { margin-bottom: 12px; color: #fff; font-size: 14px; }
+.footer-column p, .footer-column a { display: block; margin: 5px 0; color: #C4D2E7; font-size: 13px; }
+.footer-column a:hover { color: #fff; }
+.footer-bottom {
+    width: min(var(--skillup-container), 100%);
+    margin: 26px auto 0;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,.18);
+    color: #B8C8DF;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* Komponen dasar */
+.section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 30px;
+    color: var(--skillup-blue);
+    background: #EAF1FF;
+    font-size: 12px;
+    font-weight: 700;
+}
+.section-title { color: var(--skillup-navy); font-size: clamp(25px, 3vw, 34px); line-height: 1.2; }
+.section-description { color: var(--skillup-muted); font-size: 15px; }
+
+@media (max-width: 900px) {
+    .header-container { flex-wrap: wrap; gap: 8px 20px; padding: 12px 0; }
+    .navigation { order: 3; width: 100%; justify-content: center; gap: 24px; }
+    .navigation a { padding: 10px 0 12px; }
+    .navigation a.active::after { bottom: 4px; }
+    .footer-container { grid-template-columns: 1fr 1fr; gap: 28px; }
+}
+@media (max-width: 600px) {
+    .header-container { width: calc(100% - 32px); }
+    .logo { font-size: 20px; }
+    .logo-image { width: 38px; height: 38px; }
+    .header-buttons { margin-left: auto; }
+    .btn-login, .btn-register { min-width: 76px; min-height: 36px; padding: 7px 11px; font-size: 12px; }
+    .navigation { justify-content: space-between; gap: 12px; }
+    .navigation a { font-size: 12px; }
+    .footer-container { grid-template-columns: 1fr; gap: 20px; }
+    .site-footer { padding: 28px 20px 18px; }
+}

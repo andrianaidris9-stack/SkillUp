@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" role="img" aria-label="Ilustrasi Kecantikan dan Tata Rias">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3F6FC"/><stop offset="1" stop-color="#E4EDFF"/></linearGradient></defs>
+<rect width="600" height="360" rx="28" fill="url(#bg)"/>
+<circle cx="300" cy="180" r="145" fill="#FFFFFF" opacity=".55"/>
+<circle cx="300" cy="170" r="78" fill="#FFFFFF" stroke="#2875EE" stroke-width="12"/><path d="M300 90v-34m-30 0h60" stroke="#183969" stroke-width="12" stroke-linecap="round"/><path d="M268 178c18-24 46-24 64 0m-54 28c14 14 30 14 44 0" fill="none" stroke="#F5A623" stroke-width="12" stroke-linecap="round"/><rect x="420" y="115" width="42" height="112" rx="12" fill="#F5A623"/><rect x="430" y="92" width="22" height="24" rx="5" fill="#183969"/>
+<path d="M48 310h504" stroke="#C9D9F5" stroke-width="3" stroke-linecap="round"/>
+</svg>

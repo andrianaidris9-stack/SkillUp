@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Admin | SkillUp Admin</title>
+
+    <link rel="stylesheet" href="../admin-layout.css">
+    <link rel="stylesheet" href="profil-admin.css">
+    <link rel="stylesheet" href="../../Shared/CSS/notification.css">
+    <link rel="stylesheet" href="../../Shared/CSS/logout-confirmation.css">
+    <link rel="stylesheet" href="../../Shared/CSS/profile-photo.css">
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar">
+
+        <a class="admin-brand" href="../Dashboard/dashboard.html">
+            <img src="../../Assets/img/logo-skillup.png" alt="Logo SkillUp">
+            <span>SkillUp</span>
+        </a>
+
+        <nav class="admin-menu" aria-label="Navigasi Admin">
+
+            <a href="../Dashboard/dashboard.html">
+                <span class="admin-menu-icon">▦</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="../DataPeserta/data-peserta.html">
+                <span class="admin-menu-icon">♟</span>
+                <span>Data Peserta</span>
+            </a>
+
+            <a href="../DataPelatihan/pelatihan.html">
+                <span class="admin-menu-icon">▣</span>
+                <span>Data Pelatihan</span>
+            </a>
+
+            <a href="../DataAsesmen/data-asesmen.html">
+                <span class="admin-menu-icon">▤</span>
+                <span>Data Asesmen</span>
+            </a>
+
+            <a href="../HasilKlasifikasi/hasil-klasifikasi.html">
+                <span class="admin-menu-icon">✦</span>
+                <span>Hasil Klasifikasi</span>
+            </a>
+
+            <a href="profil-admin.html" class="active">
+                <span class="admin-menu-icon">⚙</span>
+                <span>Profil Admin</span>
+            </a>
+
+        </nav>
+
+        <!-- TOMBOL KELUAR -->
+        <button
+            class="admin-logout"
+            id="logoutButton"
+            type="button"
+            data-logout-url="../../Autentikasi/Login/login.html">
+
+            <span class="logout-icon" aria-hidden="true">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+
+                    <path d="M10 17l5-5-5-5"></path>
+                    <path d="M15 12H3"></path>
+                    <path d="M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6"></path>
+                </svg>
+            </span>
+
+            <span>Keluar</span>
+        </button>
+
+    </aside>
+
+    <!-- KONTEN UTAMA -->
+    <main class="admin-main">
+
+        <!-- HEADER ADMIN -->
+        <header class="admin-topbar">
+            <div class="admin-user">
+                <span id="adminName">Admin SkillUp</span>
+                <span class="admin-avatar" id="adminAvatar">A</span>
+            </div>
+        </header>
+
+        <section class="admin-content">
+
+            <!-- JUDUL HALAMAN -->
+            <div class="admin-page-heading">
+                <h1>Profil Admin</h1>
+                <p>
+                    Kelola informasi identitas akun administrator SkillUp.
+                </p>
+            </div>
+
+            <!-- PANEL PROFIL -->
+            <section class="admin-panel profile-panel">
+
+                <!-- HEADING PROFIL -->
+                <div class="profile-heading">
+
+                    <div>
+                        <h2>Informasi Profil</h2>
+                        <p>
+                            Informasi akun administrator yang sedang digunakan.
+                        </p>
+                    </div>
+
+                    <span class="profile-role-badge">
+                        Administrator
+                    </span>
+
+                </div>
+
+                <!-- IDENTITAS ADMIN -->
+                <div class="profile-identity">
+
+                    <div class="profile-photo-wrapper">
+
+                        <div class="profile-photo" data-photo-viewer tabindex="0" role="button" aria-label="Lihat foto profil ukuran besar">
+
+                            <span id="profileInitial">A</span>
+
+                            <img
+                                id="profileAdminPhoto"
+                                src=""
+                                alt="Foto Profil Admin"
+                                hidden>
+
+                        </div>
+
+                    </div>
+
+                    <div class="profile-identity-info">
+
+                        <h3 id="profileDisplayName">
+                            Admin SkillUp
+                        </h3>
+
+                        <p id="profileDisplayEmail">
+                            admin@gmail.com
+                        </p>
+
+                        <span>Administrator SkillUp</span>
+
+                    </div>
+
+                </div>
+
+                <div class="profile-divider"></div>
+
+                <!-- INFORMASI AKUN -->
+                <div class="profile-information">
+
+                    <div class="profile-information-item">
+                        <span>Nama Lengkap</span>
+                        <strong id="profileAdminName">
+                            Admin SkillUp
+                        </strong>
+                    </div>
+
+                    <div class="profile-information-item">
+                        <span>Email Admin</span>
+                        <strong id="profileAdminEmail">
+                            admin@gmail.com
+                        </strong>
+                    </div>
+
+                    <div class="profile-information-item">
+                        <span>Peran Akun</span>
+                        <strong>Administrator SkillUp</strong>
+                    </div>
+
+                    <div class="profile-information-item">
+                        <span>Status Akun</span>
+                        <strong>Aktif</strong>
+                    </div>
+
+                </div>
+
+                <!-- TOMBOL EDIT -->
+                <div class="profile-actions">
+
+                    <a
+                        href="edit-profil-admin.html"
+                        class="admin-button profile-edit-button">
+
+                        <span aria-hidden="true">✎</span>
+                        Edit Profil
+
+                    </a>
+
+                </div>
+
+                <p class="admin-note">
+                    Perbarui nama dan foto profil melalui menu
+                    Edit Profil. Pastikan informasi yang digunakan
+                    merupakan informasi akun yang benar.
+                </p>
+
+            </section>
+
+        </section>
+
+    </main>
+
+</div>
+
+<!-- JAVASCRIPT -->
+<script src="../../Shared/JS/api-client.js"></script>
+    <script src="../../Shared/JS/auth-guard.js?role=admin"></script>
+    <script src="../../Shared/JS/notification.js"></script>
+<script src="../../Shared/JS/logout-confirmation.js"></script>
+<script src="profil-admin.js"></script>
+<script src="../../Shared/JS/admin-header.js"></script>
+<script src="../../Shared/JS/profile-photo-viewer.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,364 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Asesmen Awal | SkillUp</title>
+
+    <link rel="stylesheet" href="../pengguna-layout.css">
+    <link rel="stylesheet" href="asesmen-awal.css">
+    <link rel="stylesheet" href="../../Shared/CSS/logout-confirmation.css">
+    <link rel="stylesheet" href="../../Shared/CSS/notification.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <!-- LOGO SKILLUP -->
+        <div class="logo">
+            <img
+                class="logo-image"
+                src="../../Assets/img/logo-skillup.png"
+                alt="Logo SkillUp"
+            >
+            <span>SkillUp</span>
+        </div>
+
+        <!-- MENU NAVIGASI -->
+        <nav class="menu" aria-label="Navigasi peserta">
+
+            <a href="../Dashboard/dashboard-peserta.html">
+                <span class="menu-icon" aria-hidden="true">▦</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="../Profil/profil-peserta.html">
+                <span class="menu-icon" aria-hidden="true">♟</span>
+                <span>Profil</span>
+            </a>
+
+            <a href="asesmen-awal.html" class="active">
+                <span class="menu-icon" aria-hidden="true">▤</span>
+                <span>Asesmen Awal</span>
+            </a>
+
+            <a href="../HasilRekomendasi/hasil-rekomendasi.html">
+                <span class="menu-icon" aria-hidden="true">✦</span>
+                <span>Hasil Rekomendasi</span>
+            </a>
+
+        </nav>
+
+        <!-- TOMBOL KELUAR -->
+        <button
+            class="logout"
+            id="logoutButton"
+            type="button"
+            data-logout-url="../../Autentikasi/Login/login.html"
+        >
+            <svg
+                class="logout-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+            >
+                <path d="M10 17l5-5-5-5"></path>
+                <path d="M15 12H3"></path>
+                <path d="M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6"></path>
+            </svg>
+
+            <span>Keluar</span>
+        </button>
+
+    </aside>
+
+    <!-- KONTEN UTAMA -->
+    <main class="main">
+
+        <!-- HEADER -->
+        <header class="topbar">
+            <div class="avatar" id="userAvatar">P</div>
+        </header>
+
+        <!-- ISI ASESMEN -->
+        <section class="content">
+
+            <div class="judul">
+                <h1>Asesmen Awal</h1>
+
+                <p>
+                    Isi minat dan kemampuan awal. Data usia, pendidikan
+                    terakhir, serta pengalaman kerja akan diambil dari
+                    profil sehingga tidak perlu diisi ulang.
+                </p>
+            </div>
+
+            <!-- RINGKASAN DATA PROFIL -->
+            <section class="form-card profile-summary">
+
+                <h2>Data Profil yang Digunakan</h2>
+
+                <div class="summary-grid">
+
+                    <div>
+                        <span>Usia</span>
+                        <strong id="summaryUsia">-</strong>
+                    </div>
+
+                    <div>
+                        <span>Pendidikan Terakhir</span>
+                        <strong id="summaryPendidikan">-</strong>
+                    </div>
+
+                    <div>
+                        <span>Pengalaman Kerja</span>
+                        <strong id="summaryPengalaman">-</strong>
+                    </div>
+
+                </div>
+
+                <p class="catatan">
+                    Jika informasi tersebut belum lengkap atau perlu
+                    diperbarui, silakan perbaiki melalui halaman
+                    Profil Peserta.
+                </p>
+
+            </section>
+
+            <!-- FORM ASESMEN -->
+            <form id="assessmentForm" novalidate>
+
+                <!-- MINAT BIDANG -->
+                <section class="form-card">
+
+                    <h2>1. Minat Bidang Pelatihan</h2>
+
+                    <p class="form-help">
+                        Pilih bidang yang paling sesuai dengan minat
+                        atau tujuan pengembangan keterampilan Anda.
+                    </p>
+
+                    <div class="form-group">
+
+                        <label for="minat">
+                            Bidang Pelatihan yang Diminati
+                        </label>
+
+                        <select id="minat" name="minat" required>
+
+                            <option value="">
+                                Pilih bidang yang diminati
+                            </option>
+
+                            <option value="KEC">
+                                KEC — Kecantikan dan Tata Rias
+                            </option>
+
+                            <option value="KUL">
+                                KUL — Kuliner dan Tata Boga
+                            </option>
+
+                            <option value="TEK">
+                                TEK — Teknik dan Alat Berat
+                            </option>
+
+                            <option value="BUS">
+                                BUS — Tata Busana dan Kerajinan
+                            </option>
+
+                            <option value="ADM">
+                                ADM — Administrasi dan Teknologi
+                            </option>
+
+                            <option value="LIS">
+                                LIS — Kelistrikan dan Keterampilan Teknik
+                            </option>
+
+                            <option value="PAR">
+                                PAR — Pariwisata dan Perhotelan
+                            </option>
+
+                            <option value="WIR">
+                                WIR — Kewirausahaan
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </section>
+
+                <!-- KEMAMPUAN AWAL -->
+                <section class="form-card">
+
+                    <h2>2. Kemampuan Awal</h2>
+
+                    <!-- KEMAMPUAN KOMPUTER -->
+                    <div class="form-group">
+
+                        <span class="field-label">
+                            Kemampuan Komputer
+                        </span>
+
+                        <p class="form-help">
+                            Pilih tingkat kemampuan Anda dalam
+                            menggunakan komputer atau aplikasi digital.
+                        </p>
+
+                        <div class="radio-group">
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="kemampuan_komputer"
+                                    value="Dasar"
+                                    required
+                                >
+                                Dasar
+                            </label>
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="kemampuan_komputer"
+                                    value="Menengah"
+                                >
+                                Menengah
+                            </label>
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="kemampuan_komputer"
+                                    value="Mahir"
+                                >
+                                Mahir
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                    <!-- KEMAMPUAN KOMUNIKASI -->
+                    <div class="form-group">
+
+                        <span class="field-label">
+                            Kemampuan Komunikasi
+                        </span>
+
+                        <p class="form-help">
+                            Pilih tingkat kemampuan Anda dalam
+                            menyampaikan informasi dan berinteraksi.
+                        </p>
+
+                        <div class="radio-group">
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="kemampuan_komunikasi"
+                                    value="Dasar"
+                                    required
+                                >
+                                Dasar
+                            </label>
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="kemampuan_komunikasi"
+                                    value="Menengah"
+                                >
+                                Menengah
+                            </label>
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="kemampuan_komunikasi"
+                                    value="Mahir"
+                                >
+                                Mahir
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- KETERAMPILAN PRAKTIK -->
+                <section class="form-card practical-note">
+
+                    <h2>Penilaian Keterampilan Praktik</h2>
+
+                    <p>
+                        Bagian keterampilan praktik tidak diisi sendiri
+                        oleh peserta. Admin akan mencatat tingkat Dasar,
+                        Menengah, atau Mahir berdasarkan hasil tes atau
+                        pengamatan praktik.
+                    </p>
+
+                </section>
+
+                <!-- TOMBOL FORM -->
+                <div class="tombol">
+
+    <button
+        type="button"
+        class="btn-reset"
+        id="resetAssessment"
+    >
+        Isi Ulang
+    </button>
+
+    <button
+        type="submit"
+        class="btn-simpan"
+    >
+        Kirim Asesmen
+    </button>
+
+</div>
+            </form>
+
+            <!-- HASIL ASESMEN -->
+            <section class="hasil-card" id="hasilPrediksi" hidden>
+
+                <h2>Status Asesmen</h2>
+
+                <p class="status" id="statusPrediksi"></p>
+
+                <div class="hasil-bidang" id="namaBidang"></div>
+
+                <p class="status" id="keteranganPrediksi"></p>
+
+            </section>
+
+        </section>
+
+    </main>
+
+</div>
+
+<!-- JAVASCRIPT -->
+<script src="../../Shared/JS/api-client.js"></script>
+    <script src="../../Shared/JS/auth-guard.js?role=user"></script>
+    <script src="../../Shared/JS/logout-confirmation.js"></script>
+<script src="../../Shared/JS/notification.js"></script>
+<script src="asesmen-awal.js"></script>
+<script src="../Profil/profile-sync.js"></script>
+
+</body>
+</html>

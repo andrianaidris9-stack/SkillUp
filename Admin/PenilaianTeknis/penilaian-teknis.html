@@ -1,0 +1,544 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Penilaian Teknis | SkillUp Admin</title>
+
+    <!-- CSS Layout Admin -->
+    <link rel="stylesheet" href="../admin-layout.css">
+
+    <!-- CSS Khusus Penilaian Teknis -->
+    <link rel="stylesheet" href="penilaian-teknis.css">
+
+    <!-- CSS Konfirmasi Logout -->
+    <link rel="stylesheet" href="../../Shared/CSS/logout-confirmation.css">
+    <link rel="stylesheet" href="../../Shared/CSS/notification.css">
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <!-- =========================================
+         SIDEBAR ADMIN
+    ========================================== -->
+
+    <aside class="admin-sidebar">
+
+        <div class="admin-brand">
+            <img
+                src="../../Assets/img/logo-skillup.png"
+                alt="Logo SkillUp"
+                class="admin-logo"
+            >
+            <span>SkillUp</span>
+        </div>
+
+        <nav class="admin-menu" aria-label="Navigasi Admin">
+
+            <a href="../Dashboard/dashboard.html">
+                <span class="admin-menu-icon">▦</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="../DataPeserta/data-peserta.html">
+                <span class="admin-menu-icon">♟</span>
+                <span>Data Peserta</span>
+            </a>
+
+            <a href="../DataPelatihan/pelatihan.html">
+                <span class="admin-menu-icon">▣</span>
+                <span>Data Pelatihan</span>
+            </a>
+
+            <a href="../DataAsesmen/data-asesmen.html" class="active">
+                <span class="admin-menu-icon">▤</span>
+                <span>Data Asesmen</span>
+            </a>
+
+            <a href="../HasilKlasifikasi/hasil-klasifikasi.html">
+                <span class="admin-menu-icon">✦</span>
+                <span>Hasil Klasifikasi</span>
+            </a>
+
+            <a href="../ProfilAdmin/profil-admin.html">
+                <span class="admin-menu-icon">⚙</span>
+                <span>Profil Admin</span>
+            </a>
+
+        </nav>
+
+        <!-- LOGOUT -->
+
+        <button
+            class="admin-logout"
+            id="logoutButton"
+            type="button"
+            data-logout-url="../../Autentikasi/Login/login.html"
+        >
+            <span class="logout-icon" aria-hidden="true">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M10 17l5-5-5-5"></path>
+                    <path d="M15 12H3"></path>
+                    <path d="M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6"></path>
+                </svg>
+            </span>
+
+            <span>Keluar</span>
+        </button>
+
+    </aside>
+
+
+    <!-- =========================================
+         KONTEN UTAMA
+    ========================================== -->
+
+    <main class="admin-main">
+
+        <!-- HEADER ADMIN -->
+
+        <header class="admin-topbar">
+
+            <div class="admin-user">
+                <span id="adminName">Admin SkillUp</span>
+
+                <div class="admin-avatar" id="adminAvatar">
+                    A
+                </div>
+            </div>
+
+        </header>
+
+
+        <!-- ISI HALAMAN -->
+
+        <section class="admin-content">
+
+            <!-- JUDUL HALAMAN -->
+
+            <div class="admin-page-heading">
+
+                <div>
+                    <h1>Penilaian Keterampilan Praktik</h1>
+
+                    <p>
+                        Berikan penilaian berdasarkan hasil praktik
+                        dan pengamatan yang dicatat Admin.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- INFORMASI PENILAIAN -->
+
+            <div class="info-box">
+
+                <strong>Informasi Penilaian</strong>
+
+                <p>
+                    Penilaian dicatat oleh Admin berdasarkan hasil tes atau
+                    pengamatan praktik. Peserta tidak menentukan sendiri
+                    tingkat keterampilannya. Gunakan indikator pengamatan
+                    sebagai dasar penilaian.
+                </p>
+
+            </div>
+
+
+            <!-- RINGKASAN PENILAIAN -->
+
+            <div class="summary">
+
+                <div class="summary-card">
+                    <span>Total Peserta</span>
+                    <h2 id="totalPeserta">0</h2>
+                </div>
+
+                <div class="summary-card">
+                    <span>Menunggu Penilaian</span>
+                    <h2 id="totalMenunggu">0</h2>
+                </div>
+
+                <div class="summary-card">
+                    <span>Selesai Dinilai</span>
+                    <h2 id="totalSelesai">0</h2>
+                </div>
+
+            </div>
+
+
+            <!-- TABEL PESERTA -->
+
+            <div class="table-card">
+
+                <div class="table-heading">
+
+                    <div>
+                        <h2>Daftar Peserta</h2>
+
+                        <p>
+                            Pilih peserta untuk melakukan atau memperbarui
+                            penilaian keterampilan praktik.
+                        </p>
+                    </div>
+
+                    <select id="filterPenilaian">
+                        <option value="Semua">Semua Status</option>
+                        <option value="Menunggu">Menunggu Penilaian</option>
+                        <option value="Selesai">Selesai Dinilai</option>
+                    </select>
+
+                </div>
+
+
+                <div class="table-responsive">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Nama Peserta</th>
+                                <th>Pendidikan</th>
+                                <th>Pengalaman</th>
+                                <th>Keterampilan Praktik</th>
+                                <th>Status</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="daftarPeserta">
+
+                            <tr>
+                                <td colspan="7" class="kosong">
+                                    Memuat data peserta...
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- =============================================
+     MODAL PENILAIAN TEKNIS
+============================================== -->
+
+<div class="modal" id="modalPenilaian">
+
+    <div class="modal-content">
+
+        <!-- HEADER MODAL -->
+
+        <div class="modal-header">
+
+            <div>
+                <h2>Penilaian Keterampilan Praktik</h2>
+
+                <p>
+                    Amati hasil praktik peserta sebelum menentukan nilai.
+                </p>
+            </div>
+
+            <button
+                type="button"
+                class="close-button"
+                id="tutupModal"
+                aria-label="Tutup formulir"
+            >
+                &times;
+            </button>
+
+        </div>
+
+
+        <!-- FORM PENILAIAN -->
+
+        <form id="formPenilaian">
+
+            <input type="hidden" id="emailPeserta">
+
+
+            <!-- DETAIL PESERTA -->
+
+            <div class="detail-peserta">
+
+                <p>
+                    <strong>Nama:</strong>
+                    <span id="detailNama">-</span>
+                </p>
+
+                <p>
+                    <strong>Usia:</strong>
+                    <span id="detailUsia">-</span>
+                </p>
+
+                <p>
+                    <strong>Pendidikan:</strong>
+                    <span id="detailPendidikan">-</span>
+                </p>
+
+                <p>
+                    <strong>Pengalaman:</strong>
+                    <span id="detailPengalaman">-</span>
+                </p>
+
+            </div>
+
+
+            <!-- PANDUAN PRAKTIK -->
+
+            <div class="panduan-praktik">
+
+                <h3>
+                    Petunjuk Tugas Praktik:
+                    <span id="detailBidang">
+                        Bidang Pelatihan Peserta
+                    </span>
+                </h3>
+
+                <p>
+                    Gunakan tes atau tugas praktik yang sesuai dengan bidang
+                    minat peserta. Amati proses kerja, penggunaan alat atau
+                    bahan, penerapan prosedur, dan hasil akhir tugas.
+                </p>
+
+                <p>
+                    Tentukan tingkat kemampuan berdasarkan bukti pengamatan,
+                    bukan berdasarkan penilaian diri peserta.
+                </p>
+
+                <small>
+                    Catatan: Jenis tugas praktik ditetapkan oleh pengelola
+                    sesuai program pelatihan.
+                </small>
+
+            </div>
+
+
+            <!-- INDIKATOR PENGAMATAN -->
+
+            <h3 class="judul-indikator">
+                Indikator Pengamatan Praktik
+            </h3>
+
+            <p class="keterangan-indikator">
+                Pilih hasil pengamatan untuk setiap indikator.
+            </p>
+
+
+            <div class="indikator-list">
+
+                <div class="indikator-item">
+
+                    <label for="indikator1">
+                        1. Memahami instruksi dan tujuan tugas praktik
+                    </label>
+
+                    <select id="indikator1" required>
+                        <option value="">Pilih hasil pengamatan</option>
+                        <option value="Belum mampu">Belum mampu</option>
+                        <option value="Dengan bantuan">Dengan bantuan</option>
+                        <option value="Mandiri">Mandiri</option>
+                    </select>
+
+                </div>
+
+
+                <div class="indikator-item">
+
+                    <label for="indikator2">
+                        2. Menggunakan alat atau bahan sesuai prosedur
+                    </label>
+
+                    <select id="indikator2" required>
+                        <option value="">Pilih hasil pengamatan</option>
+                        <option value="Belum mampu">Belum mampu</option>
+                        <option value="Dengan bantuan">Dengan bantuan</option>
+                        <option value="Mandiri">Mandiri</option>
+                    </select>
+
+                </div>
+
+
+                <div class="indikator-item">
+
+                    <label for="indikator3">
+                        3. Menerapkan langkah kerja dengan benar
+                    </label>
+
+                    <select id="indikator3" required>
+                        <option value="">Pilih hasil pengamatan</option>
+                        <option value="Belum mampu">Belum mampu</option>
+                        <option value="Dengan bantuan">Dengan bantuan</option>
+                        <option value="Mandiri">Mandiri</option>
+                    </select>
+
+                </div>
+
+
+                <div class="indikator-item">
+
+                    <label for="indikator4">
+                        4. Menunjukkan ketelitian dan kualitas hasil
+                    </label>
+
+                    <select id="indikator4" required>
+                        <option value="">Pilih hasil pengamatan</option>
+                        <option value="Belum mampu">Belum mampu</option>
+                        <option value="Dengan bantuan">Dengan bantuan</option>
+                        <option value="Mandiri">Mandiri</option>
+                    </select>
+
+                </div>
+
+
+                <div class="indikator-item">
+
+                    <label for="indikator5">
+                        5. Menyelesaikan tugas sesuai waktu dan arahan
+                    </label>
+
+                    <select id="indikator5" required>
+                        <option value="">Pilih hasil pengamatan</option>
+                        <option value="Belum mampu">Belum mampu</option>
+                        <option value="Dengan bantuan">Dengan bantuan</option>
+                        <option value="Mandiri">Mandiri</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- KEMANDIRIAN PESERTA -->
+
+            <div class="form-group">
+
+                <label for="kemandirian">
+                    Kemandirian Peserta
+                </label>
+
+                <select id="kemandirian" required>
+                    <option value="">Pilih kemandirian peserta</option>
+
+                    <option value="Memerlukan banyak bantuan">
+                        Memerlukan banyak bantuan
+                    </option>
+
+                    <option value="Dengan sedikit bantuan">
+                        Dengan sedikit bantuan
+                    </option>
+
+                    <option value="Mandiri">
+                        Mandiri
+                    </option>
+                </select>
+
+            </div>
+
+
+            <!-- TINGKAT KETERAMPILAN -->
+
+            <div class="form-group">
+
+                <label for="kemampuanTeknis">
+                    Tingkat Keterampilan Praktik
+                </label>
+
+                <select id="kemampuanTeknis" required>
+                    <option value="">Pilih hasil penilaian</option>
+                    <option value="Dasar">Dasar</option>
+                    <option value="Menengah">Menengah</option>
+                    <option value="Mahir">Mahir</option>
+                </select>
+
+                <small>
+                    Tingkat akhir ditentukan Admin berdasarkan keseluruhan
+                    hasil pengamatan, bukan dipilih oleh peserta.
+                </small>
+
+            </div>
+
+
+            <!-- CATATAN PENILAIAN -->
+
+            <div class="form-group">
+
+                <label for="catatanPenilaian">
+                    Catatan Penilaian Admin
+                </label>
+
+                <textarea
+                    id="catatanPenilaian"
+                    rows="4"
+                    placeholder="Tuliskan hasil pengamatan, kelebihan peserta, dan hal yang perlu ditingkatkan..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <!-- TOMBOL FORM -->
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="btn-batal"
+                    id="batalPenilaian"
+                >
+                    Batal
+                </button>
+
+                <button
+                    type="submit"
+                    class="btn-simpan"
+                >
+                    Simpan Penilaian
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =============================================
+     JAVASCRIPT
+============================================== -->
+
+<script src="../../Shared/JS/api-client.js"></script>
+    <script src="../../Shared/JS/auth-guard.js?role=admin"></script>
+    <script src="../../Shared/JS/notification.js"></script>
+<script src="../../Shared/JS/logout-confirmation.js"></script>
+<script src="penilaian-teknis.js"></script>
+<script src="../../Shared/JS/admin-header.js"></script>
+
+</body>
+</html>
